@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.testvr.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\AnubisBackup\\TestVR\\actions.json",
+      "action_manifest_path": "D:\\FINAL BACKUP\\actions.json",
       "strings": {
         "en_us": {
           "name": "TestVR [Testing]"

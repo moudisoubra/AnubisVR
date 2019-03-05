@@ -240,7 +240,7 @@ public class AnubisController : MonoBehaviour
                     break;
                 }
 
-                if (col.gameObject.tag == "Chest")
+                if (col.gameObject.tag == "Interactable")
                 {
                     objectHeld = col.gameObject;
                     objectHeld.GetComponent<Rigidbody>().useGravity = false;

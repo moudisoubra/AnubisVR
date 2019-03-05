@@ -10,6 +10,7 @@ TagManager:
   - Hand
   - SoulSkill
   - Chest
+  - Interactable
   layers:
   - Default
   - TransparentFX
