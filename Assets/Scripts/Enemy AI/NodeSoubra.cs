@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node : MonoBehaviour
+public class NodeSoubra : MonoBehaviour
 {
-    public List<Node> nodesList = new List<Node>();
+    public List<NodeSoubra> nodesList = new List<NodeSoubra>();
 
     public enum Result { running, success, failure };
 
-    public virtual Result Execute(BehaviourTree BT)
+    public virtual Result Execute(BehaviourTreeSoubra BTS)
     {
         return Result.running;
     }

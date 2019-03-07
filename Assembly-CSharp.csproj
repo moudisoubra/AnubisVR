@@ -60,17 +60,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\AI\Attack.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\AI\BaseState.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\AI\Chase.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\AI\EnemiesMove.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\AI\Enemy.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\AStarPath\ANode.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\AStarPath\Grid.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\AStarPath\PathFinding.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\BehaviourTree\BehaviourTree.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\BehaviourTree\Fall.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\BehaviourTree\Fly.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\BehaviourTree\Node.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\BehaviourTree\Selector.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\BehaviourTree\Sequencer.cs" />
+    <Compile Include="Assets\AhmedHajjoFolder\Scripts\BehaviourTree\Wander.cs" />
     <Compile Include="Assets\checkingCollision.cs" />
     <Compile Include="Assets\ChestScript.cs" />
     <Compile Include="Assets\LeverSystem.cs" />
     <Compile Include="Assets\MovingObjectsScript.cs" />
     <Compile Include="Assets\Scripts\DetectCollision.cs" />
-    <Compile Include="Assets\Scripts\Enemy AI\BehaviourTree.cs" />
-    <Compile Include="Assets\Scripts\Enemy AI\Node.cs" />
-    <Compile Include="Assets\Scripts\Enemy AI\Selector.cs" />
-    <Compile Include="Assets\Scripts\Enemy AI\Sequence.cs" />
+    <Compile Include="Assets\Scripts\Enemy AI\BehaviourTreeSoubra.cs" />
+    <Compile Include="Assets\Scripts\Enemy AI\NodeSoubra.cs" />
+    <Compile Include="Assets\Scripts\Enemy AI\SelectorSoubra.cs" />
+    <Compile Include="Assets\Scripts\Enemy AI\SequenceSoubra.cs" />
     <Compile Include="Assets\Scripts\EnemyTestScript.cs" />
-    <Compile Include="Assets\Scripts\Grid.cs" />
+    <Compile Include="Assets\Scripts\GridSoubra.cs" />
     <Compile Include="Assets\Scripts\Items\Items.cs" />
     <Compile Include="Assets\Scripts\Player\AnubisController.cs" />
     <Compile Include="Assets\Scripts\Player\DrawLine.cs" />
