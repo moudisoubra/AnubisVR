@@ -6,11 +6,11 @@ public class PathFinding : MonoBehaviour
 {
 
     
-    Grid grid;
+    GridPath grid;
 
     public Transform seeker , target;
      void Awake() {
-        grid = GetComponent<Grid>();
+        grid = GetComponent<GridPath>();
     }
 
      void Update() {
