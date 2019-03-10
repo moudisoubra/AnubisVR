@@ -6,6 +6,7 @@
 		Speed ("Wave Speed", Range(0.0, 5.0)) = 1.0
 		TextureColor ("Color: ", Color) = (1,1,1,1)
 		Opacity ("Opacity: ", Range(0.0, 1.0)) = 1.0
+		Factor("Factor: ", Range(0.0, 20.0)) = 0.0
     }
     SubShader
     {
@@ -39,6 +40,7 @@
 			float4 TextureColor;
 			float Speed;
 			float Opacity;
+			float Factor;
 
             v2f vert (appdata v)
             {
@@ -47,9 +49,9 @@
 
 				float3 worldPosition = mul(unity_ObjectToWorld, v.vertex).xyz;
 
-				o.vertex.y += sin(worldPosition.x + _Time.w * Speed) * cos(worldPosition.x + _Time.w * Speed);
-				o.vertex.y += sin(worldPosition.z + _Time.w * Speed) * cos(worldPosition.z	 + _Time.w * Speed);
-				o.vertex.y += sin(worldPosition.y + _Time.w * Speed) * cos(worldPosition.y + _Time.w * Speed);
+				o.vertex.y += sin(worldPosition.x + _Time.w * Speed) * cos(worldPosition.x + _Time.w * Speed) * Factor;
+				o.vertex.y += sin(worldPosition.z + _Time.w * Speed) * cos(worldPosition.z + _Time.w * Speed) * Factor;
+				o.vertex.y += sin(worldPosition.y + _Time.w * Speed) * cos(worldPosition.y + _Time.w * Speed) * Factor;
 
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
