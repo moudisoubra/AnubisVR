@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Selector : Node
+public class SelectorSoubra : NodeSoubra
 {
-    public override Result Execute(BehaviourTree BT)
+    public override Result Execute(BehaviourTreeSoubra BTS)
     {
         for (int i = 0; i < nodesList.Count; i++)
         {
-            Node.Result result = nodesList[i].Execute(BT);
+            NodeSoubra.Result result = nodesList[i].Execute(BTS);
 
             if (result == Result.success)
             {
