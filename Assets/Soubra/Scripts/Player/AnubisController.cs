@@ -39,6 +39,8 @@ public class AnubisController : MonoBehaviour
     public Vector3 leftControllerVelocity;
     public Vector3 previousPosition;
     public Vector3 previousPlayerPosition;
+    public Vector3 rightVelocity;
+    public Vector3 leftVelocity;
 
     public Transform enemyTarget;
 
@@ -105,6 +107,9 @@ public class AnubisController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rightVelocity = rightPose.GetVelocity();
+        leftVelocity = leftPose.GetVelocity();
+
         necromancyTimer += Time.deltaTime;
 
         //lineRenderer.SetPosition(0, rightModel.transform.position);
@@ -264,7 +269,7 @@ public class AnubisController : MonoBehaviour
                     break;
                 }
 
-                if (col.gameObject.tag == "Chest")
+                if (col.gameObject.tag == "Interactable")
                 {
                     objectHeld = col.gameObject;
                     objectHeld.GetComponent<Rigidbody>().useGravity = false;
@@ -276,7 +281,7 @@ public class AnubisController : MonoBehaviour
 
         if (rightGrabUp && objectHeld && objectHeld.transform.parent == rightHandModel.transform)
         {
-            if (objectHeld.tag == "Chest")
+            if (objectHeld.tag == "Interactable")
             {
                 objectHeld.GetComponent<Rigidbody>().useGravity = true;
                 objectHeld.transform.parent = previousParent.transform;
@@ -294,7 +299,7 @@ public class AnubisController : MonoBehaviour
 
         if (leftGrabUp && objectHeld && objectHeld.transform.parent == leftHandModel.transform)
         {
-            if (objectHeld.tag == "Chest")
+            if (objectHeld.tag == "Interactable")
             {
                 objectHeld.GetComponent<Rigidbody>().useGravity = true;
                 objectHeld.transform.parent = previousParent.transform;
@@ -411,7 +416,6 @@ public class AnubisController : MonoBehaviour
 
             if (Physics.Raycast(rightModel.transform.position, rightModel.transform.forward, out hit, Mathf.Infinity, enemyLayer))
             {
-                Debug.Log(hit.transform.gameObject.name);
                 if (hit.transform.gameObject.GetComponent<EnemyTestScript>())
                 {
                     //drScript.gameObject.SetActive(true);
