@@ -61,7 +61,8 @@ public class AnubisController : MonoBehaviour
     public bool necromancyCheck;
     public bool commandMinions;
 
-    public GameObject objectHeld;
+    public GameObject rightObjectHeld;
+    public GameObject leftObjectHeld;
     public GameObject previousParent;
     public GameObject rightHandModel;
     public GameObject leftHandModel;
@@ -89,11 +90,16 @@ public class AnubisController : MonoBehaviour
     public LayerMask enemyLayer;
     //public LineRenderer lineRenderer;
 
+    public AddForceToItems RightAddForceScript;
+    public AddForceToItems LeftAddForceScript;
+
     void Start()
-    { 
-        //drScript = FindObjectOfType<DrawLine>();
-        //drScript.gameObject.SetActive(false);
-        rightChecker = rightModel.GetComponentInParent<checkingCollision>();
+    {
+        RightAddForceScript = rightModel.GetComponent<AddForceToItems>();
+        LeftAddForceScript = leftModel.GetComponent<AddForceToItems>();
+          //drScript = FindObjectOfType<DrawLine>();
+          //drScript.gameObject.SetActive(false);
+          rightChecker = rightModel.GetComponentInParent<checkingCollision>();
         leftChecker = leftModel.GetComponentInParent<checkingCollision>();
         rightPose = rightModel.GetComponent<SteamVR_Behaviour_Pose>();
         leftPose = leftModel.GetComponent<SteamVR_Behaviour_Pose>();
@@ -107,6 +113,28 @@ public class AnubisController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rightGrab && !rightObjectHeld)
+        {
+            rightModel.GetComponent<BoxCollider>().isTrigger = false;
+            RightAddForceScript.enabled = true;
+        }
+        else
+        {
+            rightModel.GetComponent<BoxCollider>().isTrigger = true;
+            RightAddForceScript.enabled = false;
+        }
+
+        if (leftGrab && !leftObjectHeld)
+        {
+            leftModel.GetComponent<BoxCollider>().isTrigger = false;
+            LeftAddForceScript.enabled = true;
+        }
+        else
+        {
+            leftModel.GetComponent<BoxCollider>().isTrigger = true;
+            LeftAddForceScript.enabled = false;
+        }
+
         rightVelocity = rightPose.GetVelocity();
         leftVelocity = leftPose.GetVelocity();
 
@@ -203,6 +231,7 @@ public class AnubisController : MonoBehaviour
         if (rightGrabDown)
         {
             this.rightHandAnimator.SetBool("Grabbing", true);
+
         }
         else if (rightGrabUp)
         {
@@ -238,19 +267,19 @@ public class AnubisController : MonoBehaviour
             {
                 if (col.gameObject.GetComponent<Items>())
                 {
-                    objectHeld = col.gameObject;
-                    objectHeld.transform.parent = rightHandModel.transform;
-                    objectHeld.GetComponent<Rigidbody>().isKinematic = true;
+                    rightObjectHeld = col.gameObject;
+                    rightObjectHeld.transform.parent = rightHandModel.transform;
+                    rightObjectHeld.GetComponent<Rigidbody>().isKinematic = true;
                     col.gameObject.GetComponent<Items>().objectHeld = true;
                     break;
                 }
 
                 if (col.gameObject.tag == "Interactable")
                 {
-                    objectHeld = col.gameObject;
-                    objectHeld.GetComponent<Rigidbody>().useGravity = false;
-                    previousParent = objectHeld.transform.parent.gameObject;
-                    objectHeld.transform.parent = rightHandModel.transform;
+                    rightObjectHeld = col.gameObject;
+                    rightObjectHeld.GetComponent<Rigidbody>().useGravity = false;
+                    previousParent = rightObjectHeld.transform.parent.gameObject;
+                    rightObjectHeld.transform.parent = rightHandModel.transform;
                 }
             }
         }
@@ -262,74 +291,74 @@ public class AnubisController : MonoBehaviour
             {
                 if (col.gameObject.GetComponent<Items>())
                 {
-                    objectHeld = col.gameObject;
-                    objectHeld.transform.parent = leftHandModel.transform;
-                    objectHeld.GetComponent<Rigidbody>().isKinematic = true;
+                    leftObjectHeld = col.gameObject;
+                    leftObjectHeld.transform.parent = leftHandModel.transform;
+                    leftObjectHeld.GetComponent<Rigidbody>().isKinematic = true;
                     col.gameObject.GetComponent<Items>().objectHeld = true;
                     break;
                 }
 
                 if (col.gameObject.tag == "Interactable")
                 {
-                    objectHeld = col.gameObject;
-                    objectHeld.GetComponent<Rigidbody>().useGravity = false;
-                    previousParent = objectHeld.transform.parent.gameObject;
-                    objectHeld.transform.parent = rightHandModel.transform;
+                    leftObjectHeld = col.gameObject;
+                    leftObjectHeld.GetComponent<Rigidbody>().useGravity = false;
+                    previousParent = leftObjectHeld.transform.parent.gameObject;
+                    leftObjectHeld.transform.parent = rightHandModel.transform;
                 }
             }
         }
 
-        if (rightGrabUp && objectHeld && objectHeld.transform.parent == rightHandModel.transform)
+        if (rightGrabUp && rightObjectHeld && rightObjectHeld.transform.parent == rightHandModel.transform)
         {
-            if (objectHeld.tag == "Interactable")
+            if (rightObjectHeld.tag == "Interactable")
             {
-                objectHeld.GetComponent<Rigidbody>().useGravity = true;
-                objectHeld.transform.parent = previousParent.transform;
+                rightObjectHeld.GetComponent<Rigidbody>().useGravity = true;
+                rightObjectHeld.transform.parent = previousParent.transform;
                 previousParent = null;
             }
             else
             {
                 RightThrowObjects();
-                objectHeld.transform.parent = null;
-                objectHeld.GetComponent<Rigidbody>().isKinematic = false;
-                objectHeld.GetComponent<Items>().objectHeld = false;
-                objectHeld = null;
+                rightObjectHeld.transform.parent = null;
+                rightObjectHeld.GetComponent<Rigidbody>().isKinematic = false;
+                rightObjectHeld.GetComponent<Items>().objectHeld = false;
+                rightObjectHeld = null;
             }
         }
 
-        if (leftGrabUp && objectHeld && objectHeld.transform.parent == leftHandModel.transform)
+        if (leftGrabUp && leftObjectHeld && leftObjectHeld.transform.parent == leftHandModel.transform)
         {
-            if (objectHeld.tag == "Interactable")
+            if (leftObjectHeld.tag == "Interactable")
             {
-                objectHeld.GetComponent<Rigidbody>().useGravity = true;
-                objectHeld.transform.parent = previousParent.transform;
+                leftObjectHeld.GetComponent<Rigidbody>().useGravity = true;
+                leftObjectHeld.transform.parent = previousParent.transform;
                 previousParent = null;
             }
             else
             {
                 LeftThrowObjects();
-                objectHeld.transform.parent = null;
-                objectHeld.GetComponent<Rigidbody>().isKinematic = false;
-                objectHeld.GetComponent<Items>().objectHeld = false;
-                objectHeld = null;
+                leftObjectHeld.transform.parent = null;
+                leftObjectHeld.GetComponent<Rigidbody>().isKinematic = false;
+                leftObjectHeld.GetComponent<Items>().objectHeld = false;
+                leftObjectHeld = null;
             }
         }
     }
 
     public void RightThrowObjects()
     {
-        objectHeld.GetComponent<Rigidbody>().velocity = rightPose.GetVelocity();
-        objectHeld.GetComponent<Rigidbody>().angularVelocity = rightPose.GetAngularVelocity();
+        rightObjectHeld.GetComponent<Rigidbody>().velocity = rightPose.GetVelocity();
+        rightObjectHeld.GetComponent<Rigidbody>().angularVelocity = rightPose.GetAngularVelocity();
 
-        objectHeld.GetComponent<Rigidbody>().maxAngularVelocity = objectHeld.GetComponent<Rigidbody>().angularVelocity.magnitude;
+        rightObjectHeld.GetComponent<Rigidbody>().maxAngularVelocity = rightObjectHeld.GetComponent<Rigidbody>().angularVelocity.magnitude;
     }
 
     public void LeftThrowObjects()
     {
-        objectHeld.GetComponent<Rigidbody>().velocity = leftPose.GetVelocity();
-        objectHeld.GetComponent<Rigidbody>().angularVelocity = leftPose.GetAngularVelocity();
+        leftObjectHeld.GetComponent<Rigidbody>().velocity = leftPose.GetVelocity();
+        leftObjectHeld.GetComponent<Rigidbody>().angularVelocity = leftPose.GetAngularVelocity();
 
-        objectHeld.GetComponent<Rigidbody>().maxAngularVelocity = objectHeld.GetComponent<Rigidbody>().angularVelocity.magnitude;
+        leftObjectHeld.GetComponent<Rigidbody>().maxAngularVelocity = leftObjectHeld.GetComponent<Rigidbody>().angularVelocity.magnitude;
     }
 
     public void SoulSkill()

@@ -5,7 +5,6 @@ using Valve.VR;
 
 public class AddForceToItems : MonoBehaviour
 {
-    public bool isHeld;
     public float pushFactor;
     public GameObject objectPushed;
 
@@ -22,13 +21,13 @@ public class AddForceToItems : MonoBehaviour
     void Update()
     {
 
-        if (this.transform.parent && this.transform.parent.GetComponentInParent<AnubisController>())
+        if (this.transform.parent && this.transform.parent.GetComponentInParent<AnubisController>() && this.transform.gameObject.name != "Right" && this.transform.gameObject.name != "Left")
         {
             if (this.transform.parent.GetComponentInParent<BoxCollider>().gameObject.name == "Right")
             {
                 if (objectPushed && objectPushed.GetComponent<Rigidbody>())
                 {
-                    if (objectPushed.transform.parent.GetComponentInParent<EnemyScript>())
+                    if (objectPushed.transform.parent && objectPushed.transform.parent.GetComponentInParent<EnemyScript>())
                     {
                         parentBone = objectPushed.transform.parent.gameObject;
                         childBone = objectPushed.transform.transform.GetChild(0).gameObject;
@@ -37,8 +36,14 @@ public class AddForceToItems : MonoBehaviour
                         ApplyEffectRight(parentBone);
                         ApplyEffectRight(childBone);
                     }
+                    else
+                    {
+                        parentBone = null;
+                        childBone = null;
+                    }
 
                     ApplyEffectRight(objectPushed);
+                    objectPushed = null;
 
                 }
             }
@@ -46,30 +51,97 @@ public class AddForceToItems : MonoBehaviour
             {
                 if (objectPushed && objectPushed.GetComponent<Rigidbody>())
                 {
+                    if (objectPushed.transform.parent && objectPushed.transform.parent.GetComponentInParent<EnemyScript>())
+                    {
+                        parentBone = objectPushed.transform.parent.gameObject;
+                        childBone = objectPushed.transform.transform.GetChild(0).gameObject;
+                        Debug.Log(parentBone + " " + childBone);
 
-                    objectPushed.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetVelocity() * pushFactor;
-                    objectPushed.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetAngularVelocity() * pushFactor;
-                    objectPushed.GetComponent<Rigidbody>().maxAngularVelocity = objectPushed.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
+                        ApplyEffectLeft(parentBone);
+                        ApplyEffectLeft(childBone);
+                    }
+                    else
+                    {
+                        parentBone = null;
+                        childBone = null;
+                    }
+                    ApplyEffectLeft(objectPushed);
                     objectPushed = null;
                 }
             }
 
         }
-        
+        else if (this.transform.gameObject.name == "Right")
+        {
+            if (objectPushed && objectPushed.GetComponent<Rigidbody>())
+            {
+                if (objectPushed.transform.parent && objectPushed.transform.parent.GetComponentInParent<EnemyScript>())
+                {
+                    parentBone = objectPushed.transform.parent.gameObject;
+                    childBone = objectPushed.transform.transform.GetChild(0).gameObject;
+                    Debug.Log(parentBone + " " + childBone);
+                    ApplyEffectRight(parentBone);
+                    ApplyEffectRight(childBone);
+                }
+                else
+                {
+                    parentBone = null;
+                    childBone = null;
+                }
 
+                ApplyEffectRight(objectPushed);
+                objectPushed = null;
+
+            }
+
+
+        }
+        else if (this.transform.gameObject.name == "Left")
+        {
+            if (objectPushed && objectPushed.GetComponent<Rigidbody>())
+            {
+                if (objectPushed.transform.parent.GetComponentInParent<EnemyScript>())
+                {
+                    parentBone = objectPushed.transform.parent.gameObject;
+                    childBone = objectPushed.transform.transform.GetChild(0).gameObject;
+                    Debug.Log(parentBone + " " + childBone);
+
+                    ApplyEffectLeft(parentBone);
+                    ApplyEffectLeft(childBone);
+                }
+                else
+                {
+                    parentBone = null;
+                    childBone = null;
+                }
+
+                ApplyEffectLeft(objectPushed);
+                objectPushed = null;
+
+            }
+        }
     }
 
     public void ApplyEffectRight(GameObject gameobject)
     {
-        gameobject.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetVelocity() * pushFactor;
-        gameobject.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetAngularVelocity() * pushFactor;
-        gameobject.GetComponent<Rigidbody>().maxAngularVelocity = objectPushed.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
+        if (gameObject.GetComponent<Rigidbody>())
+        {
+            gameobject.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetVelocity() * pushFactor;
+            gameobject.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetAngularVelocity() * pushFactor;
+            gameobject.GetComponent<Rigidbody>().maxAngularVelocity = objectPushed.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
+        }
         gameobject = null;
     }
 
     public void ApplyEffectLeft(GameObject gameobject)
     {
-
+        if (gameObject.GetComponent<Rigidbody>())
+        {
+            gameobject.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetVelocity() * pushFactor;
+            gameobject.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetAngularVelocity() * pushFactor;
+            gameobject.GetComponent<Rigidbody>().maxAngularVelocity = objectPushed.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
+        }
+        gameobject = null;
     }
 
 

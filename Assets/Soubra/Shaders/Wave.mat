@@ -20,12 +20,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: cc667b3995f186347b95c15abbb1c3c8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Factor: 0
+    - Factor: 0.02
     - Opacity: 0.639
-    - Speed: 0.22
+    - Speed: 0.8
+    - _Softness: 0.5
     m_Colors:
-    - TextureColor: {r: 0, g: 0.8993242, b: 1, a: 1}
+    - HighColor: {r: 0.49411765, g: 0.8039216, b: 1, a: 1}
+    - LowColor: {r: 0, g: 0.84614897, b: 0.9811321, a: 1}
+    - TextureColor: {r: 0, g: 0.64418536, b: 0.8962264, a: 1}
