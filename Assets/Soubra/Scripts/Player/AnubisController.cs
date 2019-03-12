@@ -205,25 +205,19 @@ public class AnubisController : MonoBehaviour
 
     public void MovePlayer()
     {
+        Debug.Log(rightTouchpadValue);
         if (rightTeleport && rightTouchpadValue.x <= 0.5 && rightTouchpadValue.y >= 0.5)
         {//Right Controller
-
             fullRig.transform.position += new Vector3(rightModel.transform.forward.x,
                 rightModel.transform.forward.y * flyingValue,
                 rightModel.transform.forward.z) * playerSpeed * Time.deltaTime;
-
-
-            //fullRig.GetComponent<Rigidbody>().AddForce(rightModel.transform.forward.x * playerSpeed * Time.deltaTime,
-            //    rightModel.transform.forward.y * flyingValue * playerSpeed * Time.deltaTime,
-            //    rightModel.transform.forward.z * playerSpeed * Time.deltaTime);
         }
-
-        //if (leftTeleport && leftTouchpadValue.x <= 0.5 && leftTouchpadValue.y >= 0.5)
-        //{//Left Controller
-        //    fullRig.transform.position += new Vector3(leftModel.transform.forward.x,
-        //        leftModel.transform.forward.y * flyingValue,
-        //        leftModel.transform.forward.z) * playerSpeed * Time.deltaTime;
-        //}
+        if (rightTeleport && rightTouchpadValue.x <= 0.5 && rightTouchpadValue.y <= 0.5)
+        {
+            fullRig.transform.position -= new Vector3(rightModel.transform.forward.x,
+            rightModel.transform.forward.y * flyingValue,
+            rightModel.transform.forward.z) * playerSpeed * Time.deltaTime;
+        }
     }
 
     public void AnimateHand()
@@ -450,6 +444,25 @@ public class AnubisController : MonoBehaviour
                     //drScript.gameObject.SetActive(true);
                     //drScript.GetLine(rightModel, hit.transform.gameObject);
                     currentTrail = Instantiate(sandTrail, rightModel.transform.position, Quaternion.identity);
+                    enemyTarget = hit.transform;
+                    commandMinions = true;
+                }
+            }
+        }
+
+        if (leftTeleport && leftTouchpadValue.x >= 0.5 && leftTouchpadValue.y <= 0.5)
+        {
+            RaycastHit hit;
+
+            Debug.DrawRay(leftModel.transform.position, leftModel.transform.TransformDirection(Vector3.forward), Color.yellow);
+
+            if (Physics.Raycast(leftModel.transform.position, leftModel.transform.forward, out hit, Mathf.Infinity, enemyLayer))
+            {
+                if (hit.transform.gameObject.GetComponent<EnemyTestScript>())
+                {
+                    //drScript.gameObject.SetActive(true);
+                    //drScript.GetLine(rightModel, hit.transform.gameObject);
+                    currentTrail = Instantiate(sandTrail, leftModel.transform.position, Quaternion.identity);
                     enemyTarget = hit.transform;
                     commandMinions = true;
                 }
