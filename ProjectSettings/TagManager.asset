@@ -11,6 +11,7 @@ TagManager:
   - SoulSkill
   - Chest
   - Interactable
+  - Humanoid
   layers:
   - Default
   - TransparentFX

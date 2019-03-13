@@ -22,7 +22,6 @@ public class LeverSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transform.forward);
 
         wallTransform = Vector3.Distance(distanceCheck.transform.position, distanceLimit.transform.position);
 
@@ -35,5 +34,21 @@ public class LeverSystem : MonoBehaviour
     public void MoveWall()
     {
         wall.transform.position = new Vector3(wallStartPosition.x, wallStartPosition.y + (wallTransform * 4), wallStartPosition.z);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Hand")
+        {
+            movingWall = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Hand")
+        {
+            movingWall = false;
+        }
     }
 }
