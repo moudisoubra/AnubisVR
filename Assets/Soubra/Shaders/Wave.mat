@@ -26,7 +26,7 @@ Material:
     m_Floats:
     - Factor: 0.02
     - Opacity: 0.639
-    - Speed: 0.8
+    - Speed: 1.1
     - _Softness: 0.5
     m_Colors:
     - HighColor: {r: 0.49411765, g: 0.8039216, b: 1, a: 1}
