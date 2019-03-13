@@ -32,7 +32,7 @@ public class GridPath : MonoBehaviour
             {
                 Vector3 worldPoint = WorldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeDiameter + nodeRadius);
                 bool walkAble = !(Physics.CheckSphere(worldPoint, nodeRadius, UnWalkAbleMask));
-                grid[x, y] = new ANode(walkAble, worldPoint, x, y);
+                grid[x, y] = new ANode(walkAble, worldPoint, x, y); 
 
             }
         }
