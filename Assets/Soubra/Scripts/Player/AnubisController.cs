@@ -205,7 +205,6 @@ public class AnubisController : MonoBehaviour
 
     public void MovePlayer()
     {
-        Debug.Log(rightTouchpadValue);
         if (rightTeleport && rightTouchpadValue.x <= 0.5 && rightTouchpadValue.y >= 0.5)
         {//Right Controller
             fullRig.transform.position += new Vector3(rightModel.transform.forward.x,
