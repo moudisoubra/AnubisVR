@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
+
 public class GridSoubra : MonoBehaviour
 {
     public List<AStarNode> grid;
@@ -34,10 +34,8 @@ public class GridSoubra : MonoBehaviour
             for (int i = 0; i < gridSizeZ; i++)
             {
                 AStarNode tempNode = new AStarNode(new Vector3(i, 0.5f,x));
-                Debug.Log("Creating Grid: " + i);
                 grid.Add(tempNode);
             }
-            Debug.Log(grid.Count);
         }
 
 

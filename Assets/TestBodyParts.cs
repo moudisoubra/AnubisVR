@@ -43,6 +43,7 @@ public class TestBodyParts : MonoBehaviour
         foreach (Transform child in parent)
         {
             bonesList.Add(child.gameObject);
+
             AddAllChildren(child, bonesList);
         }
     }
