@@ -6,16 +6,25 @@ using Valve.VR;
 public class AddForceToItems : MonoBehaviour
 {
     public float pushFactor;
-    public GameObject objectPushed;
 
+    public GameObject objectPushed;
+    public GameObject mainParent;
     public GameObject parentBone;
     public GameObject childBone;
+
+    public List<GameObject> enemyBones;
+    public List<GameObject> hitEnemyBones;
+
+    public AvatarMask enemyMask;
+    public Animator animatorEnemy;
+    public AnimatorOverrideController animController;
 
     // Start is called before the first frame update
     void Start()
     {
         objectPushed = null;
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -29,6 +38,7 @@ public class AddForceToItems : MonoBehaviour
                 {
                     if (objectPushed.transform.parent && objectPushed.transform.parent.GetComponentInParent<EnemyScript>())
                     {
+                        mainParent = objectPushed.transform.parent.GetComponentInParent<EnemyScript>().gameObject;
                         parentBone = objectPushed.transform.parent.gameObject;
                         childBone = objectPushed.transform.transform.GetChild(0).gameObject;
                         Debug.Log(parentBone + " " + childBone);
@@ -47,12 +57,13 @@ public class AddForceToItems : MonoBehaviour
 
                 }
             }
-            else
+            else if (this.transform.parent.GetComponentInParent<BoxCollider>().gameObject.name == "Left")
             {
                 if (objectPushed && objectPushed.GetComponent<Rigidbody>())
                 {
                     if (objectPushed.transform.parent && objectPushed.transform.parent.GetComponentInParent<EnemyScript>())
                     {
+                        mainParent = objectPushed.transform.parent.GetComponentInParent<EnemyScript>().gameObject;
                         parentBone = objectPushed.transform.parent.gameObject;
                         childBone = objectPushed.transform.transform.GetChild(0).gameObject;
                         Debug.Log(parentBone + " " + childBone);
@@ -77,9 +88,9 @@ public class AddForceToItems : MonoBehaviour
             {
                 if (objectPushed.transform.parent && objectPushed.transform.parent.GetComponentInParent<EnemyScript>())
                 {
-                    parentBone = objectPushed.transform.parent.gameObject;
-                    childBone = objectPushed.transform.transform.GetChild(0).gameObject;
-                    Debug.Log(parentBone + " " + childBone);
+                    
+                    FindEnemyBones();
+
                     ApplyEffectRight(parentBone);
                     ApplyEffectRight(childBone);
                 }
@@ -89,7 +100,12 @@ public class AddForceToItems : MonoBehaviour
                     childBone = null;
                 }
 
-                ApplyEffectRight(objectPushed);
+                if (gameObject.GetComponent<Rigidbody>())
+                {
+                    objectPushed.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetVelocity() * pushFactor;
+                    objectPushed.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetAngularVelocity() * pushFactor;
+                    objectPushed.GetComponent<Rigidbody>().maxAngularVelocity = objectPushed.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
+                }
                 objectPushed = null;
 
             }
@@ -122,28 +138,76 @@ public class AddForceToItems : MonoBehaviour
         }
     }
 
-    public void ApplyEffectRight(GameObject gameobject)
+    public void ApplyEffectRight(GameObject obj)
     {
-        if (gameObject.GetComponent<Rigidbody>())
+        if (obj.GetComponent<Rigidbody>())
         {
-            gameobject.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetVelocity() * pushFactor;
-            gameobject.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetAngularVelocity() * pushFactor;
-            gameobject.GetComponent<Rigidbody>().maxAngularVelocity = objectPushed.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
+            obj.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetVelocity() * pushFactor;
+            obj.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetAngularVelocity() * pushFactor;
+            obj.GetComponent<Rigidbody>().maxAngularVelocity = obj.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
         }
-        gameobject = null;
+        obj = null;
     }
 
-    public void ApplyEffectLeft(GameObject gameobject)
+    public void ApplyEffectLeft(GameObject obj)
     {
-        if (gameObject.GetComponent<Rigidbody>())
+        if (obj.GetComponent<Rigidbody>())
         {
-            gameobject.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetVelocity() * pushFactor;
-            gameobject.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetAngularVelocity() * pushFactor;
-            gameobject.GetComponent<Rigidbody>().maxAngularVelocity = objectPushed.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
+            obj.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetVelocity() * pushFactor;
+            obj.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetAngularVelocity() * pushFactor;
+            obj.GetComponent<Rigidbody>().maxAngularVelocity = obj.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
         }
-        gameobject = null;
+        obj = null;
     }
 
+    public void FindEnemyBones()
+    {
+        enemyBones.Clear();
+        hitEnemyBones.Clear();
+
+        mainParent = objectPushed.transform.parent.GetComponentInParent<EnemyScript>().gameObject;
+
+
+        parentBone = objectPushed.transform.parent.gameObject;
+        childBone = objectPushed.transform.transform.GetChild(0).gameObject;
+
+        AddAllChildren(mainParent.transform, enemyBones, hitEnemyBones);
+        CreateMask();
+    }
+
+    private void AddAllChildren(Transform parent, List<GameObject> fullList, List<GameObject> hitList)
+    {
+        
+        foreach (Transform child in parent)
+        {
+
+            if (child.gameObject.GetComponent<Rigidbody>() && (child.gameObject == parentBone || child.gameObject == childBone || child.gameObject == objectPushed))
+            {
+                hitList.Add(child.gameObject);
+            }
+
+            fullList.Add(child.gameObject);
+
+            AddAllChildren(child, fullList, hitList);
+        }
+    }
+
+    public void CreateMask()
+    {
+        enemyMask = new AvatarMask();
+        enemyMask.AddTransformPath(mainParent.transform);
+
+        for (int i = 1; i < enemyBones.Count; i++)
+        {
+            if (enemyBones[i].gameObject.name == parentBone.name || enemyBones[i].gameObject.name == childBone.name || enemyBones[i].gameObject.name == objectPushed.name)
+            {
+                enemyMask.SetTransformActive(i, false);
+            }
+
+            else 
+                enemyMask.SetTransformActive(i, true);
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
