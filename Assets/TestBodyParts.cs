@@ -7,12 +7,17 @@ public class TestBodyParts : MonoBehaviour
     
     public GameObject bone1;
     public GameObject bone2;
+    public GameObject ActualBody;
+    public GameObject InvisiBody;
 
     public List<GameObject> invisibleBody;
     public List<GameObject> actualBody;
 
     public List<Transform> actualBodyTransforms;
     public List<Transform> invisiBodyTransforms;
+
+    public List<Transform> fullRigBody;
+    public List<Transform> fullRigInvisi;
 
     public float timer;
 
@@ -22,6 +27,8 @@ public class TestBodyParts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AddAllTransforms(ActualBody.transform, fullRigBody);
+        AddAllTransforms(InvisiBody.transform, fullRigInvisi);
         //StartCoroutine(ReturnTransform(new List<GameObject>(),new List<Transform>()));
     }
 
@@ -58,7 +65,7 @@ public class TestBodyParts : MonoBehaviour
 
         }
 
-        if (timer < 5000)
+        if (timer < 5)
         {
             if (timer <= timeBeforeBlend)
             {
@@ -71,6 +78,14 @@ public class TestBodyParts : MonoBehaviour
             else
             {
                 StartCoroutine(ReturnTransform(actualBody,invisiBodyTransforms, actualBodyTransforms));
+            }
+        }
+        else
+        {
+            for (int i = 0; i < fullRigBody.Count; i++)
+            {
+                fullRigInvisi[i].gameObject.transform.position = fullRigBody[i].gameObject.transform.position;
+                fullRigInvisi[i].gameObject.transform.rotation = fullRigBody[i].gameObject.transform.rotation;
             }
         }
     }
@@ -94,8 +109,6 @@ public class TestBodyParts : MonoBehaviour
     
     public IEnumerator ReturnTransform(List<GameObject> activeBodyParts, List<Transform> invisiTransform, List<Transform> bodyTransforms)
     {
-
-        
         while (t <= 0.9)
         {
             t += .01f;
