@@ -31,7 +31,6 @@ public class PathFinding : MonoBehaviour
             if (openSet[i].fCost < currentNode.fCost || openSet[i].fCost == currentNode.fCost && openSet[i].hCost < currentNode.hCost){
                 currentNode = openSet[i];
             }
-
         }
 
         openSet.Remove(currentNode);

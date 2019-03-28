@@ -42,21 +42,13 @@ public class Patrol : MonoBehaviour
 
         else
         {
-            setDistination();
+      
         }
 
     }
 
 
 
-    void setDistination()
-    {
-        if (destination != null)
-        {
-            Vector3 targetVector = destination.transform.position;
-            navMesh.SetDestination(targetVector);
-        }
-    }
 
     // Update is called once per frame
     void Update()
