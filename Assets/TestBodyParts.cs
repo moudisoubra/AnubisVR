@@ -7,6 +7,8 @@ public class TestBodyParts : MonoBehaviour
     
     public GameObject bone1;
     public GameObject bone2;
+    public GameObject ActualBody;
+    public GameObject InvisiBody;
 
     public List<GameObject> invisibleBody;
     public List<GameObject> actualBody;
@@ -14,15 +16,19 @@ public class TestBodyParts : MonoBehaviour
     public List<Transform> actualBodyTransforms;
     public List<Transform> invisiBodyTransforms;
 
+    public List<Transform> fullRigBody;
+    public List<Transform> fullRigInvisi;
+
     public float timer;
 
     public List<Transform> lastPosition;
-    public int qwe;
+    public int timeBeforeBlend;
     public float t = 0;
     // Start is called before the first frame update
     void Start()
     {
-        qwe = 0;
+        AddAllTransforms(ActualBody.transform, fullRigBody);
+        AddAllTransforms(InvisiBody.transform, fullRigInvisi);
         //StartCoroutine(ReturnTransform(new List<GameObject>(),new List<Transform>()));
     }
 
@@ -59,9 +65,9 @@ public class TestBodyParts : MonoBehaviour
 
         }
 
-        if (timer < 5000)
+        if (timer < 5)
         {
-            if (timer <= 2)
+            if (timer <= timeBeforeBlend)
             {
                 for (int i = 0; i < actualBody.Count; i++)
                 {
@@ -74,8 +80,15 @@ public class TestBodyParts : MonoBehaviour
                 StartCoroutine(ReturnTransform(actualBody,invisiBodyTransforms, actualBodyTransforms));
             }
         }
+        else
+        {
+            for (int i = 0; i < fullRigBody.Count; i++)
+            {
+                fullRigInvisi[i].gameObject.transform.position = fullRigBody[i].gameObject.transform.position;
+                fullRigInvisi[i].gameObject.transform.rotation = fullRigBody[i].gameObject.transform.rotation;
+            }
+        }
     }
-
     private void AddAllChildren(Transform parent, List<GameObject> bonesList)
     {
         foreach (Transform child in parent)
@@ -93,35 +106,26 @@ public class TestBodyParts : MonoBehaviour
             AddAllTransforms(child, transformList);
         }
     }
-    public Transform begin, end, movable;
     
     public IEnumerator ReturnTransform(List<GameObject> activeBodyParts, List<Transform> invisiTransform, List<Transform> bodyTransforms)
     {
-
-        
-        while (t<=1)
+        while (t <= 0.9)
         {
-            t += .05f;
-            for (int i = 0; i < activeBodyParts.Count; i++)
+            t += .01f;
+
+            for (int i = 0; i < 4; i++)
             {
                 Debug.Log("FIXING POSITION");
                 activeBodyParts[i].transform.position = Vector3.Lerp(invisiTransform[i].transform.position, bodyTransforms[i].transform.position, t);
                 activeBodyParts[i].transform.rotation = Quaternion.Slerp(invisiTransform[i].transform.rotation, bodyTransforms[i].transform.rotation, t);
             }
+
             yield return null;
                 
         }
-        if (t > 1)
+        if (t >= 0.9)
         {
             StopCoroutine(ReturnTransform(activeBodyParts, invisiTransform, bodyTransforms));
         }
-
-        //for (int i = 0; i < activeBodyParts.Count; i++)
-        //{
-        //    Debug.Log("FIXING POSITION");
-        //    activeBodyParts[i].transform.position = Vector3.Lerp(activeBodyParts[i].transform.position, bodyTransforms[i].transform.position, Time.deltaTime * .000000000000001f);
-        //    activeBodyParts[i].transform.rotation = Quaternion.Slerp(activeBodyParts[i].transform.rotation, bodyTransforms[i].transform.rotation, Time.deltaTime * .000000000000001f);
-        //    yield return null; 
-        //}
     }
 }
