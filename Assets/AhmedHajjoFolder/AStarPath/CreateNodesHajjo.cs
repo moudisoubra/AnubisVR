@@ -12,11 +12,21 @@ public class CreateNodesHajjo : MonoBehaviour
 
     public struct Node
     {
+        
         public int id;
         public int SourceId;
         public Node[] ChildsNode;
         public Transform trans;
 
+
+        public int gCost;
+        public int Hcost;
+
+
+        public int Fcost
+        {
+            get { return gCost + Hcost; }
+        }
     }
 
     void Start()
@@ -30,11 +40,13 @@ public class CreateNodesHajjo : MonoBehaviour
             allNodes[i].trans = Nodes[i].transform;
             allNodes[i].id = i;
             allNodes[i].SourceId = -1;
+
+            
         }
         //loop finds children for a certain node
         for (int i = 0; i < Nodes.Length; i++)
         {
-            allNodes[i].ChildsNode = GetChildPoint(Nodes[i].transform);
+            allNodes[i].ChildsNode = GetNearbyPoint(Nodes[i].transform.position);
         }
 
     }
@@ -46,14 +58,14 @@ public class CreateNodesHajjo : MonoBehaviour
     }
 
 
-    Node[] GetChildPoint(Transform pos)
+    Node[] GetNearbyPoint(Vector3 pos)
     {
         List<Node> nearpoints = new List<Node>();
         for (int i = 0; i < allNodes.Length; i++)
         {
-            Vector3 dir = allNodes[i].trans.position - pos.position;
+            Vector3 dir = allNodes[i].trans.position - pos;
 
-            if (Physics.Raycast(pos.position, dir.normalized, dir.magnitude))
+            if (Physics.Raycast(pos, dir.normalized, dir.magnitude))
             {
                 
             }
@@ -65,6 +77,49 @@ public class CreateNodesHajjo : MonoBehaviour
         return nearpoints.ToArray();
     }
 
+
+
+    void findPath(Vector3 startPos, Vector3 targetPos)
+    {
+       
+        Node[] startNode = GetNearbyPoint(startPos);
+        Node[] finalNode = GetNearbyPoint(targetPos);
+
+        List<Node> OpenSet = new List<Node>();
+        HashSet<Node> CloseSet = new HashSet<Node>();
+
+
+        for (int i = 0; i < startNode.Length; i++)
+        {
+            OpenSet.Add(startNode[i]);
+        }
+
+
+        while (OpenSet.Count > 0)
+        {
+            Node CurrentNode = OpenSet[0];
+            for (int i = 1; i < OpenSet.Count; i++)
+            {
+                if (OpenSet[i].Fcost < CurrentNode.Fcost || OpenSet[i].Fcost == CurrentNode.Fcost && OpenSet[i].Hcost < CurrentNode.Hcost)
+                {
+                    CurrentNode = OpenSet[i];
+                }
+            }
+
+
+            OpenSet.Remove(CurrentNode);
+            CloseSet.Add(CurrentNode);
+
+          //  if(CurrentNode == finalNode[0].id)
+            {
+                return;
+            }
+         
+        }
+
+
+        
+    }
 
 
     private void OnDrawGizmos()
@@ -81,15 +136,7 @@ public class CreateNodesHajjo : MonoBehaviour
             }
         }
     }
-    // you need to make core of the script now...
-    // you need to make a public function which can be called from any where..
-    // well this is a class...
-    // well any after getting the stuff done you could easly figure it out your self...
-    // good...
-    // it will be a function return Vector3[] the route...
-    // you know, i mean perent id -> parent id -> and so on...
-    // using the A* pathfinding method... i mean F value stuff...
-    // good luck...
+    
 
 }
 
