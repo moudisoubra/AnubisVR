@@ -8,10 +8,14 @@ public class GridPath : MonoBehaviour
     public Vector2 gridWorldSize;
     public float nodeRadius;
     ANode[,] grid;
+    
 
     public Transform player;
     float nodeDiameter;
     int gridSizeX, GridSizeY;
+   
+
+
     void Start()
     {
         nodeDiameter = nodeRadius * 2;
@@ -37,6 +41,8 @@ public class GridPath : MonoBehaviour
             }
         }
     }
+
+
 
     public List<ANode> GetNeighbours(ANode nodes)
     {

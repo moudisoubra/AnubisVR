@@ -12,6 +12,8 @@ TagManager:
   - Chest
   - Interactable
   - Humanoid
+  - node
+  - Nodes
   layers:
   - Default
   - TransparentFX
