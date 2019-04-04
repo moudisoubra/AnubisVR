@@ -1,0 +1,421 @@
+fileFormatVersion: 2
+guid: a1c8704bfaa8aeb4e9b3ee0a664e0c5f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ABS
+    100002: Arm L
+    100004: Arm L(mirrored)
+    100006: Bone012
+    100008: Bone013
+    100010: Chest
+    100012: Circle001
+    100014: Circle002
+    100016: Circle003
+    100018: Circle004
+    100020: Circle005
+    100022: Circle006
+    100024: Circle007
+    100026: Circle008
+    100028: Circle009
+    100030: Circle010
+    100032: Circle011
+    100034: Circle012
+    100036: Circle013
+    100038: Circle014
+    100040: Circle015
+    100042: Circle016
+    100044: Circle017
+    100046: Circle018
+    100048: Circle019
+    100050: Circle020
+    100052: Circle021
+    100054: Circle022
+    100056: Circle023
+    100058: Circle024
+    100060: Circle025
+    100062: Circle026
+    100064: Circle027
+    100066: Circle028
+    100068: Circle029
+    100070: Circle030
+    100072: Circle031
+    100074: Circle032
+    100076: Circle033
+    100078: Circle034
+    100080: Circle035
+    100082: Circle036
+    100084: Circle037
+    100086: COG
+    100088: Donut001
+    100090: Donut002
+    100092: Donut003
+    100094: Donut004
+    100096: eye 2-in
+    100098: eye 2-in001
+    100100: eye 2-out
+    100102: eye 2-out001
+    100104: face
+    100106: Foot 1 L
+    100108: Foot 1 R
+    100110: Foot 2 L
+    100112: Foot 2 R
+    100114: Foot 3 L
+    100116: Foot 3 R
+    100118: Forearm L
+    100120: Forearm L(mirrored)
+    100122: Head
+    100124: Head end
+    100126: IK Chain001
+    100128: IK Chain002
+    100130: IK Chain003
+    100132: IK Chain004
+    100134: IK Chain005
+    100136: IK Chain006
+    100138: IK Chain007
+    100140: IK Chain008
+    100142: Index 1 L
+    100144: Index 1 L(mirrored)
+    100146: Index 2 L
+    100148: Index 2 L(mirrored)
+    100150: Index 3 L
+    100152: Index 3 L(mirrored)
+    100154: Index 4 L
+    100156: Index 4 L(mirrored)
+    100158: Leg 1 L
+    100160: Leg 1 R
+    100162: Leg 2 L
+    100164: Leg 2 R
+    100166: MF 1 L
+    100168: MF 1 L(mirrored)
+    100170: MF 2 L
+    100172: MF 2 L(mirrored)
+    100174: MF 3 L
+    100176: MF 3 L(mirrored)
+    100178: MF 4 L
+    100180: MF 4 L(mirrored)
+    100182: Neck
+    100184: Pinky 1 L
+    100186: Pinky 1 L(mirrored)
+    100188: Pinky 2 L
+    100190: Pinky 2 L(mirrored)
+    100192: Pinky 3 L
+    100194: Pinky 3 L(mirrored)
+    100196: Pinky 4 L
+    100198: Pinky 4 L(mirrored)
+    100200: Plane001
+    100202: Plane002
+    100204: Plane003
+    100206: Plane004
+    100208: Plane005
+    100210: Point001
+    100212: Point002
+    100214: Point003
+    100216: Point004
+    100218: Point005
+    100220: Point006
+    100222: Point007
+    100224: Point008
+    100226: Point009
+    100228: Point010
+    100230: Point010 1
+    100232: Point011
+    100234: Point012
+    100236: Rectangle001
+    100238: Rectangle002
+    100240: Ring 1 L
+    100242: Ring 1 L(mirrored)
+    100244: Ring 2 L
+    100246: Ring 2 L(mirrored)
+    100248: Ring 3 L
+    100250: Ring 3 L(mirrored)
+    100252: Ring 4 L
+    100254: Ring 4 L(mirrored)
+    100256: Shoulder L
+    100258: Shoulder L(mirrored)
+    100260: skirt
+    100262: Star001
+    100264: //RootNode
+    100266: Thumb 1 L
+    100268: Thumb 1 L(mirrored)
+    100270: Thumb 2 L
+    100272: Thumb 2 L(mirrored)
+    100274: Thumb 3 L
+    100276: Thumb 3 L(mirrored)
+    100278: Thumb 4 L
+    100280: Thumb 4 L(mirrored)
+    100282: Wrist end L
+    100284: Wrist end L(mirrored)
+    100286: Wrist L
+    100288: Wrist L(mirrored)
+    400000: ABS
+    400002: Arm L
+    400004: Arm L(mirrored)
+    400006: Bone012
+    400008: Bone013
+    400010: Chest
+    400012: Circle001
+    400014: Circle002
+    400016: Circle003
+    400018: Circle004
+    400020: Circle005
+    400022: Circle006
+    400024: Circle007
+    400026: Circle008
+    400028: Circle009
+    400030: Circle010
+    400032: Circle011
+    400034: Circle012
+    400036: Circle013
+    400038: Circle014
+    400040: Circle015
+    400042: Circle016
+    400044: Circle017
+    400046: Circle018
+    400048: Circle019
+    400050: Circle020
+    400052: Circle021
+    400054: Circle022
+    400056: Circle023
+    400058: Circle024
+    400060: Circle025
+    400062: Circle026
+    400064: Circle027
+    400066: Circle028
+    400068: Circle029
+    400070: Circle030
+    400072: Circle031
+    400074: Circle032
+    400076: Circle033
+    400078: Circle034
+    400080: Circle035
+    400082: Circle036
+    400084: Circle037
+    400086: COG
+    400088: Donut001
+    400090: Donut002
+    400092: Donut003
+    400094: Donut004
+    400096: eye 2-in
+    400098: eye 2-in001
+    400100: eye 2-out
+    400102: eye 2-out001
+    400104: face
+    400106: Foot 1 L
+    400108: Foot 1 R
+    400110: Foot 2 L
+    400112: Foot 2 R
+    400114: Foot 3 L
+    400116: Foot 3 R
+    400118: Forearm L
+    400120: Forearm L(mirrored)
+    400122: Head
+    400124: Head end
+    400126: IK Chain001
+    400128: IK Chain002
+    400130: IK Chain003
+    400132: IK Chain004
+    400134: IK Chain005
+    400136: IK Chain006
+    400138: IK Chain007
+    400140: IK Chain008
+    400142: Index 1 L
+    400144: Index 1 L(mirrored)
+    400146: Index 2 L
+    400148: Index 2 L(mirrored)
+    400150: Index 3 L
+    400152: Index 3 L(mirrored)
+    400154: Index 4 L
+    400156: Index 4 L(mirrored)
+    400158: Leg 1 L
+    400160: Leg 1 R
+    400162: Leg 2 L
+    400164: Leg 2 R
+    400166: MF 1 L
+    400168: MF 1 L(mirrored)
+    400170: MF 2 L
+    400172: MF 2 L(mirrored)
+    400174: MF 3 L
+    400176: MF 3 L(mirrored)
+    400178: MF 4 L
+    400180: MF 4 L(mirrored)
+    400182: Neck
+    400184: Pinky 1 L
+    400186: Pinky 1 L(mirrored)
+    400188: Pinky 2 L
+    400190: Pinky 2 L(mirrored)
+    400192: Pinky 3 L
+    400194: Pinky 3 L(mirrored)
+    400196: Pinky 4 L
+    400198: Pinky 4 L(mirrored)
+    400200: Plane001
+    400202: Plane002
+    400204: Plane003
+    400206: Plane004
+    400208: Plane005
+    400210: Point001
+    400212: Point002
+    400214: Point003
+    400216: Point004
+    400218: Point005
+    400220: Point006
+    400222: Point007
+    400224: Point008
+    400226: Point009
+    400228: Point010
+    400230: Point010 1
+    400232: Point011
+    400234: Point012
+    400236: Rectangle001
+    400238: Rectangle002
+    400240: Ring 1 L
+    400242: Ring 1 L(mirrored)
+    400244: Ring 2 L
+    400246: Ring 2 L(mirrored)
+    400248: Ring 3 L
+    400250: Ring 3 L(mirrored)
+    400252: Ring 4 L
+    400254: Ring 4 L(mirrored)
+    400256: Shoulder L
+    400258: Shoulder L(mirrored)
+    400260: skirt
+    400262: Star001
+    400264: //RootNode
+    400266: Thumb 1 L
+    400268: Thumb 1 L(mirrored)
+    400270: Thumb 2 L
+    400272: Thumb 2 L(mirrored)
+    400274: Thumb 3 L
+    400276: Thumb 3 L(mirrored)
+    400278: Thumb 4 L
+    400280: Thumb 4 L(mirrored)
+    400282: Wrist end L
+    400284: Wrist end L(mirrored)
+    400286: Wrist L
+    400288: Wrist L(mirrored)
+    2100000: 01 - Default
+    2100002: 02 - Default
+    2100004: 07 - Default
+    2100006: 08 - Default
+    2100008: 13 - Default
+    2100010: No Name
+    2300000: eye 2-in
+    2300002: eye 2-in001
+    2300004: eye 2-out
+    2300006: eye 2-out001
+    2300008: Plane001
+    2300010: Plane002
+    2300012: Plane003
+    2300014: Plane004
+    2300016: Plane005
+    2300018: skirt
+    3300000: eye 2-in
+    3300002: eye 2-in001
+    3300004: eye 2-out
+    3300006: eye 2-out001
+    3300008: Plane001
+    3300010: Plane002
+    3300012: Plane003
+    3300014: Plane004
+    3300016: Plane005
+    3300018: skirt
+    4300000: Plane001
+    4300002: Plane002
+    4300004: Plane003
+    4300006: Plane004
+    4300008: Plane005
+    4300010: skirt
+    4300012: eye 2-out001
+    4300014: eye 2-in001
+    4300016: eye 2-out
+    4300018: eye 2-in
+    4300020: face
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: face
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
