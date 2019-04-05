@@ -11,6 +11,7 @@ public class AddForceToItems : MonoBehaviour
     public GameObject mainParent;
     public GameObject parentBone;
     public GameObject childBone;
+    public GameObject tempObject;
 
     public List<GameObject> enemyBones;
     public List<GameObject> hitEnemyBones;
@@ -19,9 +20,12 @@ public class AddForceToItems : MonoBehaviour
     public Animator animatorEnemy;
     public AnimatorOverrideController animController;
 
+    public bool forceAttack;
+
     // Start is called before the first frame update
     void Start()
     {
+        forceAttack = false;
         objectPushed = null;
     }
     
@@ -215,6 +219,83 @@ public class AddForceToItems : MonoBehaviour
         {
             objectPushed = collision.gameObject;
         }
+
+        //if (collision.gameObject.GetComponent<Rigidbody>() && collision.gameObject.GetComponentInParent<EnemyScript>() && collision.gameObject.tag == "Real")
+        //{
+        //    forceAttack = true;
+        //    var scriptLink = collision.gameObject.GetComponentInParent<TestBodyParts>();
+        //    scriptLink.ClearAll();
+        //    Debug.Log("CLEAR ALL");
+        //}
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.GetComponent<Rigidbody>() && collision.gameObject.GetComponentInParent<EnemyScript>())
+        {
+            forceAttack = true;
+            var scriptLink = collision.gameObject.GetComponentInParent<TestBodyParts>();
+            scriptLink.ClearAll();
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.GetComponent<Rigidbody>() && collision.gameObject.GetComponentInParent<EnemyScript>()
+        && forceAttack)
+        {
+            forceAttack = false;
+            var scriptLink = collision.gameObject.GetComponentInParent<TestBodyParts>();
+            scriptLink.AddAllChildren(collision.gameObject.transform, scriptLink.actualBody);
+            scriptLink.AddAllTransforms(collision.gameObject.transform, scriptLink.actualBodyTransforms);
+
+            for (int i = 0; i < scriptLink.fullRigInvisi.Count; i++)
+            {
+                if (scriptLink.fullRigInvisi[i].gameObject.name == collision.gameObject.name)
+                {
+                    Debug.Log("Tempobject found: " + tempObject);
+                    tempObject = scriptLink.fullRigInvisi[i].gameObject;
+                }
+            }
+
+            if (tempObject != null && tempObject.name == collision.gameObject.name)
+            {
+                Debug.Log("using tempObject: " + tempObject);
+                scriptLink.AddAllChildren(tempObject.transform, scriptLink.invisibleBody);
+                scriptLink.AddAllTransforms(tempObject.transform, scriptLink.invisiBodyTransforms);
+            }
+
+        }
+    }
+
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.GetComponent<Rigidbody>() && collision.gameObject.GetComponentInParent<EnemyScript>() 
+    //        && forceAttack && collision.gameObject.tag == "Real")
+    //    {
+    //        forceAttack = false;
+    //        var scriptLink = collision.gameObject.GetComponentInParent<TestBodyParts>();
+    //        scriptLink.AddAllChildren(collision.gameObject.transform, scriptLink.actualBody);
+    //        Debug.Log("HI");
+    //        scriptLink.AddAllTransforms(collision.gameObject.transform, scriptLink.actualBodyTransforms);
+
+    //        for (int i = 0; i < scriptLink.fullRigInvisi.Count; i++)
+    //        {
+    //            if (scriptLink.fullRigInvisi[i].gameObject.name == collision.gameObject.name)
+    //            {
+    //                Debug.Log("Tempobject found: " + tempObject);
+    //                tempObject = scriptLink.fullRigInvisi[i].gameObject;
+    //            }
+    //        }
+
+    //        if (tempObject != null && tempObject.name == collision.gameObject.name)
+    //        {
+    //            Debug.Log("using tempObject: " + tempObject);
+    //            scriptLink.AddAllChildren(tempObject.transform, scriptLink.invisibleBody);
+    //            scriptLink.AddAllTransforms(tempObject.transform, scriptLink.invisiBodyTransforms);
+    //        }
+
+    //    }
+    //}
 
 }
