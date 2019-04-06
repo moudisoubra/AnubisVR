@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: e43d68fc46f78a34699d84a5a89d56e4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ABS
+    100002: Arm L
+    100004: Arm L(mirrored)
+    100006: Bone012
+    100008: Bone013
+    100010: Chest
+    100012: Circle003
+    100014: Circle004
+    100016: Circle005
+    100018: Circle006
+    100020: Circle007
+    100022: COG
+    100024: face
+    100026: Foot 1 L
+    100028: Foot 1 R
+    100030: Foot 2 L
+    100032: Foot 2 R
+    100034: Foot 3 L
+    100036: Foot 3 R
+    100038: Forearm L
+    100040: Forearm L(mirrored)
+    100042: Head
+    100044: Head end
+    100046: Index 1 L
+    100048: Index 1 L(mirrored)
+    100050: Index 2 L
+    100052: Index 2 L(mirrored)
+    100054: Index 3 L
+    100056: Index 3 L(mirrored)
+    100058: Index 4 L
+    100060: Index 4 L(mirrored)
+    100062: Leg 1 L
+    100064: Leg 1 R
+    100066: Leg 2 L
+    100068: Leg 2 R
+    100070: MF 1 L
+    100072: MF 1 L(mirrored)
+    100074: MF 2 L
+    100076: MF 2 L(mirrored)
+    100078: MF 3 L
+    100080: MF 3 L(mirrored)
+    100082: MF 4 L
+    100084: MF 4 L(mirrored)
+    100086: Neck
+    100088: Pinky 1 L
+    100090: Pinky 1 L(mirrored)
+    100092: Pinky 2 L
+    100094: Pinky 2 L(mirrored)
+    100096: Pinky 3 L
+    100098: Pinky 3 L(mirrored)
+    100100: Pinky 4 L
+    100102: Pinky 4 L(mirrored)
+    100104: Ring 1 L
+    100106: Ring 1 L(mirrored)
+    100108: Ring 2 L
+    100110: Ring 2 L(mirrored)
+    100112: Ring 3 L
+    100114: Ring 3 L(mirrored)
+    100116: Ring 4 L
+    100118: Ring 4 L(mirrored)
+    100120: Shoulder L
+    100122: Shoulder L(mirrored)
+    100124: Star001
+    100126: //RootNode
+    100128: Thumb 1 L
+    100130: Thumb 1 L(mirrored)
+    100132: Thumb 2 L
+    100134: Thumb 2 L(mirrored)
+    100136: Thumb 3 L
+    100138: Thumb 3 L(mirrored)
+    100140: Thumb 4 L
+    100142: Thumb 4 L(mirrored)
+    100144: Wrist end L
+    100146: Wrist end L(mirrored)
+    100148: Wrist L
+    100150: Wrist L(mirrored)
+    400000: ABS
+    400002: Arm L
+    400004: Arm L(mirrored)
+    400006: Bone012
+    400008: Bone013
+    400010: Chest
+    400012: Circle003
+    400014: Circle004
+    400016: Circle005
+    400018: Circle006
+    400020: Circle007
+    400022: COG
+    400024: face
+    400026: Foot 1 L
+    400028: Foot 1 R
+    400030: Foot 2 L
+    400032: Foot 2 R
+    400034: Foot 3 L
+    400036: Foot 3 R
+    400038: Forearm L
+    400040: Forearm L(mirrored)
+    400042: Head
+    400044: Head end
+    400046: Index 1 L
+    400048: Index 1 L(mirrored)
+    400050: Index 2 L
+    400052: Index 2 L(mirrored)
+    400054: Index 3 L
+    400056: Index 3 L(mirrored)
+    400058: Index 4 L
+    400060: Index 4 L(mirrored)
+    400062: Leg 1 L
+    400064: Leg 1 R
+    400066: Leg 2 L
+    400068: Leg 2 R
+    400070: MF 1 L
+    400072: MF 1 L(mirrored)
+    400074: MF 2 L
+    400076: MF 2 L(mirrored)
+    400078: MF 3 L
+    400080: MF 3 L(mirrored)
+    400082: MF 4 L
+    400084: MF 4 L(mirrored)
+    400086: Neck
+    400088: Pinky 1 L
+    400090: Pinky 1 L(mirrored)
+    400092: Pinky 2 L
+    400094: Pinky 2 L(mirrored)
+    400096: Pinky 3 L
+    400098: Pinky 3 L(mirrored)
+    400100: Pinky 4 L
+    400102: Pinky 4 L(mirrored)
+    400104: Ring 1 L
+    400106: Ring 1 L(mirrored)
+    400108: Ring 2 L
+    400110: Ring 2 L(mirrored)
+    400112: Ring 3 L
+    400114: Ring 3 L(mirrored)
+    400116: Ring 4 L
+    400118: Ring 4 L(mirrored)
+    400120: Shoulder L
+    400122: Shoulder L(mirrored)
+    400124: Star001
+    400126: //RootNode
+    400128: Thumb 1 L
+    400130: Thumb 1 L(mirrored)
+    400132: Thumb 2 L
+    400134: Thumb 2 L(mirrored)
+    400136: Thumb 3 L
+    400138: Thumb 3 L(mirrored)
+    400140: Thumb 4 L
+    400142: Thumb 4 L(mirrored)
+    400144: Wrist end L
+    400146: Wrist end L(mirrored)
+    400148: Wrist L
+    400150: Wrist L(mirrored)
+    2100000: 03 - Default
+    4300000: face
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: face
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

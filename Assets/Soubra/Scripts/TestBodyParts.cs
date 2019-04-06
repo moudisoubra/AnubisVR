@@ -35,24 +35,13 @@ public class TestBodyParts : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-
-        //if (timer > 5 && timer <= 700)
-        //{
-        //    ReturnTransform(actualBodyTransforms, invisiBodyTransforms);
-        //}
     }
 
     void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            timer = 0;
-            t = 0;
-            invisibleBody.Clear();
-            actualBody.Clear();
-
-            actualBodyTransforms.Clear();
-            invisiBodyTransforms.Clear();
+            ClearAll();
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -65,8 +54,9 @@ public class TestBodyParts : MonoBehaviour
 
         }
 
-        if (timer < 5)
+        if (timer < 3)
         {
+            Debug.Log("Rig Work");
             if (timer <= timeBeforeBlend)
             {
                 for (int i = 0; i < actualBody.Count; i++)
@@ -77,7 +67,7 @@ public class TestBodyParts : MonoBehaviour
             }
             else
             {
-                StartCoroutine(ReturnTransform(actualBody,invisiBodyTransforms, actualBodyTransforms));
+                StartCoroutine(ReturnTransform(actualBody, invisiBodyTransforms, actualBodyTransforms));
             }
         }
         else
@@ -89,7 +79,19 @@ public class TestBodyParts : MonoBehaviour
             }
         }
     }
-    private void AddAllChildren(Transform parent, List<GameObject> bonesList)
+
+    public void ClearAll()
+    {
+        timer = 0;
+        t = 0;
+        invisibleBody.Clear();
+        actualBody.Clear();
+
+        actualBodyTransforms.Clear();
+        invisiBodyTransforms.Clear();
+    }
+
+    public void AddAllChildren(Transform parent, List<GameObject> bonesList)
     {
         foreach (Transform child in parent)
         {
@@ -98,7 +100,7 @@ public class TestBodyParts : MonoBehaviour
         }
     }
 
-    private void AddAllTransforms(Transform parent, List<Transform> transformList)
+    public void AddAllTransforms(Transform parent, List<Transform> transformList)
     {
         foreach (Transform child in parent)
         {
