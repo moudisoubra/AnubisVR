@@ -246,8 +246,9 @@ public class AddForceToItems : MonoBehaviour
         {
             forceAttack = false;
             var scriptLink = collision.gameObject.GetComponentInParent<TestBodyParts>();
-            scriptLink.AddAllChildren(collision.gameObject.transform, scriptLink.actualBody);
-            scriptLink.AddAllTransforms(collision.gameObject.transform, scriptLink.actualBodyTransforms);
+            scriptLink.GetProperParent(collision.gameObject.transform, scriptLink.actualBody, scriptLink.actualBodyTransforms);
+            //scriptLink.AddAllChildren(collision.gameObject.transform, scriptLink.actualBody);
+            //scriptLink.AddAllTransforms(collision.gameObject.transform, scriptLink.actualBodyTransforms);
 
             for (int i = 0; i < scriptLink.fullRigInvisi.Count; i++)
             {
@@ -261,8 +262,9 @@ public class AddForceToItems : MonoBehaviour
             if (tempObject != null && tempObject.name == collision.gameObject.name)
             {
                 Debug.Log("using tempObject: " + tempObject);
-                scriptLink.AddAllChildren(tempObject.transform, scriptLink.invisibleBody);
-                scriptLink.AddAllTransforms(tempObject.transform, scriptLink.invisiBodyTransforms);
+                scriptLink.GetProperParent(tempObject.transform, scriptLink.invisibleBody, scriptLink.invisiBodyTransforms);
+                //scriptLink.AddAllChildren(tempObject.transform, scriptLink.invisibleBody);
+                //scriptLink.AddAllTransforms(tempObject.transform, scriptLink.invisiBodyTransforms);
             }
 
         }
