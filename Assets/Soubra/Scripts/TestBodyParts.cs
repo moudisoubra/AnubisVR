@@ -9,6 +9,10 @@ public class TestBodyParts : MonoBehaviour
     public GameObject bone2;
     public GameObject ActualBody;
     public GameObject InvisiBody;
+    public GameObject leftShoulder;
+    public GameObject rightShoulder;
+    public GameObject head;
+    public static GameObject original;
 
     public List<GameObject> invisibleBody;
     public List<GameObject> actualBody;
@@ -46,17 +50,16 @@ public class TestBodyParts : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            AddAllChildren(bone1.transform, actualBody);
-            AddAllChildren(bone2.transform, invisibleBody);
+            GetProperParent(bone1.transform, actualBody, actualBodyTransforms);
+            GetProperParent(bone2.transform, invisibleBody, invisiBodyTransforms);
 
-            AddAllTransforms(bone1.transform, actualBodyTransforms);
-            AddAllTransforms(bone2.transform, invisiBodyTransforms);
+            //AddAllTransforms(bone1.transform, actualBodyTransforms);
+            //AddAllTransforms(bone2.transform, invisiBodyTransforms);
 
         }
 
         if (timer < 3)
         {
-            Debug.Log("Rig Work");
             if (timer <= timeBeforeBlend)
             {
                 for (int i = 0; i < actualBody.Count; i++)
@@ -91,13 +94,37 @@ public class TestBodyParts : MonoBehaviour
         invisiBodyTransforms.Clear();
     }
 
+    public void GetProperParent(Transform child, List<GameObject> bonesList, List<Transform> transformList)
+    {
+        AddAllChildren(FindParentWithTag(child).transform, bonesList);
+        AddAllTransforms(FindParentWithTag(child).transform, transformList);
+    }
+
+    public static GameObject FindParentWithTag(Transform childObject)
+    {
+        Transform t = childObject.transform;
+        while (t.parent != null)
+        {
+            if (t.parent.tag == "Root")
+            {
+                return t.parent.gameObject;
+            }
+            t = t.parent.transform;
+        }
+        return null; // Could not find a parent with given tag.
+    }
+
     public void AddAllChildren(Transform parent, List<GameObject> bonesList)
     {
-        foreach (Transform child in parent)
+        if (parent != null)
         {
-            bonesList.Add(child.gameObject);
-            AddAllChildren(child, bonesList);
+            foreach (Transform child in parent)
+            {
+                bonesList.Add(child.gameObject);
+                AddAllChildren(child, bonesList);
+            }
         }
+
     }
 
     public void AddAllTransforms(Transform parent, List<Transform> transformList)
