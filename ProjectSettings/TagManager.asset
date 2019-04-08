@@ -14,6 +14,12 @@ TagManager:
   - Humanoid
   - node
   - Nodes
+  - Real
+  - Left
+  - Right
+  - Head
+  - Child
+  - Root
   layers:
   - Default
   - TransparentFX
@@ -27,7 +33,7 @@ TagManager:
   - Enemy
   - 
   - NotWalkable
-  - 
+  - Walls
   - 
   - 
   - 

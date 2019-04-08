@@ -30,6 +30,9 @@ public class Patrol : MonoBehaviour
 
     public int speed = 5;
     // Start is called before the first frame update
+
+
+
     void Start()
     {
         navMesh = this.GetComponent<NavMeshAgent>();
@@ -53,7 +56,7 @@ public class Patrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
    

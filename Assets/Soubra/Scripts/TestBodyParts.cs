@@ -9,6 +9,10 @@ public class TestBodyParts : MonoBehaviour
     public GameObject bone2;
     public GameObject ActualBody;
     public GameObject InvisiBody;
+    public GameObject leftShoulder;
+    public GameObject rightShoulder;
+    public GameObject head;
+    public static GameObject original;
 
     public List<GameObject> invisibleBody;
     public List<GameObject> actualBody;
@@ -22,7 +26,7 @@ public class TestBodyParts : MonoBehaviour
     public float timer;
 
     public List<Transform> lastPosition;
-    public int timeBeforeBlend;
+    public float timeBeforeBlend;
     public float t = 0;
     // Start is called before the first frame update
     void Start()
@@ -35,37 +39,26 @@ public class TestBodyParts : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-
-        //if (timer > 5 && timer <= 700)
-        //{
-        //    ReturnTransform(actualBodyTransforms, invisiBodyTransforms);
-        //}
     }
 
     void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            timer = 0;
-            t = 0;
-            invisibleBody.Clear();
-            actualBody.Clear();
-
-            actualBodyTransforms.Clear();
-            invisiBodyTransforms.Clear();
+            ClearAll();
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            AddAllChildren(bone1.transform, actualBody);
-            AddAllChildren(bone2.transform, invisibleBody);
+            GetProperParent(bone1.transform, actualBody, actualBodyTransforms);
+            GetProperParent(bone2.transform, invisibleBody, invisiBodyTransforms);
 
-            AddAllTransforms(bone1.transform, actualBodyTransforms);
-            AddAllTransforms(bone2.transform, invisiBodyTransforms);
+            //AddAllTransforms(bone1.transform, actualBodyTransforms);
+            //AddAllTransforms(bone2.transform, invisiBodyTransforms);
 
         }
 
-        if (timer < 5)
+        if (timer < 3)
         {
             if (timer <= timeBeforeBlend)
             {
@@ -77,7 +70,7 @@ public class TestBodyParts : MonoBehaviour
             }
             else
             {
-                StartCoroutine(ReturnTransform(actualBody,invisiBodyTransforms, actualBodyTransforms));
+                StartCoroutine(ReturnTransform(actualBody, invisiBodyTransforms, actualBodyTransforms));
             }
         }
         else
@@ -89,16 +82,52 @@ public class TestBodyParts : MonoBehaviour
             }
         }
     }
-    private void AddAllChildren(Transform parent, List<GameObject> bonesList)
+
+    public void ClearAll()
     {
-        foreach (Transform child in parent)
-        {
-            bonesList.Add(child.gameObject);
-            AddAllChildren(child, bonesList);
-        }
+        timer = 0;
+        t = 0;
+        invisibleBody.Clear();
+        actualBody.Clear();
+
+        actualBodyTransforms.Clear();
+        invisiBodyTransforms.Clear();
     }
 
-    private void AddAllTransforms(Transform parent, List<Transform> transformList)
+    public void GetProperParent(Transform child, List<GameObject> bonesList, List<Transform> transformList)
+    {
+        AddAllChildren(FindParentWithTag(child).transform, bonesList);
+        AddAllTransforms(FindParentWithTag(child).transform, transformList);
+    }
+
+    public static GameObject FindParentWithTag(Transform childObject)
+    {
+        Transform t = childObject.transform;
+        while (t.parent != null)
+        {
+            if (t.parent.tag == "Root")
+            {
+                return t.parent.gameObject;
+            }
+            t = t.parent.transform;
+        }
+        return null; // Could not find a parent with given tag.
+    }
+
+    public void AddAllChildren(Transform parent, List<GameObject> bonesList)
+    {
+        if (parent != null)
+        {
+            foreach (Transform child in parent)
+            {
+                bonesList.Add(child.gameObject);
+                AddAllChildren(child, bonesList);
+            }
+        }
+
+    }
+
+    public void AddAllTransforms(Transform parent, List<Transform> transformList)
     {
         foreach (Transform child in parent)
         {

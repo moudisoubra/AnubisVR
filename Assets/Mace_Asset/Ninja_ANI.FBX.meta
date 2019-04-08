@@ -1,0 +1,280 @@
+fileFormatVersion: 2
+guid: f4fade9bf3f29e2479efc3059bebee78
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ABS
+    100002: ARM_L_01
+    100004: ARM_L_02
+    100006: ARM_L_03
+    100008: ARM_R_01
+    100010: ARM_R_02
+    100012: ARM_R_03
+    100014: Box001
+    100016: Box002
+    100018: CHEST
+    100020: Circle005
+    100022: COG
+    100024: Cylinder001
+    100026: FOOT_L_01
+    100028: FOOT_L_02
+    100030: FOOT_L_END
+    100032: FOOT_R_01
+    100034: FOOT_R_02
+    100036: FOOT_R_END
+    100038: HEAD
+    100040: HEAD_END
+    100042: INDEX_L_01
+    100044: INDEX_L_02
+    100046: INDEX_L_03
+    100048: INDEX_L_END
+    100050: INDEX_R_01
+    100052: INDEX_R_02
+    100054: INDEX_R_03
+    100056: INDEX_R_END
+    100058: LEG_L_01
+    100060: LEG_L_02
+    100062: LEG_R_01
+    100064: LEG_R_02
+    100066: MIDDLE_L_01
+    100068: MIDDLE_L_02
+    100070: MIDDLE_L_03
+    100072: MIDDLE_L_END
+    100074: MIDDLE_R_01
+    100076: MIDDLE_R_02
+    100078: MIDDLE_R_03
+    100080: MIDDLE_R_END
+    100082: NECK
+    100084: //RootNode
+    100086: PINKY_L_01
+    100088: PINKY_L_02
+    100090: PINKY_L_03
+    100092: PINKY_L_END
+    100094: PINKY_R_01
+    100096: PINKY_R_02
+    100098: PINKY_R_03
+    100100: PINKY_R_END
+    100102: RING_L_01
+    100104: RING_L_02
+    100106: RING_L_03
+    100108: RING_L_END
+    100110: RING_R_01
+    100112: RING_R_02
+    100114: RING_R_03
+    100116: RING_R_END
+    100118: Sphere001
+    100120: Star001
+    100122: THUMB_L_01
+    100124: THUMB_L_02
+    100126: THUMB_L_03
+    100128: THUMB_L_END
+    100130: THUMB_R_01
+    100132: THUMB_R_02
+    100134: THUMB_R_03
+    100136: THUMB_R_END
+    100138: WRIST_L
+    100140: WRIST_L_END
+    100142: WRIST_R
+    100144: WRIST_R_END
+    400000: ABS
+    400002: ARM_L_01
+    400004: ARM_L_02
+    400006: ARM_L_03
+    400008: ARM_R_01
+    400010: ARM_R_02
+    400012: ARM_R_03
+    400014: Box001
+    400016: Box002
+    400018: CHEST
+    400020: Circle005
+    400022: COG
+    400024: Cylinder001
+    400026: FOOT_L_01
+    400028: FOOT_L_02
+    400030: FOOT_L_END
+    400032: FOOT_R_01
+    400034: FOOT_R_02
+    400036: FOOT_R_END
+    400038: HEAD
+    400040: HEAD_END
+    400042: INDEX_L_01
+    400044: INDEX_L_02
+    400046: INDEX_L_03
+    400048: INDEX_L_END
+    400050: INDEX_R_01
+    400052: INDEX_R_02
+    400054: INDEX_R_03
+    400056: INDEX_R_END
+    400058: LEG_L_01
+    400060: LEG_L_02
+    400062: LEG_R_01
+    400064: LEG_R_02
+    400066: MIDDLE_L_01
+    400068: MIDDLE_L_02
+    400070: MIDDLE_L_03
+    400072: MIDDLE_L_END
+    400074: MIDDLE_R_01
+    400076: MIDDLE_R_02
+    400078: MIDDLE_R_03
+    400080: MIDDLE_R_END
+    400082: NECK
+    400084: //RootNode
+    400086: PINKY_L_01
+    400088: PINKY_L_02
+    400090: PINKY_L_03
+    400092: PINKY_L_END
+    400094: PINKY_R_01
+    400096: PINKY_R_02
+    400098: PINKY_R_03
+    400100: PINKY_R_END
+    400102: RING_L_01
+    400104: RING_L_02
+    400106: RING_L_03
+    400108: RING_L_END
+    400110: RING_R_01
+    400112: RING_R_02
+    400114: RING_R_03
+    400116: RING_R_END
+    400118: Sphere001
+    400120: Star001
+    400122: THUMB_L_01
+    400124: THUMB_L_02
+    400126: THUMB_L_03
+    400128: THUMB_L_END
+    400130: THUMB_R_01
+    400132: THUMB_R_02
+    400134: THUMB_R_03
+    400136: THUMB_R_END
+    400138: WRIST_L
+    400140: WRIST_L_END
+    400142: WRIST_R
+    400144: WRIST_R_END
+    2100000: 01 - Default
+    2100002: No Name
+    2300000: Box001
+    2300002: Box002
+    2300004: Sphere001
+    3300000: Box001
+    3300002: Box002
+    3300004: Sphere001
+    4300000: Cylinder001
+    4300002: Sphere001
+    4300004: Box001
+    4300006: Box002
+    7400000: 'Idle '
+    9500000: //RootNode
+    13700000: Cylinder001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: 'Idle '
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
