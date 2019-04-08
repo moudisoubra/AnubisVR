@@ -5,32 +5,22 @@ using UnityEngine;
 public class DjisPathFindHajjo : MonoBehaviour
 {
     static public DjisPathFindHajjo instance;
-    public GameObject[] Nodes;
+    [SerializeField] GameObject[] Nodes;
 
-    Node[] allNodes;
-    Node CurrentNode;
-    public GameObject StartPos;
-    public GameObject TargetPos;
+    public Node[] allNodes;
+   
+
 
     private List<int> routPoints = new List<int>();
 
+
     public struct Node
     {
-
         public int id;
         public int SourceId;
         public int[] ChildsNode;
         public Transform trans;
         public float distance;
-
-        //public int gCost;
-        //public int Hcost;
-
-
-        //public int Fcost
-        //{
-        //    get { return gCost + Hcost; }
-        //}
     }
 
     void Start()
@@ -69,7 +59,7 @@ public class DjisPathFindHajjo : MonoBehaviour
         {
             float dis = Vector3.Distance(pos, allNodes[i].trans.position);
 
-            if (!Physics.Raycast(pos, allNodes[i].trans.position - pos, dis) && dis > 1)
+            if (!Physics.Raycast(pos, allNodes[i].trans.position - pos, dis) && dis > 0.5f)
             {
                 nearpoints.Add(i);
             }
@@ -78,7 +68,7 @@ public class DjisPathFindHajjo : MonoBehaviour
         }
         return nearpoints.ToArray();
     }
-    
+
 
 
     //Find Closest Node Index Of Start and Last NodeIndex
@@ -88,11 +78,11 @@ public class DjisPathFindHajjo : MonoBehaviour
         int closestId = -1;
 
         for (int i = 0; i < allNodes.Length; i++)
-        {
+        {               
             float dis = Vector3.Distance(pos, allNodes[i].trans.position);
 
             Vector3 dir = allNodes[i].trans.position - pos;
-
+            
             if (!Physics.Raycast(pos, dir, dis))
             {
                 if (dir.magnitude < shortestDist)
@@ -107,10 +97,11 @@ public class DjisPathFindHajjo : MonoBehaviour
 
 
 
-    public void DjiPath(Vector3 startPos, Vector3 FinalPos)
+    public int[] DjiPath(Vector3 startPos, Vector3 FinalPos)
     {
+        List<int> FollowPath = new List<int>();
+        List<int> Visiting = new List<int>();
         List<int> Visited = new List<int>();
-        List<int> Closed = new List<int>();
 
         int StartNode = GetNearbyNode(startPos);
         int FinalNode = GetNearbyNode(FinalPos);
@@ -130,43 +121,26 @@ public class DjisPathFindHajjo : MonoBehaviour
 
 
         allNodes[StartNode].distance = 0;
-        Visited.Add(StartNode);
-        // break limit if something goes wrong
-        while (true)
+        Visiting.Add(StartNode);
+
+        while (Visiting.Count >0)
         {
             int closectNodeId = 0;
             float shortestDis = Mathf.Infinity;
             // finds the index of the node whos distance is the shortest.
-            for (int i = 0; i < Visited.Count; i++)
+            for (int i = 0; i < Visiting.Count; i++)
             {
-                if (allNodes[Visited[i]].distance < shortestDis)
+                if (allNodes[Visiting[i]].distance < shortestDis)
                 {
-                    closectNodeId = Visited[i];
-                    shortestDis = allNodes[Visited[i]].distance;
+                    closectNodeId = Visiting[i];
+
+                    shortestDis = allNodes[Visiting[i]].distance;
+
+
                 }
             }
-            // checks if the current node is thelast node.
-            if (allNodes[closectNodeId].id == allNodes[FinalNode].id)
-            {
 
-                string path = "Path reached .";
-                int nextPointId = FinalNode;
-                for (int i = 0; i < 50; i++)
-                {
-                    path += " | " + allNodes[nextPointId].id;
-                    routPoints.Add(nextPointId);
-                    nextPointId = allNodes[nextPointId].SourceId;
-                    if (nextPointId == -1)
-                    {
-                        Debug.Log(path);
-                        return;
-                    }
-                }
 
-                return;
-
-            }
-           
             //adding the childe node of the current node to the visited list
 
             for (int i = 0; i < allNodes[closectNodeId].ChildsNode.Length; i++)
@@ -178,72 +152,41 @@ public class DjisPathFindHajjo : MonoBehaviour
                 {
                     // allNodes[closectNodeId] is the current node
                     // allNodes[closectNodeId].ChildsNode[i] is the index of the childe in allNodes[]
-                    
+
                     allNodes[childIndex].distance = newDistance;
                     allNodes[childIndex].SourceId = allNodes[closectNodeId].id;
-          
-                    if (!Visited.Contains(childIndex)) Visited.Add(childIndex);
+
+                    if (!Visiting.Contains(childIndex)) {
+
+                        Visiting.Add(childIndex);
+                            }
                 }
 
 
             }
 
-            Visited.Remove(closectNodeId);
-            Closed.Add(closectNodeId);
+            Visiting.Remove(closectNodeId);
+            Visited.Add(closectNodeId);
         }
 
+
+
+        //---------------------------------
+        //back track
+       
+        int tempNodeID = FinalNode;
+        if (allNodes[tempNodeID].SourceId !=-1)
+        {
+            while(tempNodeID != -1)
+            {
+                routPoints.Insert(0, tempNodeID);
+                tempNodeID = allNodes[tempNodeID].SourceId;
+            }
+            return routPoints.ToArray();
+        }
+
+        return null;
     }
-
-
-
-    //void findPath(Vector3 startPos, Vector3 targetPos)
-    //{
-
-    //    Node[] startNode = GetNearbyPoint(startPos);
-    //    Node[] finalNode = GetNearbyPoint(targetPos);
-
-    //    List<Node> OpenSet = new List<Node>();
-    //    HashSet<Node> CloseSet = new HashSet<Node>();
-
-
-    //    for (int i = 0; i < startNode.Length; i++)
-    //    {
-    //        OpenSet.Add(startNode[i]);
-    //    }
-
-
-    //    while (OpenSet.Count > 0)
-    //    {
-    //        Node CurrentNode = OpenSet[0];
-    //        for (int i = 1; i < OpenSet.Count; i++)
-    //        {
-    //            Debug.Log("FindPath" + OpenSet[i].Fcost);
-    //            if ((OpenSet[i].Fcost <= CurrentNode.Fcost) && OpenSet[i].Hcost < CurrentNode.Hcost)
-    //            {
-    //                CurrentNode = OpenSet[i];
-
-    //            }
-    //        }
-
-
-    //        OpenSet.Remove(CurrentNode);
-    //        CloseSet.Add(CurrentNode);
-
-
-
-
-    //        //    if (CurrentNode == finalNode)
-    //        //{
-    //        //    return;
-    //        //}
-
-    //    }
-
-
-
-    //    }\
-
-
 
 
     private void OnDrawGizmos()

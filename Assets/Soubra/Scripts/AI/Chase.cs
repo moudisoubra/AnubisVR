@@ -17,7 +17,7 @@ public class Chase : BaseState {
             float angle = Vector3.Angle(direction, EnimeAI.transform.forward);
 
             if (Vector3.Distance(EnimeAI.playerTransform.position, EnimeAI.transform.position) < 20f && angle < 100)
-            {
+            {   
 
                 direction.y = 0;
 
