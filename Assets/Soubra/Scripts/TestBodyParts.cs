@@ -26,7 +26,7 @@ public class TestBodyParts : MonoBehaviour
     public float timer;
 
     public List<Transform> lastPosition;
-    public int timeBeforeBlend;
+    public float timeBeforeBlend;
     public float t = 0;
     // Start is called before the first frame update
     void Start()

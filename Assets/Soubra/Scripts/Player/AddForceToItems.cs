@@ -47,8 +47,8 @@ public class AddForceToItems : MonoBehaviour
                         childBone = objectPushed.transform.transform.GetChild(0).gameObject;
                         Debug.Log(parentBone + " " + childBone);
 
-                        ApplyEffectRight(parentBone);
-                        ApplyEffectRight(childBone);
+                        ApplyEffectRight(parentBone, 1);
+                        ApplyEffectRight(childBone, 1);
                     }
                     else
                     {
@@ -56,7 +56,7 @@ public class AddForceToItems : MonoBehaviour
                         childBone = null;
                     }
 
-                    ApplyEffectRight(objectPushed);
+                    ApplyEffectRight(objectPushed, 1);
                     objectPushed = null;
 
                 }
@@ -72,15 +72,15 @@ public class AddForceToItems : MonoBehaviour
                         childBone = objectPushed.transform.transform.GetChild(0).gameObject;
                         Debug.Log(parentBone + " " + childBone);
 
-                        ApplyEffectLeft(parentBone);
-                        ApplyEffectLeft(childBone);
+                        ApplyEffectLeft(parentBone, 1);
+                        ApplyEffectLeft(childBone, 1);
                     }
                     else
                     {
                         parentBone = null;
                         childBone = null;
                     }
-                    ApplyEffectLeft(objectPushed);
+                    ApplyEffectLeft(objectPushed, 1);
                     objectPushed = null;
                 }
             }
@@ -95,8 +95,8 @@ public class AddForceToItems : MonoBehaviour
                     
                     FindEnemyBones();
 
-                    ApplyEffectRight(parentBone);
-                    ApplyEffectRight(childBone);
+                    ApplyEffectRight(parentBone, 1);
+                    ApplyEffectRight(childBone, 1);
                 }
                 else
                 {
@@ -106,9 +106,7 @@ public class AddForceToItems : MonoBehaviour
 
                 if (gameObject.GetComponent<Rigidbody>())
                 {
-                    objectPushed.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetVelocity() * pushFactor;
-                    objectPushed.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetAngularVelocity() * pushFactor;
-                    objectPushed.GetComponent<Rigidbody>().maxAngularVelocity = objectPushed.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
+                    ApplyEffectRight(objectPushed, 1);
                 }
                 objectPushed = null;
 
@@ -126,8 +124,8 @@ public class AddForceToItems : MonoBehaviour
                     childBone = objectPushed.transform.transform.GetChild(0).gameObject;
                     Debug.Log(parentBone + " " + childBone);
 
-                    ApplyEffectLeft(parentBone);
-                    ApplyEffectLeft(childBone);
+                    ApplyEffectLeft(parentBone, 1);
+                    ApplyEffectLeft(childBone, 1);
                 }
                 else
                 {
@@ -135,31 +133,31 @@ public class AddForceToItems : MonoBehaviour
                     childBone = null;
                 }
 
-                ApplyEffectLeft(objectPushed);
+                ApplyEffectLeft(objectPushed, 1);
                 objectPushed = null;
 
             }
         }
     }
 
-    public void ApplyEffectRight(GameObject obj)
+    public void ApplyEffectRight(GameObject obj, float factor)
     {
         if (obj.GetComponent<Rigidbody>())
         {
-            obj.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetVelocity() * pushFactor;
-            obj.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetAngularVelocity() * pushFactor;
-            obj.GetComponent<Rigidbody>().maxAngularVelocity = obj.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
+            obj.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetVelocity() * pushFactor * factor;
+            obj.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().rightPose.GetAngularVelocity() * pushFactor * factor;
+            obj.GetComponent<Rigidbody>().maxAngularVelocity = obj.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor * factor;
         }
         obj = null;
     }
 
-    public void ApplyEffectLeft(GameObject obj)
+    public void ApplyEffectLeft(GameObject obj, float factor)
     {
         if (obj.GetComponent<Rigidbody>())
         {
-            obj.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetVelocity() * pushFactor;
-            obj.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetAngularVelocity() * pushFactor;
-            obj.GetComponent<Rigidbody>().maxAngularVelocity = obj.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor;
+            obj.GetComponent<Rigidbody>().velocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetVelocity() * pushFactor * factor;
+            obj.GetComponent<Rigidbody>().angularVelocity = this.transform.parent.GetComponentInParent<AnubisController>().leftPose.GetAngularVelocity() * pushFactor * factor;
+            obj.GetComponent<Rigidbody>().maxAngularVelocity = obj.GetComponent<Rigidbody>().angularVelocity.magnitude * pushFactor * factor;
         }
         obj = null;
     }
