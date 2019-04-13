@@ -20,6 +20,7 @@ TagManager:
   - Head
   - Child
   - Root
+  - Breakable
   layers:
   - Default
   - TransparentFX
