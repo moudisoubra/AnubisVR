@@ -16,6 +16,13 @@ public class RotateCircle : MonoBehaviour
     public float directionRL;
     public float distance;
 
+
+    public Vector3 centerToPrevious;
+    public Vector3 centerToCurrent;
+    public float angleChange;
+    public float lastAngle;
+    public float differenceAngle;
+
     void Start()
     {
         circleStartRotation = transform;
@@ -27,18 +34,18 @@ public class RotateCircle : MonoBehaviour
 
         if (rotatingHand)
         {
-        grab = rotatingHand.GetComponentInParent<AnubisController>().rightGrab;
-            if ((rotatingHand.GetComponentInParent<AnubisController>().rightGrab
-                || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
-            {
-                center = Instantiate(new GameObject(), rotatingHand.transform.position, Quaternion.identity);
-                Vector3 targetPosition = rotatingHand.transform.position - center.transform.position;
-                directionRL = GetDirectionLeftRight(center.transform.forward, targetPosition);
-                Debug.Log("Here" + directionRL);
+        //grab = rotatingHand.GetComponentInParent<AnubisController>().rightGrab;
+            //if ((rotatingHand.GetComponentInParent<AnubisController>().rightGrab
+            //    || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
+            //{
+                centerToCurrent = center.transform.position - rotatingHand.transform.position;
+                //angleChange = Vector3.Angle(centerToPrevious, centerToCurrent);
+                angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, Vector3.left);
+                centerToPrevious = centerToCurrent;
 
-                distance = Vector3.Distance(handPreLocation, rotatingHand.transform.position);
-                this.gameObject.transform.rotation = Quaternion.Euler(circleStartRotation.eulerAngles.x, circleStartRotation.eulerAngles.y, circleStartRotation.eulerAngles.z + (directionRL * distance));
-                //this.gameObject.transform.Rotate(0, 0, directionRL * distance);
+
+
+                this.gameObject.transform.localEulerAngles += new Vector3(0, 0, angleChange);
 
                 if (rotatingHand.name == "Right" && !rotatingHand.GetComponentInParent<AnubisController>().rightGrab)
                 {
@@ -48,7 +55,7 @@ public class RotateCircle : MonoBehaviour
                 {
                     rotatingHand = null;
                 }
-            }
+            //}
 
 
         }
@@ -93,6 +100,17 @@ public class RotateCircle : MonoBehaviour
         {
             rotatingHand = other.gameObject;
             handPreLocation = rotatingHand.transform.position;
+            centerToPrevious = center.transform.position - handPreLocation;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Hand")
+        {
+            rotatingHand = collision.gameObject;
+            handPreLocation = rotatingHand.transform.position;
+            centerToPrevious = center.transform.position - handPreLocation;
         }
     }
 
