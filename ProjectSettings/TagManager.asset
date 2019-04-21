@@ -21,6 +21,7 @@ TagManager:
   - Child
   - Root
   - Breakable
+  - Weapon
   layers:
   - Default
   - TransparentFX
