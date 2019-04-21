@@ -11,6 +11,7 @@ public class ANode
     public Vector3 worldPosition;
     public int GridX;
     public int GridY;
+    public Bounds bound;
     public ANode parent;
     public ANode(bool _walkAble, Vector3 _WorldPos , int _GridX, int _GridY){
         walkAble = _walkAble;

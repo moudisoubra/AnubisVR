@@ -8,7 +8,8 @@ public class DjisPathFindHajjo : MonoBehaviour
     [SerializeField] GameObject[] Nodes;
 
     public Node[] allNodes;
-   
+    public LayerMask ignoreLayers;
+    public bool DrawGizmo;
 
 
     private List<int> routPoints = new List<int>();
@@ -59,7 +60,7 @@ public class DjisPathFindHajjo : MonoBehaviour
         {
             float dis = Vector3.Distance(pos, allNodes[i].trans.position);
 
-            if (!Physics.Raycast(pos, allNodes[i].trans.position - pos, dis) && dis > 0.5f)
+            if (!Physics.Raycast(pos, allNodes[i].trans.position - pos, dis, ignoreLayers) && dis > 0.5f)
             {
                 nearpoints.Add(i);
             }
@@ -83,7 +84,7 @@ public class DjisPathFindHajjo : MonoBehaviour
 
             Vector3 dir = allNodes[i].trans.position - pos;
             
-            if (!Physics.Raycast(pos, dir, dis))
+            if (!Physics.Raycast(pos, dir, dis, ignoreLayers))
             {
                 if (dir.magnitude < shortestDist)
                 {
@@ -173,41 +174,42 @@ public class DjisPathFindHajjo : MonoBehaviour
 
         //---------------------------------
         //back track
-       
+        int nullDist = -1;
         int tempNodeID = FinalNode;
-        if (allNodes[tempNodeID].SourceId !=-1)
-        {
-            while(tempNodeID != -1)
+     //   if (allNodes[tempNodeID].SourceId != nullDist)
+        
+            while (tempNodeID != nullDist)
             {
                 routPoints.Insert(0, tempNodeID);
                 tempNodeID = allNodes[tempNodeID].SourceId;
             }
             return routPoints.ToArray();
-        }
+        
 
-        return null;
     }
 
 
     private void OnDrawGizmos()
     {
-
-        for (int i = 0; i < allNodes.Length; i++)
+        if (DrawGizmo)
         {
-            for (int n = 0; n < allNodes[i].ChildsNode.Length; n++)
+            for (int i = 0; i < allNodes.Length; i++)
             {
+                for (int n = 0; n < allNodes[i].ChildsNode.Length; n++)
+                {
 
-                Gizmos.color = Color.red;
-                Gizmos.DrawLine(allNodes[i].trans.position, allNodes[allNodes[i].ChildsNode[n]].trans.position);
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawLine(allNodes[i].trans.position, allNodes[allNodes[i].ChildsNode[n]].trans.position);
 
-            }
-            for (int n = 0; n < routPoints.Count; n++)
-            {
+                }
+                for (int n = 0; n < routPoints.Count; n++)
+                {
 
-                Gizmos.color = Color.green;
-                Gizmos.DrawSphere(allNodes[routPoints[n]].trans.position, 0.5f);
-                if (n > 0) Gizmos.DrawLine(allNodes[routPoints[n]].trans.position, allNodes[routPoints[n - 1]].trans.position);
+                    Gizmos.color = Color.green;
+                    Gizmos.DrawSphere(allNodes[routPoints[n]].trans.position, 0.5f);
+                    if (n > 0) Gizmos.DrawLine(allNodes[routPoints[n]].trans.position, allNodes[routPoints[n - 1]].trans.position);
 
+                }
             }
         }
     }

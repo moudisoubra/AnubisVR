@@ -1,0 +1,411 @@
+fileFormatVersion: 2
+guid: 4a4fa7de26a87ba43aacf4e9ecefbe90
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ' '
+    100002: ABS
+    100004: ARM_L_01
+    100006: ARM_L_02
+    100008: ARM_L_03
+    100010: ARM_R_01
+    100012: ARM_R_02
+    100014: ARM_R_03
+    100016: Box001
+    100018: Box002
+    100020: CHEST
+    100022: Circle001
+    100024: Circle002
+    100026: Circle003
+    100028: Circle004
+    100030: Circle005
+    100032: Circle006
+    100034: Circle007
+    100036: Circle008
+    100038: Circle009
+    100040: Circle011
+    100042: Circle012
+    100044: Circle013
+    100046: Circle014
+    100048: Circle015
+    100050: Circle016
+    100052: Circle017
+    100054: Circle018
+    100056: Circle019
+    100058: Circle020
+    100060: Circle021
+    100062: Circle022
+    100064: Circle023
+    100066: Circle024
+    100068: Circle025
+    100070: Circle026
+    100072: Circle027
+    100074: Circle028
+    100076: Circle029
+    100078: Circle030
+    100080: Circle031
+    100082: Circle032
+    100084: Circle033
+    100086: Circle034
+    100088: Circle035
+    100090: Circle036
+    100092: Circle037
+    100094: Circle038
+    100096: Circle039
+    100098: Circle040
+    100100: COG
+    100102: Cylinder001
+    100104: Donut001
+    100106: Donut002
+    100108: FOOT_L_01
+    100110: FOOT_L_02
+    100112: FOOT_L_END
+    100114: FOOT_R_01
+    100116: FOOT_R_02
+    100118: FOOT_R_END
+    100120: HEAD
+    100122: HEAD_END
+    100124: IK Chain001
+    100126: IK Chain002
+    100128: IK Chain003
+    100130: IK Chain004
+    100132: IK Chain005
+    100134: IK Chain006
+    100136: IK Chain007
+    100138: IK Chain008
+    100140: INDEX_L_01
+    100142: INDEX_L_02
+    100144: INDEX_L_03
+    100146: INDEX_L_END
+    100148: INDEX_R_01
+    100150: INDEX_R_02
+    100152: INDEX_R_03
+    100154: INDEX_R_END
+    100156: LEG_L_01
+    100158: LEG_L_02
+    100160: LEG_R_01
+    100162: LEG_R_02
+    100164: MIDDLE_L_01
+    100166: MIDDLE_L_02
+    100168: MIDDLE_L_03
+    100170: MIDDLE_L_END
+    100172: MIDDLE_R_01
+    100174: MIDDLE_R_02
+    100176: MIDDLE_R_03
+    100178: MIDDLE_R_END
+    100180: NECK
+    100182: //RootNode
+    100184: Object001
+    100186: PINKY_L_01
+    100188: PINKY_L_02
+    100190: PINKY_L_03
+    100192: PINKY_L_END
+    100194: PINKY_R_01
+    100196: PINKY_R_02
+    100198: PINKY_R_03
+    100200: PINKY_R_END
+    100202: Point001
+    100204: Point002
+    100206: Point003
+    100208: Point004
+    100210: Point009
+    100212: Point010
+    100214: Point011
+    100216: Point012
+    100218: Point013
+    100220: Point014
+    100222: Point015
+    100224: Point016
+    100226: Rectangle002
+    100228: RING_L_01
+    100230: RING_L_02
+    100232: RING_L_03
+    100234: RING_L_END
+    100236: RING_R_01
+    100238: RING_R_02
+    100240: RING_R_03
+    100242: RING_R_END
+    100244: Sphere001
+    100246: Star001
+    100248: THUMB_L_01
+    100250: THUMB_L_02
+    100252: THUMB_L_03
+    100254: THUMB_L_END
+    100256: THUMB_R_01
+    100258: THUMB_R_02
+    100260: THUMB_R_03
+    100262: THUMB_R_END
+    100264: WRIST_L
+    100266: WRIST_L_END
+    100268: WRIST_R
+    100270: WRIST_R_END
+    400000: ' '
+    400002: ABS
+    400004: ARM_L_01
+    400006: ARM_L_02
+    400008: ARM_L_03
+    400010: ARM_R_01
+    400012: ARM_R_02
+    400014: ARM_R_03
+    400016: Box001
+    400018: Box002
+    400020: CHEST
+    400022: Circle001
+    400024: Circle002
+    400026: Circle003
+    400028: Circle004
+    400030: Circle005
+    400032: Circle006
+    400034: Circle007
+    400036: Circle008
+    400038: Circle009
+    400040: Circle011
+    400042: Circle012
+    400044: Circle013
+    400046: Circle014
+    400048: Circle015
+    400050: Circle016
+    400052: Circle017
+    400054: Circle018
+    400056: Circle019
+    400058: Circle020
+    400060: Circle021
+    400062: Circle022
+    400064: Circle023
+    400066: Circle024
+    400068: Circle025
+    400070: Circle026
+    400072: Circle027
+    400074: Circle028
+    400076: Circle029
+    400078: Circle030
+    400080: Circle031
+    400082: Circle032
+    400084: Circle033
+    400086: Circle034
+    400088: Circle035
+    400090: Circle036
+    400092: Circle037
+    400094: Circle038
+    400096: Circle039
+    400098: Circle040
+    400100: COG
+    400102: Cylinder001
+    400104: Donut001
+    400106: Donut002
+    400108: FOOT_L_01
+    400110: FOOT_L_02
+    400112: FOOT_L_END
+    400114: FOOT_R_01
+    400116: FOOT_R_02
+    400118: FOOT_R_END
+    400120: HEAD
+    400122: HEAD_END
+    400124: IK Chain001
+    400126: IK Chain002
+    400128: IK Chain003
+    400130: IK Chain004
+    400132: IK Chain005
+    400134: IK Chain006
+    400136: IK Chain007
+    400138: IK Chain008
+    400140: INDEX_L_01
+    400142: INDEX_L_02
+    400144: INDEX_L_03
+    400146: INDEX_L_END
+    400148: INDEX_R_01
+    400150: INDEX_R_02
+    400152: INDEX_R_03
+    400154: INDEX_R_END
+    400156: LEG_L_01
+    400158: LEG_L_02
+    400160: LEG_R_01
+    400162: LEG_R_02
+    400164: MIDDLE_L_01
+    400166: MIDDLE_L_02
+    400168: MIDDLE_L_03
+    400170: MIDDLE_L_END
+    400172: MIDDLE_R_01
+    400174: MIDDLE_R_02
+    400176: MIDDLE_R_03
+    400178: MIDDLE_R_END
+    400180: NECK
+    400182: //RootNode
+    400184: Object001
+    400186: PINKY_L_01
+    400188: PINKY_L_02
+    400190: PINKY_L_03
+    400192: PINKY_L_END
+    400194: PINKY_R_01
+    400196: PINKY_R_02
+    400198: PINKY_R_03
+    400200: PINKY_R_END
+    400202: Point001
+    400204: Point002
+    400206: Point003
+    400208: Point004
+    400210: Point009
+    400212: Point010
+    400214: Point011
+    400216: Point012
+    400218: Point013
+    400220: Point014
+    400222: Point015
+    400224: Point016
+    400226: Rectangle002
+    400228: RING_L_01
+    400230: RING_L_02
+    400232: RING_L_03
+    400234: RING_L_END
+    400236: RING_R_01
+    400238: RING_R_02
+    400240: RING_R_03
+    400242: RING_R_END
+    400244: Sphere001
+    400246: Star001
+    400248: THUMB_L_01
+    400250: THUMB_L_02
+    400252: THUMB_L_03
+    400254: THUMB_L_END
+    400256: THUMB_R_01
+    400258: THUMB_R_02
+    400260: THUMB_R_03
+    400262: THUMB_R_END
+    400264: WRIST_L
+    400266: WRIST_L_END
+    400268: WRIST_R
+    400270: WRIST_R_END
+    2100000: 01 - Default
+    2100002: No Name
+    2300000: Box001
+    2300002: Box002
+    2300004: Object001
+    2300006: Sphere001
+    3300000: Box001
+    3300002: Box002
+    3300004: Object001
+    3300006: Sphere001
+    4300000: Cylinder001
+    4300002: Object001
+    4300004: Sphere001
+    4300006: Box001
+    4300008: Box002
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Cylinder001
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 574d6f87659bcc943835cc5616b7adcf,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
