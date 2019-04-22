@@ -58,7 +58,7 @@ public class TestBodyParts : MonoBehaviour
 
         }
 
-        if (timer < 3)
+        if (timer < 1)
         {
             if (timer <= timeBeforeBlend)
             {
