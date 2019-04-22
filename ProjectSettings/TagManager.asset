@@ -21,6 +21,7 @@ TagManager:
   - Child
   - Root
   - Breakable
+  - MemoryPuzzle
   layers:
   - Default
   - TransparentFX
