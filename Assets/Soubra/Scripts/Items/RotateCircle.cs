@@ -108,6 +108,7 @@ public class RotateCircle : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hand")
         {
+            Debug.Log("COLLISION ENTER");
             rotatingHand = collision.gameObject;
             handPreLocation = rotatingHand.transform.position;
             centerToPrevious = center.transform.position - handPreLocation;
