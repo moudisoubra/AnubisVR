@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateCircle : MonoBehaviour
+public class RotatingObject : MonoBehaviour
 {
+
     public bool canRotate;
     public bool properlyRotated;
     public bool grab;
     public GameObject rotatingHand;
     public GameObject center;
+    public Vector3 rotateDirection;
     public Vector3 handPreLocation;
     public Vector3 crossProduct;
     public Transform circleStartRotation;
@@ -34,27 +36,27 @@ public class RotateCircle : MonoBehaviour
 
         if (rotatingHand)
         {
-        //grab = rotatingHand.GetComponentInParent<AnubisController>().rightGrab;
+            //grab = rotatingHand.GetComponentInParent<AnubisController>().rightGrab;
             //if ((rotatingHand.GetComponentInParent<AnubisController>().rightGrab
             //    || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
             //{
-                centerToCurrent = center.transform.position - rotatingHand.transform.position;
-                //angleChange = Vector3.Angle(centerToPrevious, centerToCurrent);
-                angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, Vector3.left);
-                centerToPrevious = centerToCurrent;
+            centerToCurrent = center.transform.position - rotatingHand.transform.position;
+
+            angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, rotateDirection);
+            centerToPrevious = centerToCurrent;
 
 
 
-                this.gameObject.transform.localEulerAngles += new Vector3(0, 0, angleChange);
+            this.gameObject.transform.localEulerAngles += new Vector3(0, angleChange, 0);
 
-                if (rotatingHand.name == "Right" && !rotatingHand.GetComponentInParent<AnubisController>().rightGrab)
-                {
-                    rotatingHand = null;
-                }
-                if (rotatingHand.name == "Left" && !rotatingHand.GetComponentInParent<AnubisController>().leftGrab)
-                {
-                    rotatingHand = null;
-                }
+            if (rotatingHand.name == "Right" && !rotatingHand.GetComponentInParent<AnubisController>().rightGrab)
+            {
+                rotatingHand = null;
+            }
+            if (rotatingHand.name == "Left" && !rotatingHand.GetComponentInParent<AnubisController>().leftGrab)
+            {
+                rotatingHand = null;
+            }
             //}
 
 
@@ -108,7 +110,6 @@ public class RotateCircle : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hand")
         {
-            Debug.Log("COLLISION ENTER");
             rotatingHand = collision.gameObject;
             handPreLocation = rotatingHand.transform.position;
             centerToPrevious = center.transform.position - handPreLocation;

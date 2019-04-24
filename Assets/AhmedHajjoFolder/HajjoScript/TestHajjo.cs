@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Test : MonoBehaviour
+public class TestHajjo : MonoBehaviour
 {
 
 
