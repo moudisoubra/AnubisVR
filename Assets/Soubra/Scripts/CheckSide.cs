@@ -5,11 +5,11 @@ using UnityEngine;
 public class CheckSide : MonoBehaviour
 {
     public Vector3 crossProduct;
+    public float resultCross;
     public float dotProduct;
     public Transform target;
     public float directionRL;
     public float directionIB;
-    public float resultCross;
     public float resultDot;
 
 

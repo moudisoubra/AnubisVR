@@ -44,6 +44,8 @@ public class AnubisController : MonoBehaviour
 
     public Transform enemyTarget;
 
+    public bool rightTeleportDown;
+    public bool leftTeleportDown;
     public bool rightTeleport;
     public bool leftTeleport;
     public bool rightGrab;
@@ -99,7 +101,7 @@ public class AnubisController : MonoBehaviour
         LeftAddForceScript = leftModel.GetComponent<AddForceToItems>();
           //drScript = FindObjectOfType<DrawLine>();
           //drScript.gameObject.SetActive(false);
-          rightChecker = rightModel.GetComponentInParent<checkingCollision>();
+        rightChecker = rightModel.GetComponentInParent<checkingCollision>();
         leftChecker = leftModel.GetComponentInParent<checkingCollision>();
         rightPose = rightModel.GetComponent<SteamVR_Behaviour_Pose>();
         leftPose = leftModel.GetComponent<SteamVR_Behaviour_Pose>();
@@ -178,6 +180,8 @@ public class AnubisController : MonoBehaviour
         leftGrabUp = SteamVR_Actions._default.GrabPinch.GetStateUp(leftController);
         rightGrabDown = SteamVR_Actions._default.GrabPinch.GetStateDown(rightController);
         leftGrabDown = SteamVR_Actions._default.GrabPinch.GetStateDown(leftController);
+        rightTeleportDown = SteamVR_Actions._default.Teleport.GetStateDown(rightController);
+        leftTeleportDown = SteamVR_Actions._default.Teleport.GetStateDown(leftController);
         rightTeleport = SteamVR_Actions._default.Teleport.GetState(rightController);
         leftTeleport = SteamVR_Actions._default.Teleport.GetState(leftController);
         rightGrip = SteamVR_Actions._default.GrabGrip.GetState(rightController);
@@ -205,17 +209,27 @@ public class AnubisController : MonoBehaviour
 
     public void MovePlayer()
     {
-        if (rightTeleport && rightTouchpadValue.x <= 0.5 && rightTouchpadValue.y >= 0.5)
+        if (leftTeleport && leftTouchpadValue.x <= 0.5 && leftTouchpadValue.y >= 0.5)
         {//Right Controller
-            fullRig.transform.position += new Vector3(rightModel.transform.forward.x,
-                rightModel.transform.forward.y * flyingValue,
-                rightModel.transform.forward.z) * playerSpeed * Time.deltaTime;
+            fullRig.transform.position += new Vector3(leftModel.transform.forward.x,
+                leftModel.transform.forward.y * flyingValue,
+                leftModel.transform.forward.z) * playerSpeed * Time.deltaTime;
         }
-        if (rightTeleport && rightTouchpadValue.x <= 0.5 && rightTouchpadValue.y <= 0.5)
+        if (leftTeleport && leftTouchpadValue.x <= 0.5 && leftTouchpadValue.y <= 0.0) 
         {
-            fullRig.transform.position -= new Vector3(rightModel.transform.forward.x,
-            rightModel.transform.forward.y * flyingValue,
-            rightModel.transform.forward.z) * playerSpeed * Time.deltaTime;
+            fullRig.transform.position -= new Vector3(leftModel.transform.forward.x,
+            leftModel.transform.forward.y * flyingValue,
+            leftModel.transform.forward.z) * playerSpeed * Time.deltaTime;
+        }
+
+        if (leftTeleportDown && leftTouchpadValue.x <= -0.4)
+        {
+            fullRig.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y - 25 , 0);
+        }
+
+        if (leftTeleportDown && leftTouchpadValue.x >= 0.5)
+        {
+            fullRig.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y + 25, 0);
         }
     }
 
@@ -258,13 +272,30 @@ public class AnubisController : MonoBehaviour
 
             foreach (Collider col in colliders)
             {
-                if (col.gameObject.GetComponent<Items>())
+                if (col.gameObject.tag == "Weapon")
                 {
+                    Debug.Log("THIS");
+                    rightObjectHeld = col.gameObject;
+                    rightObjectHeld.GetComponent<Items>().objectHeld = true;
+                    rightObjectHeld.GetComponent<Rigidbody>().useGravity = false;
+                    rightObjectHeld.GetComponent<Rigidbody>().isKinematic = true;
+                    rightObjectHeld.transform.parent = rightHandModel.transform;
+                }
+                if (col.gameObject.GetComponent<Items>() && col.gameObject.tag != "Weapon")
+                {
+                    Debug.Log("THIS!");
                     rightObjectHeld = col.gameObject;
                     rightObjectHeld.transform.parent = rightHandModel.transform;
                     rightObjectHeld.GetComponent<Rigidbody>().isKinematic = true;
                     col.gameObject.GetComponent<Items>().objectHeld = true;
                     break;
+                }
+                if (col.gameObject.tag == "Breakable")
+                {
+                    rightObjectHeld = col.gameObject;   
+                    rightObjectHeld.GetComponent<Rigidbody>().useGravity = false;
+                    rightObjectHeld.GetComponent<Rigidbody>().isKinematic = true;
+                    rightObjectHeld.transform.parent = rightHandModel.transform;
                 }
 
                 if (col.gameObject.tag == "Interactable")
@@ -282,7 +313,15 @@ public class AnubisController : MonoBehaviour
 
             foreach (Collider col in colliders)
             {
-                if (col.gameObject.GetComponent<Items>())
+                if (col.gameObject.tag == "Weapon")
+                {
+                    leftObjectHeld = col.gameObject;
+                    leftObjectHeld.GetComponent<Items>().objectHeld = true;
+                    leftObjectHeld.GetComponent<Rigidbody>().useGravity = false;
+                    leftObjectHeld.GetComponent<Rigidbody>().isKinematic = true;
+                    leftObjectHeld.transform.parent = leftHandModel.transform;
+                }
+                if (col.gameObject.GetComponent<Items>() && col.gameObject.tag != "Weapon")
                 {
                     leftObjectHeld = col.gameObject;
                     leftObjectHeld.transform.parent = leftHandModel.transform;
@@ -290,13 +329,20 @@ public class AnubisController : MonoBehaviour
                     col.gameObject.GetComponent<Items>().objectHeld = true;
                     break;
                 }
+                if (col.gameObject.tag == "Breakable")
+                {
+                    leftObjectHeld = col.gameObject;
+                    leftObjectHeld.GetComponent<Rigidbody>().useGravity = false;
+                    leftObjectHeld.GetComponent<Rigidbody>().isKinematic = true;
+                    leftObjectHeld.transform.parent = leftHandModel.transform;
+                }
 
                 if (col.gameObject.tag == "Interactable")
                 {
                     leftObjectHeld = col.gameObject;
                     leftObjectHeld.GetComponent<Rigidbody>().useGravity = false;
                     previousParent = leftObjectHeld.transform.parent.gameObject;
-                    leftObjectHeld.transform.parent = rightHandModel.transform;
+                    leftObjectHeld.transform.parent = leftHandModel.transform;
                 }
             }
         }
@@ -308,6 +354,27 @@ public class AnubisController : MonoBehaviour
                 rightObjectHeld.GetComponent<Rigidbody>().useGravity = true;
                 rightObjectHeld.transform.parent = previousParent.transform;
                 previousParent = null;
+            }
+            if (rightObjectHeld.tag == "Breakable")
+            {
+                RightThrowObjects();
+                rightObjectHeld.GetComponent<BreakableObjects>().collided = false;
+                rightObjectHeld.GetComponent<BreakableObjects>().breakNow = true;
+                rightObjectHeld.GetComponent<Rigidbody>().isKinematic = false;
+                rightObjectHeld.GetComponent<Rigidbody>().useGravity = true;
+                rightObjectHeld.transform.parent = null;
+                previousParent = null;
+            }
+            if (rightObjectHeld.tag == "Weapon")
+            {
+                Debug.Log("RIGHT");
+                rightObjectHeld.GetComponent<Items>().objectHeld = false;
+                RightThrowObjects();
+                rightObjectHeld.transform.parent = null;
+                rightObjectHeld.GetComponent<Rigidbody>().useGravity = true;
+                rightObjectHeld.GetComponent<Rigidbody>().isKinematic = false;
+                rightObjectHeld.GetComponent<Items>().objectHeld = false;
+                rightObjectHeld = null;
             }
             else
             {
@@ -327,10 +394,32 @@ public class AnubisController : MonoBehaviour
                 leftObjectHeld.transform.parent = previousParent.transform;
                 previousParent = null;
             }
+            if (leftObjectHeld.tag == "Breakable")
+            {
+                LeftThrowObjects();
+                leftObjectHeld.GetComponent<BreakableObjects>().collided = false;
+                leftObjectHeld.GetComponent<BreakableObjects>().breakNow = true;
+                leftObjectHeld.GetComponent<Rigidbody>().isKinematic = false;
+                leftObjectHeld.GetComponent<Rigidbody>().useGravity = true;
+                leftObjectHeld.transform.parent = null;
+                previousParent = null;
+            }
+            if (leftObjectHeld.tag == "Weapoon")
+            {
+                Debug.Log("LEFT");
+                leftObjectHeld.GetComponent<Items>().objectHeld = false;
+                LeftThrowObjects();
+                leftObjectHeld.transform.parent = null;
+                leftObjectHeld.GetComponent<Rigidbody>().useGravity = true;
+                leftObjectHeld.GetComponent<Rigidbody>().isKinematic = false;
+                leftObjectHeld.GetComponent<Items>().objectHeld = false;
+                leftObjectHeld = null;
+            }
             else
             {
                 LeftThrowObjects();
                 leftObjectHeld.transform.parent = null;
+                leftObjectHeld.GetComponent<Rigidbody>().useGravity = true;
                 leftObjectHeld.GetComponent<Rigidbody>().isKinematic = false;
                 leftObjectHeld.GetComponent<Items>().objectHeld = false;
                 leftObjectHeld = null;
