@@ -15,7 +15,7 @@ public class PuzzleControllerHajjo : MonoBehaviour
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
         {
-            if (hit.collider.CompareTag("MemoryPuzzle"))
+            if (hit.collider.CompareTag("memoryPuzzleHajjo"))
             {
                 /*
                                 Animation anim = hit.collider.gameObject.GetComponent<Animation>();
