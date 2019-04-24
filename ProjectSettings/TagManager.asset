@@ -21,6 +21,7 @@ TagManager:
   - Child
   - Root
   - Breakable
+  - Wall
   layers:
   - Default
   - TransparentFX
