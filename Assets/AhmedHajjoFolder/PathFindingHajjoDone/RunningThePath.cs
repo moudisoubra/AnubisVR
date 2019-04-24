@@ -15,6 +15,7 @@ public class RunningThePath : MonoBehaviour
     public LayerMask Wall;
 
     private bool pathCollected = false;
+    public bool randomTarget;
 
     float speed = 10f;
     float MaxDis = 5f;
@@ -37,9 +38,17 @@ public class RunningThePath : MonoBehaviour
             if (!pathCollected)
             {
                 currentPoint = 0;
-                //PathPoints = DjisPathFindHajjo.instance.DjiPath(transform.position, lastPoint.position);
-                Vector3 reachPoint = DjisPathFindHajjo.instance.allNodes[Random.Range(0, DjisPathFindHajjo.instance.allNodes.Length)].trans.position;
-                PathPoints = DjisPathFindHajjo.instance.DjiPath(transform.position, reachPoint);
+
+                if (randomTarget)
+                {
+                    Vector3 reachPoint = DjisPathFindHajjo.instance.allNodes[Random.Range(0, DjisPathFindHajjo.instance.allNodes.Length)].trans.position;
+                    PathPoints = DjisPathFindHajjo.instance.DjiPath(transform.position, reachPoint);
+                }
+                else
+                {
+                    PathPoints = DjisPathFindHajjo.instance.DjiPath(transform.position, lastPoint.position);
+                }
+                
                 pathCollected = true;
             }
 

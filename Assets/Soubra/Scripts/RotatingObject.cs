@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateMirror : MonoBehaviour
+public class RotatingObject : MonoBehaviour
 {
 
     public bool canRotate;
@@ -10,6 +10,7 @@ public class RotateMirror : MonoBehaviour
     public bool grab;
     public GameObject rotatingHand;
     public GameObject center;
+    public Vector3 rotateDirection;
     public Vector3 handPreLocation;
     public Vector3 crossProduct;
     public Transform circleStartRotation;
@@ -41,7 +42,7 @@ public class RotateMirror : MonoBehaviour
             //{
             centerToCurrent = center.transform.position - rotatingHand.transform.position;
 
-            angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, Vector3.up);
+            angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, rotateDirection);
             centerToPrevious = centerToCurrent;
 
 
