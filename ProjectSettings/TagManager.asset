@@ -4,24 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - projectile
-  - FxTemporaire
-  - Enemy
-  - Hand
-  - SoulSkill
-  - Chest
-  - Interactable
-  - Humanoid
-  - node
-  - Nodes
-  - Real
-  - Left
-  - Right
-  - Head
-  - Child
-  - Root
   - Breakable
-  - Wall
+  - Weapon
+  - MemoryPuzzle
+  - memoryPuzzleHajjo
   layers:
   - Default
   - TransparentFX
@@ -31,11 +17,11 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Enemy
   - 
-  - NotWalkable
-  - Walls
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

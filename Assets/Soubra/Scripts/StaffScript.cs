@@ -18,7 +18,7 @@ public class StaffScript : MonoBehaviour
     {
         if (transform.parent)
         {
-            rotatingEye.transform.Rotate(0, rotationSpeed, 0);
+            rotatingEye.transform.Rotate(0, 0, rotationSpeed);
         }
         else
         {

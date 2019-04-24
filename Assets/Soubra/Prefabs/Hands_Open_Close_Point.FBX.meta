@@ -1,0 +1,312 @@
+fileFormatVersion: 2
+guid: 885c209915041a446b66dab156ae09f9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BN_LForarm
+    100002: BN_LIndex004
+    100004: BN_LIndex005
+    100006: BN_LIndex006
+    100008: BN_LIndex01
+    100010: BN_LIndex02
+    100012: BN_LIndex03
+    100014: BN_LMiddle004
+    100016: BN_LMiddle005
+    100018: BN_LMiddle006
+    100020: BN_LMiddle01
+    100022: BN_LMiddle02
+    100024: BN_LMiddle03
+    100026: BN_LPinky004
+    100028: BN_LPinky005
+    100030: BN_LPinky006
+    100032: BN_LPinky01
+    100034: BN_LPinky02
+    100036: BN_LPinky03
+    100038: BN_LRing004
+    100040: BN_LRing005
+    100042: BN_LRing006
+    100044: BN_LRing01
+    100046: BN_LRing02
+    100048: BN_LRing03
+    100050: BN_LTumb004
+    100052: BN_LTumb005
+    100054: BN_LTumb006
+    100056: BN_LTumb01
+    100058: BN_LTumb02
+    100060: BN_LTumb03
+    100062: BN_LWrist
+    100064: BN_LWrist001
+    100066: Box001
+    100068: Cylinder001
+    100070: Cylinder002
+    100072: Cylinder003
+    100074: Cylinder004
+    100076: Cylinder006
+    100078: HAnd_Low
+    100080: //RootNode
+    400000: BN_LForarm
+    400002: BN_LIndex004
+    400004: BN_LIndex005
+    400006: BN_LIndex006
+    400008: BN_LIndex01
+    400010: BN_LIndex02
+    400012: BN_LIndex03
+    400014: BN_LMiddle004
+    400016: BN_LMiddle005
+    400018: BN_LMiddle006
+    400020: BN_LMiddle01
+    400022: BN_LMiddle02
+    400024: BN_LMiddle03
+    400026: BN_LPinky004
+    400028: BN_LPinky005
+    400030: BN_LPinky006
+    400032: BN_LPinky01
+    400034: BN_LPinky02
+    400036: BN_LPinky03
+    400038: BN_LRing004
+    400040: BN_LRing005
+    400042: BN_LRing006
+    400044: BN_LRing01
+    400046: BN_LRing02
+    400048: BN_LRing03
+    400050: BN_LTumb004
+    400052: BN_LTumb005
+    400054: BN_LTumb006
+    400056: BN_LTumb01
+    400058: BN_LTumb02
+    400060: BN_LTumb03
+    400062: BN_LWrist
+    400064: BN_LWrist001
+    400066: Box001
+    400068: Cylinder001
+    400070: Cylinder002
+    400072: Cylinder003
+    400074: Cylinder004
+    400076: Cylinder006
+    400078: HAnd_Low
+    400080: //RootNode
+    2100000: 02 - Default
+    2100002: No Name
+    2300000: Box001
+    2300002: Cylinder001
+    2300004: Cylinder002
+    2300006: Cylinder003
+    2300008: Cylinder004
+    2300010: Cylinder006
+    3300000: Box001
+    3300002: Cylinder001
+    3300004: Cylinder002
+    3300006: Cylinder003
+    3300008: Cylinder004
+    3300010: Cylinder006
+    4300000: HAnd_Low
+    4300002: Box001
+    4300004: Cylinder006
+    4300006: Cylinder004
+    4300008: Cylinder003
+    4300010: Cylinder002
+    4300012: Cylinder001
+    7400000: ClosedHand
+    7400002: Point
+    7400004: FullClose
+    7400006: FullPoint
+    9500000: //RootNode
+    13700000: HAnd_Low
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: ClosedHand
+      takeName: Take 001
+      firstFrame: 45
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Point
+      takeName: Take 001
+      firstFrame: 121
+      lastFrame: 121
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FullClose
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 38
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FullPoint
+      takeName: Take 001
+      firstFrame: 82
+      lastFrame: 123
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

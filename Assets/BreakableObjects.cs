@@ -46,13 +46,12 @@ public class BreakableObjects : MonoBehaviour
             childObjects[i].GetComponent<MeshCollider>().isTrigger = false;
             childObjects[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             childObjects[i].GetComponent<Rigidbody>().isKinematic = false;
-
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject)
+        if (collision.gameObject && collision.relativeVelocity.magnitude > 1)
         {
             collided = true;
         }
