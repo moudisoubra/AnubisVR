@@ -3,12 +3,14 @@ using System.Collections;
 
 public class Laser : MonoBehaviour
 {
+    public Material diamondFull;
+    public Material diamondUnlit;
 
     public LineRenderer lr;
 
     public bool activate;
     public bool permanent;
-
+    public bool final;
     public GameObject mirrorHit;
     void Start()
     {
@@ -21,7 +23,10 @@ public class Laser : MonoBehaviour
         if (activate || permanent)
         {
             lr.enabled = true;
-            ActivateLaser();
+            if (lr.enabled)
+            {
+                ActivateLaser();
+            }
         }
         else
         {
@@ -41,6 +46,12 @@ public class Laser : MonoBehaviour
                 mirrorHit = hit.collider.gameObject;
                 mirrorHit.GetComponent<Laser>().enabled = true;
                 mirrorHit.GetComponent<Laser>().activate = true;
+            }
+            if (hit.collider.tag == "Diamond" && final)
+            {
+                var DiamondGameObject = hit.collider.gameObject;
+                DiamondGameObject.GetComponent<Renderer>().material.Lerp(DiamondGameObject.GetComponent<Renderer>().material, diamondFull, 0.001f);
+                DiamondGameObject.GetComponent<DiamondSpin>().spin = true;
             }
             if ((hit.collider.tag != "Mirror" || hit.collider.gameObject == null) && mirrorHit)
             {
