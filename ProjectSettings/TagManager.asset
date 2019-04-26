@@ -8,6 +8,16 @@ TagManager:
   - Weapon
   - MemoryPuzzle
   - memoryPuzzleHajjo
+  - Enemy
+  - Interactable
+  - Root
+  - Child
+  - Mirror
+  - Hand
+  - Humanoid
+  - Real
+  - SoulSkill
+  - Diamond
   layers:
   - Default
   - TransparentFX

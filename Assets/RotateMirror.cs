@@ -40,7 +40,7 @@ public class RotateMirror : MonoBehaviour
             //    || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
             //{
             centerToCurrent = center.transform.position - rotatingHand.transform.position;
-            //angleChange = Vector3.Angle(centerToPrevious, centerToCurrent);
+
             angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, Vector3.up);
             centerToPrevious = centerToCurrent;
 
