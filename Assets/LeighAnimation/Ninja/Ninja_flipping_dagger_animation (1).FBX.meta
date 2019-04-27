@@ -290,7 +290,7 @@ ModelImporter:
     4300004: Sphere001
     4300006: Box001
     4300008: Box002
-    7400000: Take 001
+    7400000: Flipping
     9500000: //RootNode
     13700000: Cylinder001
     2186277476908879412: ImportLogs
@@ -323,7 +323,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Flipping
       takeName: Take 001
       firstFrame: 0
       lastFrame: 80
@@ -554,7 +554,7 @@ ModelImporter:
     - name: Circle022
       parentName: Circle021
       position: {x: -0.02737358, y: -0.0000000047683715, z: -0.00000015258789}
-      rotation: {x: 0.01166548, y: -0.7110318, z: 0.0037301306, w: 0.7030533}
+      rotation: {x: 0.011665479, y: -0.7110318, z: 0.0037301301, w: 0.7030533}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: Circle023
       parentName: Circle003
@@ -614,7 +614,7 @@ ModelImporter:
     - name: Circle030
       parentName: Circle031
       position: {x: -0.04130142, y: 0.000000014305114, z: 0.00000061035155}
-      rotation: {x: 0.011553571, y: -0.51980186, z: 0.012535701, w: 0.85411674}
+      rotation: {x: 0.011553572, y: -0.51980186, z: 0.0125357015, w: 0.85411674}
       scale: {x: 0.99999994, y: 1, z: 1}
     - name: Circle029
       parentName: Circle030
@@ -704,7 +704,7 @@ ModelImporter:
     - name: ARM_L_02
       parentName: ARM_L_01
       position: {x: -0.1742603, y: -0.00000015258789, z: -0.00000015258789}
-      rotation: {x: -0.18186007, y: 0.10692175, z: -0.12421711, w: 0.9695693}
+      rotation: {x: -0.18186009, y: 0.106921755, z: -0.124217115, w: 0.9695694}
       scale: {x: 1.0000004, y: 1.0000004, z: 0.99999994}
     - name: ARM_L_03
       parentName: ARM_L_02
@@ -714,7 +714,7 @@ ModelImporter:
     - name: WRIST_L
       parentName: ARM_L_03
       position: {x: -0.23625179, y: -0.000010309219, z: 0.00000030517577}
-      rotation: {x: -0.71638995, y: 0.16020493, z: -0.04075657, w: 0.6778338}
+      rotation: {x: -0.71638995, y: 0.16020495, z: -0.04075657, w: 0.67783386}
       scale: {x: 0.99999964, y: 0.9999997, z: 1}
     - name: Box002
       parentName: WRIST_L
@@ -734,7 +734,7 @@ ModelImporter:
     - name: INDEX_L_03
       parentName: INDEX_L_02
       position: {x: -0.026563033, y: -0.000000038146972, z: -0.00000034332274}
-      rotation: {x: -0.0019939274, y: -0.012421393, z: -0.00001973533, w: 0.99992085}
+      rotation: {x: -0.0019939276, y: -0.012421393, z: -0.000019735331, w: 0.99992085}
       scale: {x: 1, y: 1, z: 0.9999999}
     - name: INDEX_L_END
       parentName: INDEX_L_03
@@ -754,7 +754,7 @@ ModelImporter:
     - name: MIDDLE_L_03
       parentName: MIDDLE_L_02
       position: {x: -0.02963993, y: 0, z: 0.00000045776366}
-      rotation: {x: -0.0021923713, y: -0.013203358, z: -0.00005399696, w: 0.9999104}
+      rotation: {x: -0.0021923715, y: -0.013203358, z: -0.000053996962, w: 0.9999104}
       scale: {x: 1, y: 0.9999999, z: 1}
     - name: MIDDLE_L_END
       parentName: MIDDLE_L_03
@@ -809,12 +809,12 @@ ModelImporter:
     - name: THUMB_L_02
       parentName: THUMB_L_01
       position: {x: -0.03464142, y: -0.0000000667572, z: 0.00000023841858}
-      rotation: {x: 0.07666434, y: -0.0013017348, z: 0.02954763, w: 0.99661815}
+      rotation: {x: 0.07666435, y: -0.0013017349, z: 0.029547632, w: 0.9966182}
       scale: {x: 0.99999994, y: 0.9999999, z: 1}
     - name: THUMB_L_03
       parentName: THUMB_L_02
       position: {x: -0.02652584, y: -0.00000030517577, z: -0.0000004005432}
-      rotation: {x: 0.0000018849962, y: -0.000010453859, z: 0.0283986, w: 0.99959666}
+      rotation: {x: 0.0000018849963, y: -0.00001045386, z: 0.028398601, w: 0.9995967}
       scale: {x: 1.0000001, y: 1.0000002, z: 1.0000004}
     - name: THUMB_L_END
       parentName: THUMB_L_03
@@ -839,7 +839,7 @@ ModelImporter:
     - name: ARM_R_03
       parentName: ARM_R_02
       position: {x: -0.31407326, y: 0.00000831604, z: 0}
-      rotation: {x: -0.56799775, y: -0.0054126205, z: -0.007947064, w: 0.82297385}
+      rotation: {x: -0.5679978, y: -0.005412621, z: -0.007947065, w: 0.82297397}
       scale: {x: 1, y: 1.0000001, z: 0.99999994}
     - name: WRIST_R
       parentName: ARM_R_03
@@ -859,7 +859,7 @@ ModelImporter:
     - name: INDEX_R_02
       parentName: INDEX_R_01
       position: {x: -0.04129406, y: 0, z: -0.000000076293944}
-      rotation: {x: -0.05065272, y: -0.0039358363, z: -0.00016875789, w: 0.99870855}
+      rotation: {x: -0.050652724, y: -0.0039358367, z: -0.0001687579, w: 0.9987086}
       scale: {x: 0.99999994, y: 0.9999999, z: 1.0000001}
     - name: INDEX_R_03
       parentName: INDEX_R_02
@@ -899,12 +899,12 @@ ModelImporter:
     - name: PINKY_R_02
       parentName: PINKY_R_01
       position: {x: -0.03285339, y: -0.000000076293944, z: 0}
-      rotation: {x: 0.012714204, y: -0.020879714, z: 0.0008934855, w: 0.99970084}
+      rotation: {x: 0.0127142025, y: -0.020879712, z: 0.0008934854, w: 0.9997007}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: PINKY_R_03
       parentName: PINKY_R_02
       position: {x: -0.023753451, y: -0.000000076293944, z: 0}
-      rotation: {x: -0.0023879115, y: -0.008166801, z: -0.000040734772, w: 0.99996376}
+      rotation: {x: -0.0023879118, y: -0.008166802, z: -0.000040734776, w: 0.9999638}
       scale: {x: 1.0000002, y: 1.0000001, z: 1}
     - name: PINKY_R_END
       parentName: PINKY_R_03
@@ -944,7 +944,7 @@ ModelImporter:
     - name: THUMB_R_03
       parentName: THUMB_R_02
       position: {x: -0.02652584, y: 0.00000022888183, z: 0}
-      rotation: {x: -0.016154015, y: -0.013773561, z: -0.011366024, w: 0.99971}
+      rotation: {x: -0.016154017, y: -0.013773562, z: -0.011366025, w: 0.9997101}
       scale: {x: 0.9999999, y: 0.99999994, z: 1.0000001}
     - name: THUMB_R_END
       parentName: THUMB_R_03
@@ -979,7 +979,7 @@ ModelImporter:
     - name: LEG_L_01
       parentName: COG
       position: {x: -0.0004987335, y: 0.0660253, z: -0.00067778584}
-      rotation: {x: -0.18169586, y: 0.45771888, z: 0.86900336, w: 0.048095446}
+      rotation: {x: -0.18169586, y: 0.4577189, z: 0.86900336, w: 0.04809545}
       scale: {x: 1, y: 1.0000001, z: 1}
     - name: LEG_L_02
       parentName: LEG_L_01
@@ -1009,7 +1009,7 @@ ModelImporter:
     - name: LEG_R_02
       parentName: LEG_R_01
       position: {x: -0.47386625, y: -0.00000024318695, z: 0}
-      rotation: {x: -0.4765361, y: -0.16577677, z: -0.111552246, w: 0.8561469}
+      rotation: {x: -0.47653612, y: -0.16577677, z: -0.11155225, w: 0.8561469}
       scale: {x: 0.99999994, y: 1, z: 1}
     - name: FOOT_R_01
       parentName: LEG_R_02
