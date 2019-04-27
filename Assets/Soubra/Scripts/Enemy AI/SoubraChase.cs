@@ -15,7 +15,7 @@ public class SoubraChase : NodeSoubra
 
     public override Result Execute(BehaviourTreeSoubra BTS)
     {
-        if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) < 60)
+        if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) <= BTS.distanceToChase && !BTS.chaseFail)
         {
 
 
@@ -49,7 +49,7 @@ public class SoubraChase : NodeSoubra
                 currentPoint = -1;
             }
 
-            if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) < 30)
+            if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) <= 15)
             {
                 Debug.Log("Chase success");
                 return Result.success;

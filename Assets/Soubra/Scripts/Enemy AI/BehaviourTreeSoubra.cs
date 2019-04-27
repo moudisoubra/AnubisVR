@@ -11,9 +11,11 @@ public class BehaviourTreeSoubra : MonoBehaviour
     public GameObject selfObject;
     public Transform startPoint;
     public Transform lastPoint;
+    public float distanceToChase;
     public float speed = 10f;
     public float MaxDis = 5f;
     public bool fail;
+    public bool chaseFail;
 
     void Start()
     {
