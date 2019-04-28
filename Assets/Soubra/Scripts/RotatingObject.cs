@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotatingObject : MonoBehaviour
 {
-
+    public bool circlePuzzle;
     public bool canRotate;
     public bool properlyRotated;
     public bool grab;
@@ -33,6 +33,17 @@ public class RotatingObject : MonoBehaviour
 
     void Update()
     {
+        if (circlePuzzle)
+        {
+            if (this.transform.eulerAngles.z <= 11.7f && this.transform.eulerAngles.z >= 7.5f)
+            {
+                properlyRotated = true;
+            }
+            else
+            {
+                properlyRotated = false;
+            }
+        }
 
         if (rotatingHand)
         {

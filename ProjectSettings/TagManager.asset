@@ -18,6 +18,7 @@ TagManager:
   - Real
   - SoulSkill
   - Diamond
+  - Nodes
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Wall
   - 
   - 
   - 

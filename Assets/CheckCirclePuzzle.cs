@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CheckCirclePuzzle : MonoBehaviour
 {
+    public GameObject rotatedSarco;
     public GameObject circle1;
     public GameObject circle2;
     public GameObject circle3;
-    public GameObject wall;
+    public GameObject frontSarco;
     public bool puzzleDone;
     public bool freezePuzzle;
 
@@ -15,23 +16,23 @@ public class CheckCirclePuzzle : MonoBehaviour
     void Start()
     {
         puzzleDone = false;
-        freezePuzzle = false;   
+        freezePuzzle = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (circle1.GetComponent<RotateCircle>().properlyRotated &&
-            circle2.GetComponent<RotateCircle>().properlyRotated &&
-            circle3.GetComponent<RotateCircle>().properlyRotated)
+        if (circle1.GetComponent<RotatingObject>().properlyRotated &&
+            circle2.GetComponent<RotatingObject>().properlyRotated &&
+            circle3.GetComponent<RotatingObject>().properlyRotated)
         {
             puzzleDone = true;
             freezePuzzle = true;
         }
 
-        if (puzzleDone && freezePuzzle)
+        if (puzzleDone)
         {
-            wall.GetComponent<MeshRenderer>().enabled = false;
+            frontSarco.transform.rotation = Quaternion.Slerp(frontSarco.transform.rotation, rotatedSarco.transform.rotation, 0.1f * Time.deltaTime);
             freezePuzzle = false;
         }
     }
