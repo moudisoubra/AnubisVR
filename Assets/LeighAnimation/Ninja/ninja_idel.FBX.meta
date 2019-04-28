@@ -161,7 +161,7 @@ ModelImporter:
     4300002: Sphere001
     4300004: Box001
     4300006: Box002
-    7400000: Take 001
+    7400000: IdleNinja
     9500000: //RootNode
     13700000: Cylinder001
   externalObjects: {}
@@ -193,7 +193,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: IdleNinja
       takeName: Take 001
       firstFrame: 0
       lastFrame: 80
@@ -303,7 +303,7 @@ ModelImporter:
     - name: ARM_L_02
       parentName: ARM_L_01
       position: {x: -0.1742603, y: -0.00000015258789, z: -0.00000015258789}
-      rotation: {x: -0.18186009, y: 0.106921755, z: -0.124217115, w: 0.9695694}
+      rotation: {x: -0.18186007, y: 0.10692175, z: -0.12421711, w: 0.9695693}
       scale: {x: 1.0000004, y: 1.0000004, z: 0.99999994}
     - name: ARM_L_03
       parentName: ARM_L_02
@@ -313,7 +313,7 @@ ModelImporter:
     - name: WRIST_L
       parentName: ARM_L_03
       position: {x: -0.23625179, y: -0.000010309219, z: 0.00000030517577}
-      rotation: {x: -0.7163903, y: 0.16020434, z: -0.040754993, w: 0.6778338}
+      rotation: {x: -0.71639025, y: 0.16020432, z: -0.04075499, w: 0.67783374}
       scale: {x: 0.99999964, y: 0.9999996, z: 1}
     - name: Box002
       parentName: WRIST_L
@@ -323,12 +323,12 @@ ModelImporter:
     - name: INDEX_L_01
       parentName: WRIST_L
       position: {x: -0.08540893, y: -0.010641251, z: 0.018793162}
-      rotation: {x: 0.71167886, y: -0.004140793, z: -0.0013958024, w: 0.7024914}
+      rotation: {x: 0.7116788, y: -0.0041407924, z: -0.0013958022, w: 0.70249134}
       scale: {x: 1.0000001, y: 0.9999999, z: 1}
     - name: INDEX_L_02
       parentName: INDEX_L_01
       position: {x: -0.04130142, y: 0, z: 0.0000002670288}
-      rotation: {x: 0.013523425, y: -0.01627853, z: 0.00038930107, w: 0.999776}
+      rotation: {x: 0.013523425, y: -0.016278528, z: 0.00038930107, w: 0.99977595}
       scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
     - name: INDEX_L_03
       parentName: INDEX_L_02
@@ -393,7 +393,7 @@ ModelImporter:
     - name: RING_L_03
       parentName: RING_L_02
       position: {x: -0.027324142, y: 0.000000009536743, z: -0.00000030517577}
-      rotation: {x: -0.01863811, y: -0.013275843, z: -0.00022327647, w: 0.9997382}
+      rotation: {x: -0.018638112, y: -0.013275843, z: -0.0002232765, w: 0.9997382}
       scale: {x: 1, y: 1.0000002, z: 1}
     - name: RING_L_END
       parentName: RING_L_03
@@ -403,7 +403,7 @@ ModelImporter:
     - name: THUMB_L_01
       parentName: WRIST_L
       position: {x: -0.044189148, y: 0.010821457, z: 0.029093169}
-      rotation: {x: 0.09451726, y: -0.14625408, z: -0.3423288, w: 0.9233024}
+      rotation: {x: 0.09451725, y: -0.14625406, z: -0.34232876, w: 0.92330235}
       scale: {x: 1.0000002, y: 0.99999994, z: 0.9999999}
     - name: THUMB_L_02
       parentName: THUMB_L_01
@@ -439,12 +439,12 @@ ModelImporter:
     - name: ARM_R_03
       parentName: ARM_R_02
       position: {x: -0.31407326, y: 0.00000831604, z: 0}
-      rotation: {x: -0.5679978, y: -0.005412621, z: -0.007947065, w: 0.82297397}
+      rotation: {x: -0.56799775, y: -0.0054126205, z: -0.007947064, w: 0.82297385}
       scale: {x: 1, y: 1.0000001, z: 0.99999994}
     - name: WRIST_R
       parentName: ARM_R_03
       position: {x: -0.23625186, y: 0.000010261536, z: -0.000000076293944}
-      rotation: {x: 0.073142745, y: 0.127551, z: 0.120485924, w: 0.9817658}
+      rotation: {x: 0.07314274, y: 0.12755099, z: 0.12048592, w: 0.98176575}
       scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
     - name: Box001
       parentName: WRIST_R
@@ -494,7 +494,7 @@ ModelImporter:
     - name: PINKY_R_01
       parentName: WRIST_R
       position: {x: -0.08229385, y: 0.009669037, z: -0.03481094}
-      rotation: {x: -0.71902335, y: -0.0075275283, z: -0.0061395965, w: 0.69491804}
+      rotation: {x: -0.7190234, y: -0.0075275293, z: -0.0061395974, w: 0.6949181}
       scale: {x: 1.0000002, y: 1, z: 0.99999994}
     - name: PINKY_R_02
       parentName: PINKY_R_01
@@ -524,7 +524,7 @@ ModelImporter:
     - name: RING_R_03
       parentName: RING_R_02
       position: {x: -0.027373657, y: 0, z: 0}
-      rotation: {x: 0.016588744, y: -0.004088411, z: 0.00002268678, w: 0.9998541}
+      rotation: {x: 0.016588742, y: -0.0040884106, z: 0.000022686778, w: 0.999854}
       scale: {x: 0.9999998, y: 0.9999998, z: 1}
     - name: RING_R_END
       parentName: RING_R_03
@@ -539,12 +539,12 @@ ModelImporter:
     - name: THUMB_R_02
       parentName: THUMB_R_01
       position: {x: -0.03464132, y: 0.000000076293944, z: -0.000000019073486}
-      rotation: {x: 0.2675347, y: -0.031020956, z: 0.025559101, w: 0.96270955}
+      rotation: {x: 0.26753467, y: -0.031020954, z: 0.0255591, w: 0.9627095}
       scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
     - name: THUMB_R_03
       parentName: THUMB_R_02
       position: {x: -0.026525782, y: 0.00000022888183, z: 0}
-      rotation: {x: -0.016153302, y: -0.013776474, z: -0.011367978, w: 0.99971}
+      rotation: {x: -0.0161533, y: -0.013776473, z: -0.011367977, w: 0.99970996}
       scale: {x: 0.9999998, y: 0.99999976, z: 1}
     - name: THUMB_R_END
       parentName: THUMB_R_03
@@ -579,7 +579,7 @@ ModelImporter:
     - name: LEG_L_01
       parentName: COG
       position: {x: -0.0004987335, y: 0.0660253, z: -0.00067778584}
-      rotation: {x: -0.18169586, y: 0.4577189, z: 0.86900336, w: 0.04809545}
+      rotation: {x: -0.18169586, y: 0.45771888, z: 0.86900336, w: 0.048095446}
       scale: {x: 1, y: 1.0000001, z: 1}
     - name: LEG_L_02
       parentName: LEG_L_01
@@ -609,7 +609,7 @@ ModelImporter:
     - name: LEG_R_02
       parentName: LEG_R_01
       position: {x: -0.47386625, y: -0.00000024318695, z: 0}
-      rotation: {x: -0.47653612, y: -0.16577677, z: -0.11155225, w: 0.8561469}
+      rotation: {x: -0.4765361, y: -0.16577677, z: -0.111552246, w: 0.8561469}
       scale: {x: 0.99999994, y: 1, z: 1}
     - name: FOOT_R_01
       parentName: LEG_R_02
