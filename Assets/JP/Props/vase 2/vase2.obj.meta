@@ -11,7 +11,12 @@ ModelImporter:
     2300000: vase
     3300000: vase
     4300000: vase
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vaseMat
+    second: {fileID: 2100000, guid: f4da39cd99850bb4ea5af9c07f3abd14, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
