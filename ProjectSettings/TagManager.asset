@@ -19,6 +19,7 @@ TagManager:
   - SoulSkill
   - Diamond
   - Nodes
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -63,6 +63,7 @@ public class AnubisController : MonoBehaviour
     public bool necromancyCheck;
     public bool commandMinions;
 
+    public GameObject rotateObject;
     public GameObject rightObjectHeld;
     public GameObject leftObjectHeld;
     public GameObject previousParent;
@@ -575,4 +576,5 @@ public class AnubisController : MonoBehaviour
             Destroy(anubis);
         }
     }
+
 }

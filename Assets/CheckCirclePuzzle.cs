@@ -6,8 +6,6 @@ public class CheckCirclePuzzle : MonoBehaviour
 {
     public GameObject rotatedSarco;
     public GameObject circle1;
-    public GameObject circle2;
-    public GameObject circle3;
     public GameObject frontSarco;
     public bool puzzleDone;
     public bool freezePuzzle;
@@ -22,9 +20,7 @@ public class CheckCirclePuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (circle1.GetComponent<RotatingObject>().properlyRotated &&
-            circle2.GetComponent<RotatingObject>().properlyRotated &&
-            circle3.GetComponent<RotatingObject>().properlyRotated)
+        if (circle1.GetComponent<RotatingObject>().properlyRotated)
         {
             puzzleDone = true;
             freezePuzzle = true;
