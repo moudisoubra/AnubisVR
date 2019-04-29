@@ -53,6 +53,7 @@ public class LeverSystem : MonoBehaviour
                 centerToCurrent = center.transform.position - rotatingHand.transform.position;
 
                 angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, rotateDirection);
+                GetComponentInParent<MoveFloor>().changeRate = angleChange / 2;
                 centerToPrevious = centerToCurrent;
 
 

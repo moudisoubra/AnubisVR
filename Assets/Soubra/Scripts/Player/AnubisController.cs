@@ -454,7 +454,7 @@ public class AnubisController : MonoBehaviour
             previousPlayerPosition = transform.position;
         }
 
-        if (soulSkillTimer < 11 && soulSkill)
+        if (soulSkillTimer < 16 && soulSkill)
         {
             rightHandModel.gameObject.GetComponent<Renderer>().material = ghostMaterial;
             leftHandModel.gameObject.GetComponent<Renderer>().material = ghostMaterial;
