@@ -18,9 +18,11 @@ public class SoubraChase : NodeSoubra
         if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) < 60)
         {
 
+            Vector3 direction = BTS.selfObject.transform.position - BTS.transform.position;
+            float angle = Vector3.Angle(direction, BTS.transform.forward);
 
             Vector3 pos;
-
+            //Chase 
             if (!pathCollected)
             {
                 currentPoint = 0;
@@ -30,27 +32,16 @@ public class SoubraChase : NodeSoubra
                 pathCollected = true;
             }
 
-            pos = DjisPathFindHajjo.instance.allNodes[PathPoints[currentPoint]].trans.position;
 
-
-
-            if (Vector3.Distance(BTS.selfObject.transform.position, pos) < 0.5f)
+ 
+            //Chase
+            if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) < 30 && angle < 50)
             {
-                currentPoint++;
-            }
-            else
-            {
-                BTS.selfObject.transform.position = Vector3.MoveTowards(BTS.selfObject.transform.position, pos, Time.deltaTime * BTS.speed);
-            }
+                direction.y = 0f;
 
-            if (currentPoint == PathPoints.Length)
-            {
-                pathCollected = false;
-                currentPoint = -1;
-            }
+                BTS.transform.rotation = Quaternion.Slerp(BTS.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
+                Seeking(BTS);
 
-            if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) < 30)
-            {
                 Debug.Log("Chase success");
                 return Result.success;
             }
@@ -61,5 +52,27 @@ public class SoubraChase : NodeSoubra
         Debug.Log(Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position));
         Debug.Log("Chase Failed");
         return Result.success;
+
+
+
+
+
+
+        }
+
+
+
+    public void Seeking(BehaviourTreeSoubra BTS)
+    {
+
+        Vector3 DesiredVel = BTS.selfObject.transform.position - BTS.transform.position;
+        DesiredVel = Vector3.Normalize(DesiredVel);
+        DesiredVel *= 0.5f;
+        Vector3 seekForce = DesiredVel - BTS.rb.velocity;
+
+        BTS.Move(seekForce);
+
     }
+
+
 }
