@@ -58,7 +58,6 @@ public class SoubraChase : NodeSoubra
             Debug.Log("Chase running");
             return Result.running;
         }
-        Debug.Log(Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position));
         Debug.Log("Chase Failed");
         return Result.success;
     }

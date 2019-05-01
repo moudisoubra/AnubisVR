@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PuzzleControllerHajjo : MonoBehaviour
 {
-    public bool fuckedup = false;
+    public bool wrong = false;
     int lastBlockKeyId = 0;
     public int currentSelectionCount = 0;
     public PuzzleDataHajjo[] selectedBlocks;
@@ -66,7 +66,7 @@ public class PuzzleControllerHajjo : MonoBehaviour
                 
                     if (currentSelectionCount > 0 && lastBlockKeyId != puzzleBlockInfo.keyType)
                     {
-                        fuckedup = true;
+                        wrong = true;
                     }
 
                     lastBlockKeyId = puzzleBlockInfo.keyType;
@@ -81,7 +81,7 @@ public class PuzzleControllerHajjo : MonoBehaviour
                             // turn back all;
                             for (int i = 0; i < 3; i++)
                             {
-                            if (fuckedup)
+                            if (wrong)
                             {
                                 selectedBlocks[i].Reset();
                             }
@@ -90,7 +90,7 @@ public class PuzzleControllerHajjo : MonoBehaviour
 
                             }
                         currentSelectionCount = 0;
-                        fuckedup = false;
+                        wrong = false;
                     }
                     }
                    

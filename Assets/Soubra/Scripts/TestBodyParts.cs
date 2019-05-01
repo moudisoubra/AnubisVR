@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class TestBodyParts : MonoBehaviour
 {
-    
+    public int deathTimer = 0;
+    public bool Dead;
+    public bool now;
+    public GameObject chest1;
+    public GameObject chest2;
     public GameObject bone1;
     public GameObject bone2;
     public GameObject ActualBody;
@@ -23,6 +27,8 @@ public class TestBodyParts : MonoBehaviour
     public List<Transform> fullRigBody;
     public List<Transform> fullRigInvisi;
 
+    public List<GameObject> fullBody;
+
     public float timer;
 
     public List<Transform> lastPosition;
@@ -31,6 +37,7 @@ public class TestBodyParts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AddAllChildren(transform, fullBody);
         AddAllTransforms(ActualBody.transform, fullRigBody);
         AddAllTransforms(InvisiBody.transform, fullRigInvisi);
         //StartCoroutine(ReturnTransform(new List<GameObject>(),new List<Transform>()));
@@ -75,10 +82,32 @@ public class TestBodyParts : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < fullRigBody.Count; i++)
+            if (Dead)
             {
-                fullRigInvisi[i].gameObject.transform.position = fullRigBody[i].gameObject.transform.position;
-                fullRigInvisi[i].gameObject.transform.rotation = fullRigBody[i].gameObject.transform.rotation;
+                transform.GetComponent<Animator>().enabled = false;
+                for (int i = 0; i < fullBody.Count; i++)
+                {
+                    if (fullBody[i].gameObject.GetComponent<Collider>())
+                    {
+                        fullBody[i].gameObject.GetComponent<Collider>().isTrigger = false;
+                    }
+                }
+                for (int i = 0; i < invisibleBody.Count; i++)
+                {
+                    if (fullRigInvisi[i].gameObject.GetComponent<Collider>())
+                    {
+                        fullRigInvisi[i].gameObject.GetComponent<Collider>().enabled = false;
+                    }
+                }
+                this.GetComponent<TestBodyParts>().enabled = false;
+            }
+            else
+            {
+                for (int i = 0; i < fullRigBody.Count; i++)
+                {
+                    fullRigInvisi[i].gameObject.transform.position = fullRigBody[i].gameObject.transform.position;
+                    fullRigInvisi[i].gameObject.transform.rotation = fullRigBody[i].gameObject.transform.rotation;
+                }
             }
         }
     }
