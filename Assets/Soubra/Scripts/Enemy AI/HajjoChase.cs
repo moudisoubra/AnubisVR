@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoubraChase : NodeSoubra
+public class HajjoChase : NodeSoubra
 {
     public int[] PathPoints;
 
@@ -15,27 +15,25 @@ public class SoubraChase : NodeSoubra
 
     public override Result Execute(BehaviourTreeSoubra BTS)
     {
-        if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) < 60)
-        {
-
             Vector3 direction = BTS.selfObject.transform.position - BTS.transform.position;
             float angle = Vector3.Angle(direction, BTS.transform.forward);
 
-            Vector3 pos;
+        if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) < 60 )
+        {
+/*
             //Chase 
             if (!pathCollected)
             {
                 currentPoint = 0;
 
                 PathPoints = DjisPathFindHajjo.instance.DjiPath(BTS.selfObject.transform.position, BTS.lastPoint.position);
-
+                Debug.Log("New Path collected...");
                 pathCollected = true;
             }
+    */
 
-
- 
-            //Chase
-            if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) < 30 && angle < 50)
+            //Attack
+            if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) < 30)
             {
                 direction.y = 0f;
 
@@ -45,20 +43,33 @@ public class SoubraChase : NodeSoubra
                 Debug.Log("Chase success");
                 return Result.success;
             }
+            if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) < 50)
+            {
 
-            Debug.Log("Chase running");
+                Debug.Log("Chase running");
             return Result.running;
+            
+
+            }
         }
         Debug.Log(Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position));
-        Debug.Log("Chase Failed");
-        return Result.success;
+        return Result.failure;
+
+        //if (/*no player*/ )
+        //{
+
+
+        //Debug.Log("Chase Failed");
+        //return Result.success;
+
+        //}
 
 
 
 
 
 
-        }
+    }
 
 
 

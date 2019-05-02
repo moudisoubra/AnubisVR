@@ -18,7 +18,7 @@ public class SoubraAttack : NodeSoubra
         Debug.Log("Attack success");
         return Result.success;
 
-
+/*
         Vector3 direction = BTS.selfObject.transform.position - transform.position;
         float angle = Vector3.Angle(direction, BTS.transform.forward);
 
@@ -36,7 +36,7 @@ public class SoubraAttack : NodeSoubra
             }
         }
 
-
+    */
 
     }
 }
