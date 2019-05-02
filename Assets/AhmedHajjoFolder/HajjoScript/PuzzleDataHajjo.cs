@@ -11,14 +11,13 @@ public class PuzzleDataHajjo : MonoBehaviour
 
     private void Start()
     {
-        
         anim = GetComponent<Animation>();
     }
 
     public void Reset()
     {
         Debug.Log("Reseting...");
-        anim.Play("TurnPuzzleCube_Back");
+        anim.Play("EyePuzzleReset");
         facing = false;
     }
 

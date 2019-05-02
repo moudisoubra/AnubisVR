@@ -41,10 +41,10 @@ public class FlockingHajjoTest : MonoBehaviour
 
     }
 
-    public void ComputeAlignment(List<FlockingHajjoTest> neighbours)
-    {
-       foreach ()
-    }
+    //public void ComputeAlignment(List<FlockingHajjoTest> neighbours)
+    //{
+    //   foreach ()
+    //}
 
 
 

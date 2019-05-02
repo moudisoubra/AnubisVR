@@ -63,6 +63,7 @@ public class AnubisController : MonoBehaviour
     public bool necromancyCheck;
     public bool commandMinions;
 
+    public GameObject rotateObject;
     public GameObject rightObjectHeld;
     public GameObject leftObjectHeld;
     public GameObject previousParent;
@@ -90,13 +91,16 @@ public class AnubisController : MonoBehaviour
     public checkingCollision leftChecker;
     public DrawLine drScript;
     public LayerMask enemyLayer;
+    public LayerMask puzzleLayer;
     //public LineRenderer lineRenderer;
 
+    public PuzzleControllerSoubra puzzleScript;
     public AddForceToItems RightAddForceScript;
     public AddForceToItems LeftAddForceScript;
 
     void Start()
     {
+        puzzleScript = GameObject.FindObjectOfType<PuzzleControllerSoubra>();
         RightAddForceScript = rightModel.GetComponent<AddForceToItems>();
         LeftAddForceScript = leftModel.GetComponent<AddForceToItems>();
           //drScript = FindObjectOfType<DrawLine>();
@@ -453,7 +457,7 @@ public class AnubisController : MonoBehaviour
             previousPlayerPosition = transform.position;
         }
 
-        if (soulSkillTimer < 11 && soulSkill)
+        if (soulSkillTimer < 16 && soulSkill)
         {
             rightHandModel.gameObject.GetComponent<Renderer>().material = ghostMaterial;
             leftHandModel.gameObject.GetComponent<Renderer>().material = ghostMaterial;
@@ -523,7 +527,7 @@ public class AnubisController : MonoBehaviour
         {
             RaycastHit hit;
 
-                Debug.DrawRay(rightModel.transform.position, rightModel.transform.TransformDirection(Vector3.forward), Color.yellow);
+            Debug.DrawRay(rightModel.transform.position, rightModel.transform.TransformDirection(Vector3.forward), Color.yellow);
 
             if (Physics.Raycast(rightModel.transform.position, rightModel.transform.forward, out hit, Mathf.Infinity, enemyLayer))
             {
@@ -536,6 +540,22 @@ public class AnubisController : MonoBehaviour
                     commandMinions = true;
                 }
             }
+        }
+        if (rightTeleportDown && rightTouchpadValue.x >= 0.5 && rightTouchpadValue.y <= 0.5)
+        {
+            RaycastHit hit;
+
+            if (Physics.Raycast(rightModel.transform.position, rightModel.transform.forward, out hit, Mathf.Infinity, puzzleLayer))
+            {
+                if (hit.transform.gameObject.GetComponent<PuzzleDataHajjo>())
+                {
+                    Debug.Log("Hit Puzzle: " + hit.transform.name);
+                    currentTrail = Instantiate(sandTrail, rightModel.transform.position, Quaternion.identity);
+                    puzzleScript.TurnPuzzle(hit.transform.GetComponent<PuzzleDataHajjo>());
+                }
+            }
+
+
         }
 
         if (leftTeleport && leftTouchpadValue.x >= 0.5 && leftTouchpadValue.y <= 0.5)
@@ -555,14 +575,16 @@ public class AnubisController : MonoBehaviour
                     commandMinions = true;
                 }
             }
-        }
-    }
 
-    void OnDrawGizmosSelected()
-    {
-        // Draw a yellow sphere at the transform's position
-        Gizmos.color = Color.yellow;
-        //Gizmos.DrawSphere(playerCamera.transform.position, 3);
+            if (Physics.Raycast(leftModel.transform.position, leftModel.transform.forward, out hit, Mathf.Infinity, puzzleLayer))
+            {
+                if (hit.transform.gameObject.GetComponent<PuzzleDataHajjo>())
+                {
+                    currentTrail = Instantiate(sandTrail, leftModel.transform.position, Quaternion.identity);
+                    puzzleScript.TurnPuzzle(hit.transform.GetComponent<PuzzleDataHajjo>());
+                }
+            }
+        }
     }
 
     public void ResetPlayerPosition()
@@ -574,5 +596,11 @@ public class AnubisController : MonoBehaviour
             resetNumber = 1;
             Destroy(anubis);
         }
+    }
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        //Gizmos.DrawSphere(playerCamera.transform.position, 3);
     }
 }

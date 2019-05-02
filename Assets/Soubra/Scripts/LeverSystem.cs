@@ -4,51 +4,134 @@ using UnityEngine;
 
 public class LeverSystem : MonoBehaviour
 {
+    public bool circlePuzzle;
+    public bool canRotate;
+    public bool properlyRotated;
+    public bool grab;
+    public GameObject rotatingHand;
+    public GameObject center;
+    public Vector3 rotateDirection;
+    public Vector3 handPreLocation;
+    public Vector3 crossProduct;
+    public Transform circleStartRotation;
+    public float resultCross;
+    public float directionRL;
+    public float distance;
 
-    public GameObject wall;
-    public GameObject distanceCheck;
-    public GameObject distanceLimit;
-    public Vector3 wallStartPosition;
-    public float wallTransform;
-    public bool movingWall;
 
-    
+    public Vector3 centerToPrevious;
+    public Vector3 centerToCurrent;
+    public float angleChange;
+    public float lastAngle;
+    public float differenceAngle;
+
     void Start()
     {
-        wallStartPosition = wall.transform.position;
-        wallTransform = 0;
+        circleStartRotation = transform;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-
-        wallTransform = Vector3.Distance(distanceCheck.transform.position, distanceLimit.transform.position);
-
-        if (movingWall)
+        if (circlePuzzle)
         {
-            MoveWall();
+            if (this.transform.eulerAngles.z <= 11.7f && this.transform.eulerAngles.z >= 7.5f)
+            {
+                properlyRotated = true;
+            }
+            else
+            {
+                properlyRotated = false;
+            }
         }
+
+        if (rotatingHand)
+        {
+            if ((rotatingHand.GetComponentInParent<AnubisController>().rightGrab
+                || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
+            {
+                centerToCurrent = center.transform.position - rotatingHand.transform.position;
+
+                angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, rotateDirection);
+                GetComponentInParent<MoveFloor>().changeRate = angleChange / 2;
+                centerToPrevious = centerToCurrent;
+
+
+
+                this.gameObject.transform.localEulerAngles += new Vector3(angleChange, 0, 0);
+
+                if (rotatingHand.name == "Right" && !rotatingHand.GetComponentInParent<AnubisController>().rightGrab)
+                {
+                    rotatingHand = null;
+                }
+                if (rotatingHand.name == "Left" && !rotatingHand.GetComponentInParent<AnubisController>().leftGrab)
+                {
+                    rotatingHand = null;
+                }
+            }
+
+
+        }
+
+
+        if (this.transform.eulerAngles.z <= 11.7f && this.transform.eulerAngles.z >= 7.5f)
+        {
+            properlyRotated = true;
+        }
+        else
+        {
+            properlyRotated = false;
+        }
+
     }
 
-    public void MoveWall()
+    public float GetDirectionLeftRight(Vector3 forward, Vector3 targetDirection)
     {
-        wall.transform.position = new Vector3(wallStartPosition.x, wallStartPosition.y + (wallTransform * 4), wallStartPosition.z);
+        crossProduct = Vector3.Cross(forward, targetDirection).normalized;
+        resultCross = crossProduct.y;
+
+        if (resultCross > 0f)
+        {
+            Debug.Log("Left");
+            return 1f;
+        }
+        else if (resultCross < 0f)
+        {
+            Debug.Log("Right");
+            return -1f;
+        }
+        else
+        {
+            Debug.Log("Neither");
+            return 0f;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Hand")
+        if (other.gameObject.tag == "Hand")
         {
-            movingWall = true;
+            rotatingHand = other.gameObject;
+            handPreLocation = rotatingHand.transform.position;
+            centerToPrevious = center.transform.position - handPreLocation;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Hand")
+        {
+            rotatingHand = collision.gameObject;
+            handPreLocation = rotatingHand.transform.position;
+            centerToPrevious = center.transform.position - handPreLocation;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Hand")
+        if (other.gameObject.tag == "Hand")
         {
-            movingWall = false;
+            Debug.Log("Exit");
         }
     }
 }

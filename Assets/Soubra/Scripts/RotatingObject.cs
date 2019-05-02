@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class RotatingObject : MonoBehaviour
 {
-
+    public GameObject nextCircle;
+    public Animation animation;
+    public float eularAngleZ;
+    public float animate;
+    public bool circlePuzzle;
     public bool canRotate;
     public bool properlyRotated;
-    public bool grab;
     public GameObject rotatingHand;
     public GameObject center;
     public Vector3 rotateDirection;
@@ -33,31 +36,61 @@ public class RotatingObject : MonoBehaviour
 
     void Update()
     {
-
-        if (rotatingHand)
+        if (circlePuzzle)
         {
-            //grab = rotatingHand.GetComponentInParent<AnubisController>().rightGrab;
-            //if ((rotatingHand.GetComponentInParent<AnubisController>().rightGrab
-            //    || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
-            //{
-            centerToCurrent = center.transform.position - rotatingHand.transform.position;
-
-            angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, rotateDirection);
-            centerToPrevious = centerToCurrent;
-
-
-
-            this.gameObject.transform.localEulerAngles += new Vector3(0, angleChange, 0);
-
-            if (rotatingHand.name == "Right" && !rotatingHand.GetComponentInParent<AnubisController>().rightGrab)
+            animation = GetComponent<Animation>();
+            eularAngleZ = this.transform.eulerAngles.z;
+            if (this.transform.eulerAngles.z <= 13f && this.transform.eulerAngles.z >= 6f)
             {
-                rotatingHand = null;
+                animate++;
+                canRotate = false;
+
+                if (animate < 2)
+                {
+                properlyRotated = true;
+                    animation.Play();
+                }
+                if (nextCircle)
+                {
+                    nextCircle.GetComponent<RotatingObject>().enabled = true;
+                }
             }
-            if (rotatingHand.name == "Left" && !rotatingHand.GetComponentInParent<AnubisController>().leftGrab)
+            else
             {
-                rotatingHand = null;
+                canRotate = true;
+                if (nextCircle)
+                {
+                    nextCircle.GetComponent<RotatingObject>().enabled = false;
+                }
             }
-            //}
+        }
+
+
+
+        if (rotatingHand && canRotate)
+        {
+
+            if ((rotatingHand.GetComponentInParent<AnubisController>().rightGrab
+                || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
+            {
+                centerToCurrent = center.transform.position - rotatingHand.transform.position;
+
+                angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, rotateDirection);
+                centerToPrevious = centerToCurrent;
+
+
+
+                this.gameObject.transform.localEulerAngles += new Vector3(0, angleChange * 2.5f, 0);
+
+                if (rotatingHand.name == "Right" && !rotatingHand.GetComponentInParent<AnubisController>().rightGrab)
+                {
+                    rotatingHand = null;
+                }
+                if (rotatingHand.name == "Left" && !rotatingHand.GetComponentInParent<AnubisController>().leftGrab)
+                {
+                    rotatingHand = null;
+                }
+            }
 
 
         }
@@ -120,6 +153,7 @@ public class RotatingObject : MonoBehaviour
     {
         if (other.gameObject.tag == "Hand")
         {
+            rotatingHand = null;
             Debug.Log("Exit");
         }
     }
