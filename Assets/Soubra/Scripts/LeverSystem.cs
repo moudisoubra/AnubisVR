@@ -47,9 +47,9 @@ public class LeverSystem : MonoBehaviour
 
         if (rotatingHand)
         {
-            if ((rotatingHand.GetComponentInParent<AnubisController>().rightGrab
-                || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
-            {
+            //if ((rotatingHand.GetComponentInParent<AnubisController>().rightGrab
+            //    || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
+            //{
                 centerToCurrent = center.transform.position - rotatingHand.transform.position;
 
                 angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, rotateDirection);
@@ -68,7 +68,7 @@ public class LeverSystem : MonoBehaviour
                 {
                     rotatingHand = null;
                 }
-            }
+            //}
 
 
         }
