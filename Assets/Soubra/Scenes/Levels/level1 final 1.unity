@@ -19260,7 +19260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &591259890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19296,7 +19296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &591259892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19358,6 +19358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 591033561}
   - component: {fileID: 602760631}
+  - component: {fileID: 591259898}
   m_Layer: 0
   m_Name: LeftModel
   m_TagString: Untagged
@@ -19365,6 +19366,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &591259898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591259897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5c9628ba7849241aa1d30307b753d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bars:
+  - {fileID: 591259891}
+  - {fileID: 591259889}
+  - {fileID: 591259903}
+  - {fileID: 591259901}
+  - {fileID: 591259901}
+  barChosen: -0.5
 --- !u!1 &591259899
 GameObject:
   m_ObjectHideFlags: 0
@@ -19401,7 +19421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &591259902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19437,7 +19457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &591259904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36182,6 +36202,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc24dcc46ed46e4c9d2827eb883b099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rate: 4
+  health: 0
+  previousHealth: 0
+  mana: 0
+  previousMana: 0
+  healthController: {fileID: 591259898}
+  manaController: {fileID: 1342802431}
 --- !u!4 &1160728677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2794711048252083284, guid: 638dc36a37195ed4192390098db0db7c,
@@ -41901,7 +41928,6 @@ GameObject:
   - component: {fileID: 1352202864}
   - component: {fileID: 1342705428}
   - component: {fileID: 1342705429}
-  - component: {fileID: 1342802401}
   m_Layer: 0
   m_Name: NRight
   m_TagString: Untagged
@@ -41909,23 +41935,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1342802401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342802400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 336483675b2201a429b4a2b9084e9d3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
-  currentMaterial: {fileID: 0}
-  colorUp: 0
-  colorDown: 0
-  colorChange: 0
 --- !u!1 &1342802416
 GameObject:
   m_ObjectHideFlags: 0
@@ -42132,6 +42141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1343100382}
   - component: {fileID: 1356399792}
+  - component: {fileID: 1342802431}
   m_Layer: 0
   m_Name: RightModel
   m_TagString: Untagged
@@ -42139,6 +42149,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1342802431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342802430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5c9628ba7849241aa1d30307b753d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bars:
+  - {fileID: 1342802420}
+  - {fileID: 1342802422}
+  - {fileID: 1342802424}
+  - {fileID: 1342802426}
+  - {fileID: 1342802426}
+  barChosen: -0.5
 --- !u!4 &1342851883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2794711048252083284, guid: 638dc36a37195ed4192390098db0db7c,
@@ -47177,6 +47206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00c4e5dcce05c44ab39b091e9748df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   selfObject: {fileID: 0}
   startPoint: {fileID: 0}
   lastPoint: {fileID: 1533943546}

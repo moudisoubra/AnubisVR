@@ -7,7 +7,7 @@ public class BehaviourTreeSoubra : MonoBehaviour
 
     NodeSoubra root;
     NodeSoubra attackSequence;
-
+    public Rigidbody rb;
     public GameObject selfObject;
     public Transform startPoint;
     public Transform lastPoint;
@@ -20,6 +20,7 @@ public class BehaviourTreeSoubra : MonoBehaviour
     void Start()
     {
         selfObject = this.gameObject;
+        rb = GetComponent<Rigidbody>();
         root = new SelectorSoubra();
         attackSequence = new SequenceSoubra();
         AddChildren();
@@ -34,9 +35,9 @@ public class BehaviourTreeSoubra : MonoBehaviour
     void AddChildren()
     {
         root.nodesList.Add(attackSequence);
-        root.nodesList.Add(new SoubraPatrol());
+        root.nodesList.Add(new HajjoPatrol());
 
-        attackSequence.nodesList.Add(new SoubraChase());
+        attackSequence.nodesList.Add(new HajjoChase());
         attackSequence.nodesList.Add(new SoubraAttack());
     }
 }
