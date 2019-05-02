@@ -52,7 +52,7 @@ public class HajjoChase : NodeSoubra
 
             }
         }
-        Debug.Log(Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position));
+        //Debug.Log(Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position));
         return Result.failure;
 
         //if (/*no player*/ )
@@ -81,7 +81,7 @@ public class HajjoChase : NodeSoubra
         DesiredVel *= 0.5f;
         Vector3 seekForce = DesiredVel - BTS.rb.velocity;
 
-        BTS.Move(seekForce);
+        //BTS.Move(seekForce);
 
     }
 

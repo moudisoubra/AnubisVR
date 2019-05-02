@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GlowControl : MonoBehaviour
 {
-    public Renderer renderer;
+    public MeshRenderer renderer;
     public Material currentMaterial;
     public bool colorUp;
     public bool colorDown;
@@ -22,8 +22,6 @@ public class GlowControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var col = currentMaterial.GetColor("_EmissionColor");
-        Debug.Log(col);
         GlowDown();
         GlowUp();
     }
