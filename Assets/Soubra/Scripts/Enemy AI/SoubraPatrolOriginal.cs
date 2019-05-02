@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoubraPatrol : NodeSoubra
+public class SoubraPatrolOriginal : NodeSoubra
 {
 
     public int[] PathPoints;
