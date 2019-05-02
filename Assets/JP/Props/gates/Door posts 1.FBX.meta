@@ -16,7 +16,12 @@ ModelImporter:
     3300002: door
     4300000: Box002
     4300002: door
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 127d7db231c3193429a1c31c31035a27, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
