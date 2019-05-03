@@ -4,45 +4,50 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
+    public static Grid instance;
 
-   
-   
-    public Vector2 gridWorldSize;
-    public float nodeRadius;
-    ANode[,] grid;
-
-
-    float nodeDiameter =1f;
-    int gridSizeX = 16, GridSizeY = 16;
+    public Color ChangeColors;
+    public int OffSetX, OffSetY;
+    public GridcellData[,] grid;
+    public int gridSizeX, GridSizeY;
 
 
-
-    void Start()
+    public class GridcellData
     {
-        //nodeDiameter = nodeRadius * 2;
-        gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
-        GridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
+        public List<Transform> ContainObjects = new List<Transform>();
+    }
+
+
+    void Awake()
+    {
+        instance = this;
         CreatGrid();
+      
     }
 
 
     void CreatGrid()
     {
-        grid = new ANode[gridSizeX, GridSizeY];
-        //Vector3 WorldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.forward * gridWorldSize.y / 2;
+        grid = new GridcellData[gridSizeX, GridSizeY];
 
         for (int x = 0; x < gridSizeX; x++)
         {
             for (int y = 0; y < GridSizeY; y++)
             {
-                Vector3 worldPoint =Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeDiameter + nodeRadius);
-                bool walkAble = !(Physics.CheckSphere(worldPoint, nodeRadius));
-                grid[x, y].bound = new Bounds(new Vector2(x * gridWorldSize.x, y * gridWorldSize.y),gridWorldSize);
-                grid[x, y] = new ANode(walkAble, worldPoint, x, y); 
-
-
+                grid[x, y] = new GridcellData();
             }
         }
+    }
+
+    public Vector2Int GetCell(Vector3 pos)
+    {
+        Vector2Int cell=Vector2Int.zero;
+        cell.x = (int)pos.x / OffSetX;
+        cell.y = (int)pos.z / OffSetY;
+
+        //Debug.Log("Cell X : " + gridSizeX + " | " + "Cell Y : " + GridSizeY);
+
+        return cell;
     }
 
 
@@ -50,15 +55,16 @@ public class Grid : MonoBehaviour
    
     public void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 0, gridWorldSize.y));
-
-        if (grid != null)
+       
+        for (int x = 0; x < gridSizeX; x++)
         {
-            foreach (ANode n in grid)
+            for (int y = 0; y < GridSizeY; y++)
             {
-
-                Gizmos.color = (n.walkAble) ? Color.blue : Color.red;
-                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter + 0.1f));
+                Gizmos.color = Color.blue; 
+                Gizmos.DrawSphere(new Vector3(x * OffSetX, 0, y * OffSetY), 4f);
+                Gizmos.color = ChangeColors;
+                Gizmos.DrawWireCube(new Vector3((x * OffSetX) + OffSetX* 0.5f, 0f, (y * OffSetY) + OffSetY * 0.5f), new Vector3(OffSetX,0,OffSetY));
+                
             }
         }
     }
