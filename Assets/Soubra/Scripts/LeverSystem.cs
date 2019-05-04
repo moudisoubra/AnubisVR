@@ -8,6 +8,7 @@ public class LeverSystem : MonoBehaviour
     public bool canRotate;
     public bool properlyRotated;
     public bool grab;
+    public bool MoveFloor;
     public GameObject rotatingHand;
     public GameObject center;
     public Vector3 rotateDirection;
@@ -47,13 +48,21 @@ public class LeverSystem : MonoBehaviour
 
         if (rotatingHand)
         {
-            //if ((rotatingHand.GetComponentInParent<AnubisController>().rightGrab
-            //    || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
-            //{
+            if ((rotatingHand.GetComponentInParent<AnubisController>().rightGrab
+                || rotatingHand.GetComponentInParent<AnubisController>().leftGrab))
+            {
                 centerToCurrent = center.transform.position - rotatingHand.transform.position;
 
                 angleChange = Vector3.SignedAngle(centerToPrevious, centerToCurrent, rotateDirection);
+            if (MoveFloor)
+            {
                 GetComponentInParent<MoveFloor>().changeRate = angleChange / 2;
+            }
+            else
+            {
+                GetComponentInParent<MoveFloorsSideways>().changeRate = angleChange / 10;
+            }
+            
                 centerToPrevious = centerToCurrent;
 
 
@@ -68,7 +77,7 @@ public class LeverSystem : MonoBehaviour
                 {
                     rotatingHand = null;
                 }
-            //}
+            }
 
 
         }

@@ -17,7 +17,7 @@ public class PuzzleDataHajjo : MonoBehaviour
     public void Reset()
     {
         Debug.Log("Reseting...");
-        anim.Play("EyePuzzleReset");
+        anim.Play("SpinBackEye");
         facing = false;
     }
 
