@@ -20,6 +20,7 @@ public class MoveFloorsSideways : MonoBehaviour
     public Vector3 originalTransformRight;
 
     public DjisPathFindHajjo script;
+    public ChangeHint changeHint;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,7 @@ public class MoveFloorsSideways : MonoBehaviour
                 floorMovableLeft.transform.position = Vector3.Lerp(floorMovableLeft.transform.position, originalTransformLeft, 0.1f);
                 floorMovableRight.transform.position = Vector3.Lerp(floorMovableRight.transform.position, originalTransformRight, 0.1f);
                 script.ReFindNodes();
+                changeHint.solved = true;
                 if (timer > 5)
                 {
                     AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Level2 Final", LoadSceneMode.Additive);

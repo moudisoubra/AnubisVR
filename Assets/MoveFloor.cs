@@ -9,6 +9,7 @@ public class MoveFloor : MonoBehaviour
     public float changeRate;
     public GameObject[] walls;
     public DjisPathFindHajjo script;
+    public ChangeHint changeHint;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class MoveFloor : MonoBehaviour
             }
             GameObject.Destroy(particleEffect);
             script.ReFindNodes();
+            changeHint.solved = true;
         }
     }
 }
