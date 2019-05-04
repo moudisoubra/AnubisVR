@@ -14,6 +14,9 @@ public class AnubisController : MonoBehaviour
     public SteamVR_Action_Vector2 rightTouchpad;
     public SteamVR_Action_Vector2 leftTouchpad;
 
+    public SteamVR_Action_Boolean rightMenuButton;
+    public SteamVR_Action_Boolean leftMenuButton;
+
     public SteamVR_Input_Sources rightController;
     public SteamVR_Input_Sources leftController;
 
@@ -44,6 +47,8 @@ public class AnubisController : MonoBehaviour
 
     public Transform enemyTarget;
 
+    public bool rightMenuButtonDown;
+    public bool leftMenuButtonDown;
     public bool rightTeleportDown;
     public bool leftTeleportDown;
     public bool rightTeleport;
@@ -178,6 +183,8 @@ public class AnubisController : MonoBehaviour
         leftSoulCheck = leftChecker.collidingSoulSkill;
         soulSkillTimer += Time.deltaTime;
 
+        rightMenuButtonDown = SteamVR_Actions._default.MenuButton.GetStateDown(rightController);
+        leftMenuButtonDown = SteamVR_Actions._default.MenuButton.GetStateDown(leftController);
         rightGrab = SteamVR_Actions._default.GrabPinch.GetState(rightController);
         leftGrab = SteamVR_Actions._default.GrabPinch.GetState(leftController);
         rightGrabUp = SteamVR_Actions._default.GrabPinch.GetStateUp(rightController);
@@ -197,18 +204,14 @@ public class AnubisController : MonoBehaviour
         rightTouchpadValue = rightTouchpad.GetAxis(rightController);
         leftTouchpadValue = leftTouchpad.GetAxis(leftController);
 
-        //if (SteamVR_Actions._default.Teleport.GetState(controller))
-        //{
-        //    Debug.Log("Touchpad Value " + touchpadValue);
-        //}
-
+        SoulSkill();
+        MovePlayer();
         AnimateHand();
         GrabObjects();
-        MovePlayer();
-        SoulSkill();
-        ResetPlayerPosition();
-        NecromancySkill();
+        ActivateHint();
         pointAtTarget();
+        NecromancySkill();
+        ResetPlayerPosition();
     }
 
     public void MovePlayer()
@@ -517,6 +520,14 @@ public class AnubisController : MonoBehaviour
         }
 
 
+    }
+
+    public void ActivateHint()
+    {
+        if (rightMenuButtonDown)
+        {
+            GetComponent<HintSpawn>().SendHint();
+        }
     }
 
     public void pointAtTarget()
