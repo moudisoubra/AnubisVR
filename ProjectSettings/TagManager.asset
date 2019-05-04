@@ -21,6 +21,7 @@ TagManager:
   - Nodes
   - Ground
   - Wall
+  - Lever
   layers:
   - Default
   - TransparentFX

@@ -50,6 +50,13 @@ public class DjisPathFindHajjo : MonoBehaviour
 
     }
 
+    public void ReFindNodes()
+    {
+        for (int i = 0; i < Nodes.Length; i++)
+        {
+            allNodes[i].ChildsNode = GetNearbyPoint(Nodes[i].transform.position);
+        }
+    }
     //Find the Child Index Nodes
     int[] GetNearbyPoint(Vector3 pos)
     {
@@ -106,7 +113,6 @@ public class DjisPathFindHajjo : MonoBehaviour
 
         int StartNode = GetNearbyNode(startPos);
         int FinalNode = GetNearbyNode(FinalPos);
-        Debug.Log("Start Node ID is : " + StartNode + " & " + "Finish Node ID is : " + FinalNode);
 
         // reset all calculation data
         for (int i = 0; i < allNodes.Length; i++)
