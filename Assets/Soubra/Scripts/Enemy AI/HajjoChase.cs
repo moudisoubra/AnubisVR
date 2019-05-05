@@ -47,12 +47,12 @@ public class HajjoChase : NodeSoubra
             {
 
                 Debug.Log("Chase running");
-            return Result.running;
-            
+                return Result.running;
+
 
             }
         }
-        Debug.Log(Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position));
+        //Debug.Log(Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position));
         return Result.failure;
 
         //if (/*no player*/ )

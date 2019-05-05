@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Soubra/Scenes/Levels/level1 final 1.unity
-    guid: eed60e7bf6e84654c9eb39249f95b862
+    path: Assets/Soubra/Scenes/Final Levels/Level1 Final.unity
+    guid: 1f60053c948460248b68879d596c23ce
   - enabled: 0
-    path: Assets/Soubra/Scenes/Levels/Level2.unity
-    guid: e1ed15f6c992b864dafabdf828b2d83a
+    path: Assets/Soubra/Scenes/Final Levels/Level2 Final.unity
+    guid: b23e6587f15aafb4f9f1bf0ede2dec9c
   - enabled: 0
-    path: Assets/Soubra/Scenes/Levels/Level3.unity
-    guid: 53b28e0865ce06f4b9279511c48836c2
+    path: Assets/Soubra/Scenes/Final Levels/Level3 Final.unity
+    guid: bae5f9896596a6f4690f8441e986b0ae
   m_configObjects: {}

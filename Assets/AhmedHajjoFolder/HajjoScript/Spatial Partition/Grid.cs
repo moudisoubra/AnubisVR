@@ -22,14 +22,12 @@ public class Grid : MonoBehaviour
     {
         instance = this;
         CreatGrid();
-      
     }
 
 
     void CreatGrid()
     {
         grid = new GridcellData[gridSizeX, GridSizeY];
-
         for (int x = 0; x < gridSizeX; x++)
         {
             for (int y = 0; y < GridSizeY; y++)
@@ -44,8 +42,6 @@ public class Grid : MonoBehaviour
         Vector2Int cell=Vector2Int.zero;
         cell.x = (int)pos.x / OffSetX;
         cell.y = (int)pos.z / OffSetY;
-
-        //Debug.Log("Cell X : " + gridSizeX + " | " + "Cell Y : " + GridSizeY);
 
         return cell;
     }
