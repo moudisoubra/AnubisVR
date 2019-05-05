@@ -34,10 +34,20 @@ public class SoubraPatrolOriginal : NodeSoubra
 
         if (Vector3.Distance(BTS.selfObject.transform.position, pos) < 0.5f)
         {
-            currentPoint++;
+            BTS.waitTimer += Time.deltaTime;
+
+                Debug.Log("OFF");
+                BTS.animator.SetTrigger("Idle");
+            if (BTS.waitTimer > 5)
+            {
+                currentPoint++;
+                BTS.waitTimer = 0;
+            }
         }
         else
         {
+            Debug.Log("NOT OFF");
+            BTS.animator.SetTrigger("Run");
             BTS.selfObject.transform.position = Vector3.MoveTowards(BTS.selfObject.transform.position, pos, Time.deltaTime * BTS.speed);
         }
 
@@ -47,7 +57,6 @@ public class SoubraPatrolOriginal : NodeSoubra
             currentPoint = -1;
         }
         BTS.selfObject.transform.LookAt(pos);
-        BTS.animator.SetTrigger("Run");
         Debug.Log("PATROL SUCCESS");
         return Result.success;
     }

@@ -93,7 +93,7 @@ public class AddForceToItems : MonoBehaviour
                 if (objectPushed.transform.parent && objectPushed.transform.parent.GetComponentInParent<EnemyScript>())
                 {
                     
-                    FindEnemyBones();
+                    //FindEnemyBones();
 
                     ApplyEffectRight(parentBone, 1);
                     ApplyEffectRight(childBone, 1);
@@ -245,8 +245,6 @@ public class AddForceToItems : MonoBehaviour
             forceAttack = false;
             var scriptLink = collision.gameObject.GetComponentInParent<TestBodyParts>();
             scriptLink.GetProperParent(collision.gameObject.transform, scriptLink.actualBody, scriptLink.actualBodyTransforms);
-            //scriptLink.AddAllChildren(collision.gameObject.transform, scriptLink.actualBody);
-            //scriptLink.AddAllTransforms(collision.gameObject.transform, scriptLink.actualBodyTransforms);
 
             for (int i = 0; i < scriptLink.fullRigInvisi.Count; i++)
             {

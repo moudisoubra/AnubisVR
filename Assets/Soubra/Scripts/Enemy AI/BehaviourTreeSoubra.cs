@@ -18,6 +18,7 @@ public class BehaviourTreeSoubra : MonoBehaviour
     public float distanceToChase;
     public float speed = 10f;
     public float MaxDis = 5f;
+    public float waitTimer = 0;
     public bool fail;
     public bool chaseFail;
 
