@@ -51,7 +51,7 @@ public class QuadHajjo : MonoBehaviour
 
         for (int i = 0; i < vertices.Length; i++)
         {
-    
+        
         }
     }
 }

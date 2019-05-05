@@ -34,9 +34,9 @@ public class BehaviourTreeSoubra : MonoBehaviour
     void AddChildren()
     {
         root.nodesList.Add(attackSequence);
-        root.nodesList.Add(new SoubraPatrol());
+        root.nodesList.Add(new HajjoPatrol());
 
-        attackSequence.nodesList.Add(new SoubraChase());
+        attackSequence.nodesList.Add(new HajjoChase());
         attackSequence.nodesList.Add(new SoubraAttack());
     }
 }
