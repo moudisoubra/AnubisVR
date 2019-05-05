@@ -18,7 +18,6 @@ public class SoubraChaseOriginal : NodeSoubra
         if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) <= BTS.distanceToChase && !BTS.chaseFail)
         {
 
-
             Vector3 pos;
 
             if (!pathCollected)
@@ -49,12 +48,13 @@ public class SoubraChaseOriginal : NodeSoubra
                 currentPoint = -1;
             }
 
-            if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) <= 15)
+            if (Vector3.Distance(BTS.selfObject.transform.position, BTS.lastPoint.position) <= BTS.MaxDis)
             {
                 Debug.Log("Chase success");
                 return Result.success;
             }
-
+            BTS.selfObject.transform.LookAt(pos);
+            BTS.animator.SetTrigger("Run");
             Debug.Log("Chase running");
             return Result.running;
         }

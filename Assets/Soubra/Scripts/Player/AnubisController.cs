@@ -498,8 +498,8 @@ public class AnubisController : MonoBehaviour
             if ((rightControllerCurrent > rightControllerPosition) && (leftControllerCurrent > leftControllerPosition) && necromancyCheck)
             {
                 necromancyTimer = 0;
-                this.rightHandAnimator.SetBool("RaisingDead", true);
-                this.leftHandAnimator.SetBool("RaisingDead", true);
+                //this.rightHandAnimator.SetBool("RaisingDead", true);
+                //this.leftHandAnimator.SetBool("RaisingDead", true);
                 Collider[] colliders = Physics.OverlapSphere(playerCamera.transform.position, 3);
                 
                 foreach (Collider col in colliders)
