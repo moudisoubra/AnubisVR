@@ -7,10 +7,14 @@ public class BehaviourTreeSoubra : MonoBehaviour
 
     NodeSoubra root;
     NodeSoubra attackSequence;
+    public GameObject playerHead;
+    public Animator animator;
     public Rigidbody rb;
     public GameObject selfObject;
     public Transform startPoint;
     public Transform lastPoint;
+    public int hitPoints;
+    public int maxHitPoints;
     public float distanceToChase;
     public float speed = 10f;
     public float MaxDis = 5f;
@@ -19,6 +23,7 @@ public class BehaviourTreeSoubra : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         selfObject = this.gameObject;
         rb = GetComponent<Rigidbody>();
         root = new SelectorSoubra();
@@ -34,6 +39,7 @@ public class BehaviourTreeSoubra : MonoBehaviour
 
     void AddChildren()
     {
+        root.nodesList.Add(new SoubraDieOriginal());
         root.nodesList.Add(attackSequence);
         root.nodesList.Add(new SoubraPatrolOriginal());
 

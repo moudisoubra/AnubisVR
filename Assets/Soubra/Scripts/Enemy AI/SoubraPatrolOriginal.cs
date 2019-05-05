@@ -46,7 +46,8 @@ public class SoubraPatrolOriginal : NodeSoubra
             pathCollected = false;
             currentPoint = -1;
         }
-
+        BTS.selfObject.transform.LookAt(pos);
+        BTS.animator.SetTrigger("Run");
         Debug.Log("PATROL SUCCESS");
         return Result.success;
     }

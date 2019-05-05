@@ -42,7 +42,7 @@ public class AddForceToItems : MonoBehaviour
                 {
                     if (objectPushed.transform.parent && objectPushed.transform.parent.GetComponentInParent<EnemyScript>())
                     {
-                        mainParent = objectPushed.transform.parent.GetComponentInParent<EnemyScript>().gameObject;
+                        mainParent = objectPushed.transform.parent.GetComponentInParent<BehaviourTreeSoubra>().gameObject;
                         parentBone = objectPushed.transform.parent.gameObject;
                         childBone = objectPushed.transform.transform.GetChild(0).gameObject;
                         Debug.Log(parentBone + " " + childBone);

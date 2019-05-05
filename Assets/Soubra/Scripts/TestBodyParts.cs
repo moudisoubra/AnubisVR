@@ -7,8 +7,6 @@ public class TestBodyParts : MonoBehaviour
     public int deathTimer = 0;
     public bool Dead;
     public bool now;
-    public GameObject chest1;
-    public GameObject chest2;
     public GameObject bone1;
     public GameObject bone2;
     public GameObject ActualBody;
@@ -85,6 +83,7 @@ public class TestBodyParts : MonoBehaviour
             if (Dead)
             {
                 transform.GetComponent<Animator>().enabled = false;
+                transform.GetComponent<BehaviourTreeSoubra>().enabled = false;
                 for (int i = 0; i < fullBody.Count; i++)
                 {
                     if (fullBody[i].gameObject.GetComponent<Collider>())
@@ -99,7 +98,7 @@ public class TestBodyParts : MonoBehaviour
                         fullRigInvisi[i].gameObject.GetComponent<Collider>().enabled = false;
                     }
                 }
-                this.GetComponent<TestBodyParts>().enabled = false;
+                transform.GetComponent<TestBodyParts>().enabled = false;
             }
             else
             {
