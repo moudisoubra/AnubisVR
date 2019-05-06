@@ -119,6 +119,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754356765}
     m_Modifications:
+    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
+      propertyPath: m_Name
+      value: Ground torch (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.29
@@ -174,10 +178,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
-      propertyPath: m_Name
-      value: Ground torch (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -446,6 +446,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754356765}
     m_Modifications:
+    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
+      propertyPath: m_Name
+      value: Ground torch (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -57.3
@@ -502,10 +506,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
-      propertyPath: m_Name
-      value: Ground torch (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -555,6 +555,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754356765}
     m_Modifications:
+    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
+      propertyPath: m_Name
+      value: Ground torch (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.29
@@ -610,10 +614,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
-      propertyPath: m_Name
-      value: Ground torch (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -914,6 +914,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754356765}
     m_Modifications:
+    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
+      propertyPath: m_Name
+      value: Ground torch (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -969,10 +973,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
-      propertyPath: m_Name
-      value: Ground torch (4)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3286,7 +3286,7 @@ Transform:
   m_GameObject: {fileID: 754356764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.6156197, y: -8.469677, z: 295.9}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 834279570}
   - {fileID: 976169357}
@@ -3376,6 +3376,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754356765}
     m_Modifications:
+    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
+      propertyPath: m_Name
+      value: Ground torch (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.7
@@ -3432,10 +3436,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
-      propertyPath: m_Name
-      value: Ground torch (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3455,6 +3455,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754356765}
     m_Modifications:
+    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
+      propertyPath: m_Name
+      value: Ground torch (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.7
@@ -3510,10 +3514,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
-      propertyPath: m_Name
-      value: Ground torch (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4272,6 +4272,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754356765}
     m_Modifications:
+    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
+      propertyPath: m_Name
+      value: Ground torch (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.7
@@ -4327,10 +4331,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
-      propertyPath: m_Name
-      value: Ground torch (6)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6907,6 +6907,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754356765}
     m_Modifications:
+    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
+      propertyPath: m_Name
+      value: Ground torch (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.7
@@ -6962,10 +6966,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
-      propertyPath: m_Name
-      value: Ground torch (5)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7362,6 +7362,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754356765}
     m_Modifications:
+    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
+      propertyPath: m_Name
+      value: Ground torch (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.7
@@ -7417,10 +7421,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
-      propertyPath: m_Name
-      value: Ground torch (8)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7525,6 +7525,79 @@ Transform:
   m_Father: {fileID: 754356765}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!1001 &1699000055
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1253142483436318, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_Name
+      value: Fire_Parent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652784949999524, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_Name
+      value: Fire_ALPHA
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706519164850726, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_Name
+      value: Fire_Glow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878652760548056, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_Name
+      value: Fire_Sparks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911683160194432, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_Name
+      value: Fire_ADD
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 177.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 194.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521404770085940, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89956e675b749204c8e10395ce2b5fb9, type: 3}
 --- !u!1 &1700467536
 GameObject:
   m_ObjectHideFlags: 0
@@ -7601,7 +7674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700467536}
   m_LocalRotation: {x: 0.08927633, y: -0.71228814, z: 0.09019081, w: 0.69031954}
-  m_LocalPosition: {x: 294, y: 45, z: 251}
+  m_LocalPosition: {x: 111.2, y: 20, z: 280.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7614,6 +7687,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754356765}
     m_Modifications:
+    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
+      propertyPath: m_Name
+      value: Ground torch (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -57.3
@@ -7669,10 +7746,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
-      propertyPath: m_Name
-      value: Ground torch (10)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 23ec18917bcdd9d4bb2a004a07800c2b, type: 3}
       propertyPath: m_Materials.Array.data[0]
