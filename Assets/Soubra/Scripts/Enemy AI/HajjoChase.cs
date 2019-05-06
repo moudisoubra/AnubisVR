@@ -76,10 +76,10 @@ public class HajjoChase : NodeSoubra
     public void Seeking(BehaviourTreeSoubra BTS)
     {
 
-        Vector3 DesiredVel = BTS.selfObject.transform.position - BTS.transform.position;
-        DesiredVel = Vector3.Normalize(DesiredVel);
-        DesiredVel *= 0.5f;
-        Vector3 seekForce = DesiredVel - BTS.rb.velocity;
+        //Vector3 DesiredVel = BTS.selfObject.transform.position - BTS.transform.position;
+        //DesiredVel = Vector3.Normalize(DesiredVel);
+        //DesiredVel *= 0.5f;
+        //Vector3 seekForce = DesiredVel - BTS..velocity;
 
         //BTS.Move(seekForce);
 

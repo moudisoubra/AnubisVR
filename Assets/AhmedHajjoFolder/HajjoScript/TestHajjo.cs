@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Hajjo;
 
 public class TestHajjo : MonoBehaviour
 {
-
+  
 
     // Start is called before the first frame update
     void Start()
     {
+        
 
         MeshFilter meshfilter = gameObject.AddComponent<MeshFilter>();
         MeshRenderer meshRender = gameObject.AddComponent<MeshRenderer>();

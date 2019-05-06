@@ -1,0 +1,310 @@
+fileFormatVersion: 2
+guid: 32b8b60f2c3c39649b58d189112ece2b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ABS
+    100002: Arm L
+    100004: Arm L(mirrored)
+    100006: Bone012
+    100008: Bone013
+    100010: Box001
+    100012: Chest
+    100014: Circle003
+    100016: Circle004
+    100018: Circle005
+    100020: Circle006
+    100022: Circle007
+    100024: COG
+    100026: Cylinder001
+    100028: eye 2-in
+    100030: eye 2-in001
+    100032: eye 2-out
+    100034: eye 2-out001
+    100036: face
+    100038: Foot 1 L
+    100040: Foot 1 R
+    100042: Foot 2 L
+    100044: Foot 2 R
+    100046: Foot 3 L
+    100048: Foot 3 R
+    100050: Forearm L
+    100052: Forearm L(mirrored)
+    100054: Head
+    100056: Head end
+    100058: Index 1 L
+    100060: Index 1 L(mirrored)
+    100062: Index 2 L
+    100064: Index 2 L(mirrored)
+    100066: Index 3 L
+    100068: Index 3 L(mirrored)
+    100070: Index 4 L
+    100072: Index 4 L(mirrored)
+    100074: Leg 1 L
+    100076: Leg 1 R
+    100078: Leg 2 L
+    100080: Leg 2 R
+    100082: MF 1 L
+    100084: MF 1 L(mirrored)
+    100086: MF 2 L
+    100088: MF 2 L(mirrored)
+    100090: MF 3 L
+    100092: MF 3 L(mirrored)
+    100094: MF 4 L
+    100096: MF 4 L(mirrored)
+    100098: Neck
+    100100: Pinky 1 L
+    100102: Pinky 1 L(mirrored)
+    100104: Pinky 2 L
+    100106: Pinky 2 L(mirrored)
+    100108: Pinky 3 L
+    100110: Pinky 3 L(mirrored)
+    100112: Pinky 4 L
+    100114: Pinky 4 L(mirrored)
+    100116: Ring 1 L
+    100118: Ring 1 L(mirrored)
+    100120: Ring 2 L
+    100122: Ring 2 L(mirrored)
+    100124: Ring 3 L
+    100126: Ring 3 L(mirrored)
+    100128: Ring 4 L
+    100130: Ring 4 L(mirrored)
+    100132: Shoulder L
+    100134: Shoulder L(mirrored)
+    100136: Star001
+    100138: //RootNode
+    100140: Thumb 1 L
+    100142: Thumb 1 L(mirrored)
+    100144: Thumb 2 L
+    100146: Thumb 2 L(mirrored)
+    100148: Thumb 3 L
+    100150: Thumb 3 L(mirrored)
+    100152: Thumb 4 L
+    100154: Thumb 4 L(mirrored)
+    100156: Wrist end L
+    100158: Wrist end L(mirrored)
+    100160: Wrist L
+    100162: Wrist L(mirrored)
+    400000: ABS
+    400002: Arm L
+    400004: Arm L(mirrored)
+    400006: Bone012
+    400008: Bone013
+    400010: Box001
+    400012: Chest
+    400014: Circle003
+    400016: Circle004
+    400018: Circle005
+    400020: Circle006
+    400022: Circle007
+    400024: COG
+    400026: Cylinder001
+    400028: eye 2-in
+    400030: eye 2-in001
+    400032: eye 2-out
+    400034: eye 2-out001
+    400036: face
+    400038: Foot 1 L
+    400040: Foot 1 R
+    400042: Foot 2 L
+    400044: Foot 2 R
+    400046: Foot 3 L
+    400048: Foot 3 R
+    400050: Forearm L
+    400052: Forearm L(mirrored)
+    400054: Head
+    400056: Head end
+    400058: Index 1 L
+    400060: Index 1 L(mirrored)
+    400062: Index 2 L
+    400064: Index 2 L(mirrored)
+    400066: Index 3 L
+    400068: Index 3 L(mirrored)
+    400070: Index 4 L
+    400072: Index 4 L(mirrored)
+    400074: Leg 1 L
+    400076: Leg 1 R
+    400078: Leg 2 L
+    400080: Leg 2 R
+    400082: MF 1 L
+    400084: MF 1 L(mirrored)
+    400086: MF 2 L
+    400088: MF 2 L(mirrored)
+    400090: MF 3 L
+    400092: MF 3 L(mirrored)
+    400094: MF 4 L
+    400096: MF 4 L(mirrored)
+    400098: Neck
+    400100: Pinky 1 L
+    400102: Pinky 1 L(mirrored)
+    400104: Pinky 2 L
+    400106: Pinky 2 L(mirrored)
+    400108: Pinky 3 L
+    400110: Pinky 3 L(mirrored)
+    400112: Pinky 4 L
+    400114: Pinky 4 L(mirrored)
+    400116: Ring 1 L
+    400118: Ring 1 L(mirrored)
+    400120: Ring 2 L
+    400122: Ring 2 L(mirrored)
+    400124: Ring 3 L
+    400126: Ring 3 L(mirrored)
+    400128: Ring 4 L
+    400130: Ring 4 L(mirrored)
+    400132: Shoulder L
+    400134: Shoulder L(mirrored)
+    400136: Star001
+    400138: //RootNode
+    400140: Thumb 1 L
+    400142: Thumb 1 L(mirrored)
+    400144: Thumb 2 L
+    400146: Thumb 2 L(mirrored)
+    400148: Thumb 3 L
+    400150: Thumb 3 L(mirrored)
+    400152: Thumb 4 L
+    400154: Thumb 4 L(mirrored)
+    400156: Wrist end L
+    400158: Wrist end L(mirrored)
+    400160: Wrist L
+    400162: Wrist L(mirrored)
+    2100000: No Name
+    2100002: 10 - Default
+    2100004: 13 - Default
+    2100006: 09 - Default
+    2300000: Box001
+    2300002: Cylinder001
+    2300004: eye 2-in
+    2300006: eye 2-in001
+    2300008: eye 2-out
+    2300010: eye 2-out001
+    3300000: Box001
+    3300002: Cylinder001
+    3300004: eye 2-in
+    3300006: eye 2-in001
+    3300008: eye 2-out
+    3300010: eye 2-out001
+    4300000: Box001
+    4300002: Cylinder001
+    4300004: eye 2-out001
+    4300006: eye 2-in001
+    4300008: eye 2-out
+    4300010: eye 2-in
+    4300012: face
+    7400000: Run
+    9500000: //RootNode
+    13700000: face
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
