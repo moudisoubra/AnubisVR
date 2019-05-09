@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Hajjo;
 
 public class Grid : MonoBehaviour
 {
     public static Grid instance;
+    public SpacePartitioning fk;
 
     public Color ChangeColors;
     public int OffSetX, OffSetY;
@@ -12,16 +14,17 @@ public class Grid : MonoBehaviour
     public int gridSizeX, GridSizeY;
 
 
-    public class GridcellData
-    {
-        public List<Transform> ContainObjects = new List<Transform>();
-    }
+        public class GridcellData
+        {
+            public List<Transform> ContainObjects = new List<Transform>();
+        }
 
 
     void Awake()
     {
         instance = this;
         CreatGrid();
+       
     }
 
 
@@ -45,9 +48,6 @@ public class Grid : MonoBehaviour
 
         return cell;
     }
-
-
-
    
     public void OnDrawGizmos()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 
-[CustomEditor(typeof(GameObject))]
+//[CustomEditor(typeof(GameObject))]
 public class HajjoTool1 : Editor
 {
     public override void OnInspectorGUI()

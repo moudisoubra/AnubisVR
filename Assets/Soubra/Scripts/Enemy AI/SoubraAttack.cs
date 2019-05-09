@@ -21,7 +21,7 @@ public class SoubraAttack : NodeSoubra
                 return Result.success;
             }
             Debug.Log("Attack Running");
-            return Result.running;
+            return Result.running; 
         }
         else
         {

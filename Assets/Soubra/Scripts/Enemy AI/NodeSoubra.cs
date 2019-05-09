@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NodeHajjo : MonoBehaviour
+public class NodeSoubra : MonoBehaviour
 {
-    public List<NodeHajjo> nodesList = new List<NodeHajjo>();
+    public List<NodeSoubra> nodesList = new List<NodeSoubra>();
 
     public enum Result { running, success, failure };
 

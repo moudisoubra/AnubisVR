@@ -18,7 +18,7 @@ public class SpatialEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Grid.instance.grid[spaceManager.currentNode.x, spaceManager.currentNode.y].ContainObjects.Contains(playerObject))
+        if (GridCreator.instance.spacePar.grid[spaceManager.currentNode.x, spaceManager.currentNode.y].ContainObjects.Contains(playerObject))
         {
             Debug.Log("Player Found..");
             if (Vector3.Distance(transform.position, playerObject.position) < dis)
