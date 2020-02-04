@@ -99,13 +99,13 @@ public class AnubisController : MonoBehaviour
     public LayerMask puzzleLayer;
     //public LineRenderer lineRenderer;
 
-    public PuzzleControllerSoubra puzzleScript;
+    //public PuzzleControllerSoubra puzzleScript;
     public AddForceToItems RightAddForceScript;
     public AddForceToItems LeftAddForceScript;
 
     void Start()
     {
-        puzzleScript = GameObject.FindObjectOfType<PuzzleControllerSoubra>();
+        //puzzleScript = GameObject.FindObjectOfType<PuzzleControllerSoubra>();
         RightAddForceScript = rightModel.GetComponent<AddForceToItems>();
         LeftAddForceScript = leftModel.GetComponent<AddForceToItems>();
           //drScript = FindObjectOfType<DrawLine>();

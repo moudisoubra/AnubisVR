@@ -19,7 +19,7 @@ public class MoveFloorsSideways : MonoBehaviour
     public Vector3 originalTransformLeft;
     public Vector3 originalTransformRight;
 
-    public DjisPathFindHajjo script;
+    //public DjisPathFindHajjo script;
     public ChangeHint changeHint;
     // Start is called before the first frame update
     void Start()

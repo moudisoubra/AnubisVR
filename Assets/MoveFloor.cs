@@ -8,7 +8,7 @@ public class MoveFloor : MonoBehaviour
     public GameObject particleEffect;
     public float changeRate;
     public GameObject[] walls;
-    public DjisPathFindHajjo script;
+    //public DjisPathFindHajjo script;
     public ChangeHint changeHint;
     // Start is called before the first frame update
     void Start()

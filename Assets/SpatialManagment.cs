@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpatialManagment : MonoBehaviour
 {
-    private SpaceManager spaceManager;
+    //private SpaceManager spaceManager;
     public Transform playerObject;
     public GameObject[] arrayOfObjects;
     // Start is called before the first frame update
